@@ -1,0 +1,213 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+}
+
+.Header-1 {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* padding: 10px 0px; */
+  background-color: #33a137;
+  color: white;
+  height: 2.8rem;
+  /* color: white; */
+}
+
+.left-Container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  margin-left: 50px;
+  height: 40px;
+  /* border: 2px solid red; */
+}
+
+.left-Container > img {
+  height: 150%;
+}
+
+.center-Container {
+  display: flex;
+  flex: 8;
+  text-align: center;
+  padding: 0px 50px;
+  /* border: 2px solid red; */
+  height: 40px;
+  align-items: center;
+}
+
+.center-Container > ul {
+  display: flex;
+}
+
+.center-Container > ul > li {
+  padding: 0px 30px;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  transition: all 1s;
+  font-weight: 500;
+}
+
+.center-Container > ul > li:hover {
+  cursor: pointer;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 20px;
+}
+
+.right-Container {
+  display: flex;
+  flex: 3;
+  margin-right: 30px;
+  height: 40px;
+  align-items: center;
+}
+
+.right-Container > img {
+  padding-left: 40px;
+  margin-right: 10px;
+  padding-right: 0px;
+  height: 70%;
+}
+
+.right-Container > .MuiSvgIcon-root {
+  /* margin-left: 30px;
+  margin-right: 10px; */
+  height: 200%;
+  margin-left: 20px;
+}
+
+.MuiSvgIcon-root{
+ margin-left: 10px;
+}
+
+input[type="button"] {
+  height: 28px;
+  width: 120px;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 13px;
+  border: white;
+  background-color: white;
+}
+
+.Header-2 {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  height: 2.8rem;
+  /* border: 2px solid rebeccapurple; */
+}
+
+.left-header {
+  display: flex;
+  flex: 1.5;
+  margin-right: 30px;
+  height: 40px;
+  align-items: center;
+  /* background-color: blue; */
+  text-align: center;
+}
+
+.right-header {
+  display: flex;
+  flex: 8;
+  margin-right: 30px;
+  height: 40px;
+  align-items: center;
+  /* background-color: gold; */
+}
+
+.Header-2 > .left-header > .first > img {
+  width: 25%;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.first {
+  margin-right: -20px;
+  margin-left: 10px;
+}
+.second {
+  margin-left: -30px;
+  height: 40px;
+  width: 240px;
+  text-align: left;
+}
+
+.Header-2 > .left-header > .second > h2 {
+  color: black;
+  font-size: 20px;
+  font-weight: 900;
+  margin-left: 15px;
+}
+.Header-2 > .left-header > .second > h4 {
+  margin-left: 15px;
+  color: #f9aa19;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.options > ul {
+  display: flex;
+}
+
+.extends > ul {
+  display: flex;
+}
+
+.options > ul > li {
+  padding: 0px 30px;
+  text-decoration: none;
+  list-style: none;
+  transition: all 1s;
+  font-weight: 400;
+  color: #848484;
+  font-size: 1rem;
+}
+
+.options > ul > li:hover {
+  cursor: pointer;
+}
+
+.extends > ul > li {
+  padding: 0px 30px;
+  text-decoration: none;
+  list-style: none;
+  transition: all 1s;
+  color: #848484;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.options > ul > li:nth-child(3) {
+  border-right: 2px solid #b1b1b1;
+}
+
+
+.extends > ul > li:nth-child(1) {
+  padding-left: 20px;
+  /* border-left: 2px solid #b1b1b1; */
+  border-right: 2px solid #b1b1b1;
+}
+
+.extends > ul > li:hover {
+  cursor: pointer;
+}
+
+.collapse > h4 {
+  color: #848484;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.collapse > h4:hover {
+  cursor: pointer;
+}
+
+.null-container{
+  display: none;
+  /* transition: all 0.5s; */
+}

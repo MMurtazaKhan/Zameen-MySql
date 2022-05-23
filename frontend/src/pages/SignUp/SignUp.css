@@ -1,0 +1,294 @@
+.register {
+  display: flex;
+  /* border: 2px solid red; */
+  /* margin-top: 10px; */
+  height: 100vh;
+
+}
+
+.left-reg {
+  display: flex;
+  flex: 0.4;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border-right: 2px solid gold; */
+  background-color: #47ac4a;
+}
+
+.left-reg > h2 {
+  color: white;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-size: 50px;
+  padding-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.left-reg > p {
+  color: whitesmoke;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-size: 18px;
+  padding-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.register > .left-reg .LoginBt {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  width: 50%;
+  cursor: pointer;
+  border-radius: 50px;
+  height: 60px;
+  transition: all 0.5s;
+}
+
+
+.register > .left-reg .LoginBt:hover {
+  background-color: whitesmoke;
+  color: #47ac4a;
+  font-size: 17px
+
+  /* transform: translateY(-5px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.219); */
+}
+
+
+.right-reg {
+  display: flex;
+  flex: 0.6;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid gold;
+
+}
+
+.right-reg > h3 {
+  color: #47ac4a;
+  font-size: 50px;
+  padding-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+.signUpForm {
+
+  height: 70%;
+
+
+}
+
+.signUpForm > div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.signUpForm > div > input {
+  padding: 1vmax 4vmax;
+  margin: 5px 0px;
+  padding-right: 1vmax;
+  width: 500px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 1vmax;
+  outline: none;
+  background-color: #fafffd;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.signUpForm > div > svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+#registerImage > img {
+  width: 3vmax;
+  border-radius: 100%;
+}
+#registerImage > input {
+  display: flex;
+  padding: 0%;
+  width: 455px;
+}
+
+#registerImage > input::file-selector-button {
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  height: 5vh;
+  border: none;
+  margin: 0%;
+  font: 400 0.8vmax cursive;
+  transition: all 0.5s;
+  padding: 0 1vmax;
+  color: rgba(0, 0, 0, 0.623);
+  background-color: rgb(255, 255, 255);
+}
+
+#registerImage > input::file-selector-button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.signUpBtn {
+  margin-top: 3rem;
+  border: none;
+  background-color: #47ac4a;
+  color: white;
+  font: 300 0.9vmax "Roboto";
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 50px;
+  outline: none;
+  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-size: 20px;
+}
+
+.signUpBtn:hover {
+  /* background-color: #275c29; */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.219);
+}
+ 
+
+/* Login */
+.login {
+  display: flex;
+  /* border: 2px solid red; */
+  /* margin-top: 10px; */
+  height: 100vh;
+ 
+  
+}
+
+.left-login {
+  display: flex;
+  flex: 0.6;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid gold;
+  background-color: white;
+}
+
+.right-login {
+  display: flex;
+  flex: 0.4;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #47ac4a; 
+  /* text-align: center; */
+}
+
+.left-login > h3 {
+  color: #47ac4a;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-size: 45px;
+  padding-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.loginForm > div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.loginForm > div > input {
+  padding: 1vmax 4vmax;
+  margin: 5px 0px;
+  padding-right: 1vmax;
+  width: 500px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 1vmax;
+  outline: none;
+  background-color: #fafffd;
+
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.loginForm > div > svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+
+.loginBtn {
+  margin-top: 3rem;
+  border: none;
+  background-color: #47ac4a;
+  color: white;
+  font: 300 0.9vmax "Roboto";
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 50px;
+  outline: none;
+  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-size: 20px;
+}
+
+.loginBtn:hover {
+  /* background-color: #275c29; */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.219);
+}
+ 
+
+.right-login > h2 {
+  color: white;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-size: 50px;
+  padding-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.right-login > p {
+  color: whitesmoke;
+  /* font-family: "Josefin Sans", sans-serif; */
+  font-size: 18px;
+  padding-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.login > .right-login .RegBt {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  width: 50%;
+  cursor: pointer;
+  border-radius: 50px;
+  height: 60px;
+  transition: all 0.5s;
+}
+
+
+.login > .right-login .RegBt:hover {
+  background-color: whitesmoke;
+  color: #47ac4a;
+  font-size: 17px
+
+}
+
+.blank{
+  display: none;
+}
+
+
