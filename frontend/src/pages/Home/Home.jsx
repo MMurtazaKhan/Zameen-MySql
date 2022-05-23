@@ -5,7 +5,11 @@ const Home = () => {
   return (
  
     
-    <div className='Home'>Home</div>
+    <div className='Home'>
+      kljaslkdfjakl;sjl;k
+      kjashnl;kdamsl;
+      jkasbljkdfak
+    </div>
    
 
   )
