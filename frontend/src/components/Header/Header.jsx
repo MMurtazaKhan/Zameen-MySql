@@ -4,6 +4,7 @@ import "./Header.css";
 import { Settings } from "@material-ui/icons";
 import { AccountCircle } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import Contact from "../../pages/Contact/Contact";
 
 
 
@@ -35,11 +36,11 @@ const Header = () => {
         </div>
         <div className="center-Container">
           <ul>
-            <li>HOME</li>
-            <li>SERVICES</li>
-            <li>BLOG</li>
-            <li>ABOUT</li>
-            <li>CONTACT</li>
+            <li><Link className="Link-tag" to="" >HOME</Link></li>
+            <li><Link className="Link-tag" to="" >SERVICES</Link></li>
+            <li><Link className="Link-tag" to="" >BLOG</Link></li>
+            <li><Link className="Link-tag" to="" >ABOUT</Link></li>
+            <li><Link className="Link-tag" to="/contact" >CONTACT</Link></li>
           </ul>
         </div>
         <div className="right-Container">
@@ -53,7 +54,7 @@ const Header = () => {
       <div className="Header-2">
         <div className="left-header">
           <div className="first">
-            <img src="z.jpeg" alt="Zameen-logo" />
+            <img src="zameen.jpeg" alt="Zameen-logo" />
           </div>
           <div className="second">
             <h2>zameen.com</h2>
