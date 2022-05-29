@@ -41,7 +41,7 @@
   display: flex;
 }
 
-.center-Container > ul > li {
+.center-Container > ul > Li {
   padding: 0px 30px;
   text-decoration: none;
   list-style: none;
@@ -51,12 +51,29 @@
   font-weight: 500;
 }
 
-.center-Container > ul > li:hover {
+.Link-tag{
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  transition: all 1s;
+  font-weight: 500;
+}
+
+.Link-tag:hover{
   cursor: pointer;
   border-bottom: 2px solid black;
   color: black;
   font-size: 20px;
 }
+
+/* .center-Container > ul > li:hover {
+  cursor: pointer;
+  border-bottom: 2px solid black;
+  color: black;
+  font-size: 20px;
+} */
 
 .right-Container {
   display: flex;

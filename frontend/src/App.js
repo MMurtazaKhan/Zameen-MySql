@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./pages/SignUp/SignUp";
+import Contact from "./pages/Contact/Contact"
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -17,6 +18,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/register" component={SignUp} />
+          <Route exact path="/contact" component={Contact} />
+          
         </Switch>
         <Footer />
       </BrowserRouter>
