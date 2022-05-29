@@ -1,0 +1,57 @@
+.help-container{
+ 
+    background-image: url('E:\Zameen\frontend\public\contact-bg.jpeg');
+     background-size: cover;
+     height: 600px;
+    }
+    
+.faq-container {
+  display: flex;
+  padding-top: 50px;
+}
+
+.container__sidebar {
+  padding-top: 30px;
+  width: 30%;
+}
+
+.container__main {
+  /* Take the remaining width */
+  flex: 1;
+
+  /* Make it scrollable */
+  overflow: auto;
+}
+
+
+/* Collapse css */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #47ac4a;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.null-container{
+    display: none;
+}
