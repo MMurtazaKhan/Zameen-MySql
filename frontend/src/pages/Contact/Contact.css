@@ -12,180 +12,123 @@
 
 }  */
 .contact-page{
-    margin-top: 0px;
-    padding: 0px;
-    height: 100vh;
-    background-image: url('D:\zameen-main\frontend\public\contact-bg.jpeg');
-    width: 100%;
-    
-    background-size: cover;
-    background-repeat: no-repeat;
+
+  margin-top: 0px;
+  padding: 0px;
+  height: 100vh;
+  background-image: url('E:\Zameen\frontend\public\contact.jpeg');
+  width: 100%;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-svgs{
+  width :40px;
+  height: 40px;
+  background-color: rgb(255, 242, 242, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 
 .contact-container {
-    box-sizing: border-box;
-    
-    width: 35%;
-    height: 500px;
-    border: 1px solid whitesmoke;
-    margin: 20px auto;
-    background: linear-gradient(316deg, rgb(11 131 121) 50%, rgb(15 158 113) 75%, rgb(17 195 150) 100%);
+  box-sizing: border-box;
+  
+  width: 35%;
+  height: 500px;
+  border: 1px solid whitesmoke;
+  margin: 20px auto;
+  background: linear-gradient(316deg, rgb(11 131 121) 50%, rgb(15 158 113) 75%, rgb(17 195 150) 100%);
+
 
 }
 
 
 .contact-container h1 {
-    text-align: center;
-    font-size: 35px;
-    color: wheat;
-    font-family: 'Baloo 2', cursive;
-    text-transform: uppercase;
+
+  text-align: center;
+  font-size: 35px;
+  color: wheat;
+  font-family: 'Baloo 2', cursive;
+  text-transform: uppercase;
 }
 
 .social-links {
-    
-    display: inline-block;
+  
+  display: inline-block;
 }
 
 .social-links a {
-    
-    display: inline-block;
-    margin-right: 32px;
-    text-align: center;
-    line-height: 40px;
+  
+  display: inline-block;
+  margin-right: 32px;
+  text-align: center;
+  line-height: 40px;
+
 
 }
 
 i {
-    color: wheat;
-    /* display: flex; */
-    /* width: 129px; */
+
+  color: wheat;
+  /* display: flex; */
+  /* width: 129px; */
+
 }
 
 .phone,
 .map,
 .social-links,
 .email {
-    margin-left: 70px;
-    margin-bottom: 15px;
+  margin-left: 70px;
+  margin-bottom: 15px;
 
 }
 
 .contact-container p {
-    margin-top: 5px;
-    font-size: 18px;
-    font-family: 'Baloo 2', cursive;
-    color: rgb(17, 16, 16);
+  margin-top: 5px;
+  font-size: 18px;
+  font-family: 'Baloo 2', cursive;
+  color: rgb(17, 16, 16);
 
 }
 
 .map p {
-    line-height: 24px;
+  line-height: 24px;
 }
 
 .social-links p {
-    line-height: 24px;
-    margin-bottom: 10px;
+  line-height: 24px;
+  margin-bottom: 10px;
 }
 
 .social-links i:hover {
 
-    background-color: rgb(3, 77, 99);
-    outline-color: rgb(243, 198, 126);
-    ;
-}/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-/* body {
-     background-image: url('D:\zameen-main\frontend\public\back.jpg'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-
-
-}  */
-.contact-page{
-    margin-top: 0px;
-    padding: 0px;
-    height: 100vh;
-    background-image: url('D:\zameen-main\frontend\public\contact-bg.jpeg');
-    width: 100%;
-    
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.contact-container {
-    box-sizing: border-box;
-    
-    width: 35%;
-    height: 500px;
-    border: 1px solid whitesmoke;
-    margin: 20px auto;
-    background: linear-gradient(316deg, rgb(11 131 121) 50%, rgb(15 158 113) 75%, rgb(17 195 150) 100%);
-
+  background-color: rgb(3, 77, 99);
+  outline-color: rgb(243, 198, 126);
+  ;
 }
 
 
-.contact-container h1 {
-    text-align: center;
-    font-size: 35px;
-    color: wheat;
-    font-family: 'Baloo 2', cursive;
-    text-transform: uppercase;
-}
 
-.social-links {
-    
-    display: inline-block;
-}
 
-.social-links a {
-    
-    display: inline-block;
-    margin-right: 32px;
-    text-align: center;
-    line-height: 40px;
 
-}
 
-i {
-    color: wheat;
-    /* display: flex; */
-    /* width: 129px; */
-}
 
-.phone,
-.map,
-.social-links,
-.email {
-    margin-left: 70px;
-    margin-bottom: 15px;
 
-}
 
-.contact-container p {
-    margin-top: 5px;
-    font-size: 18px;
-    font-family: 'Baloo 2', cursive;
-    color: rgb(17, 16, 16);
 
-}
 
-.map p {
-    line-height: 24px;
-}
 
-.social-links p {
-    line-height: 24px;
-    margin-bottom: 10px;
-}
 
-.social-links i:hover {
 
-    background-color: rgb(3, 77, 99);
-    outline-color: rgb(243, 198, 126);
-    ;
-}
+
+
+
+
+

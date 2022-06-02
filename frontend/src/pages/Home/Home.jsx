@@ -11,13 +11,13 @@ const Home = () => {
     const switchTabs = (e, tab) =>{
         if (tab==="yes") {
             
-            optionTab.current.classList.add("collapse");
+            optionTab.current.classList.add("collapse-label");
             optionTab.current.classList.remove("null-container");  
             setshow("yes");
         }
         else{
             optionTab.current.classList.add("null-container");
-            optionTab.current.classList.remove("collapse");  
+            optionTab.current.classList.remove("collapse-label");  
             setshow("no");
         }
     }
@@ -36,7 +36,7 @@ const Home = () => {
             <option value="Islamabad">Islamabad</option>
         </select>
         </div>
-        <input type="text" placeholder='Location' className='collapse' onClick={(e)=> switchTabs(e,show)}/>
+        <input type="text" placeholder='Location' className='collapse-label' onClick={(e)=> switchTabs(e,show)}/>
         <button>Find</button>
         </div>
 
