@@ -31,7 +31,7 @@
   display: flex;
   flex: 8;
   text-align: center;
-  padding: 0px 50px;
+  padding: 5px 50px;
   /* border: 2px solid red; */
   height: 40px;
   align-items: center;
@@ -39,6 +39,7 @@
 
 .center-Container > ul {
   display: flex;
+  padding-top: 10px;
 }
 
 .center-Container > ul > Li {
@@ -135,6 +136,7 @@ input[type="button"] {
   flex: 8;
   margin-right: 30px;
   height: 40px;
+  padding-top: 7px;
   align-items: center;
   /* background-color: gold; */
 }
@@ -188,6 +190,9 @@ input[type="button"] {
 
 .options > ul > li:hover {
   cursor: pointer;
+  color: #33a137;
+  text-decoration: underline;
+  transition: all 1s;
 }
 
 .extends > ul > li {
@@ -213,15 +218,20 @@ input[type="button"] {
 
 .extends > ul > li:hover {
   cursor: pointer;
+  color: #33a137;
+  text-decoration: underline;
+  transition: all 1s;
 }
 
-.collapse > h4 {
+.header-collapse > h4 {
   color: #848484;
   font-size: 1rem;
   font-weight: 500;
 }
-.collapse > h4:hover {
+.header-collapse > h4:hover {
   cursor: pointer;
+  color: #33a137;
+  font-weight: bold;
 }
 
 .null-container{

@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
@@ -19,22 +17,22 @@ const Footer = () => {
               <ul>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>about us</a>
+                    <p>about us</p>
                   </li>
                 </Link>
                 <Link to="/services" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>our services</a>
+                    <p>our services</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>privacy policy</a>
+                    <p>privacy policy</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>affiliate program</a>
+                    <p>affiliate program</p>
                   </li>
                 </Link>
               </ul>
@@ -44,27 +42,27 @@ const Footer = () => {
               <ul>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>FAQ</a>
+                    <p>FAQ</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>shipping</a>
+                    <p>shipping</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>returns</a>
+                    <p>returns</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>order status</a>
+                    <p>order status</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>payment options</a>
+                    <p>payment options</p>
                   </li>
                 </Link>
               </ul>
@@ -74,22 +72,22 @@ const Footer = () => {
               <ul>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>watch</a>
+                    <p>watch</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>bag</a>
+                    <p>bag</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>shoes</a>
+                    <p>shoes</p>
                   </li>
                 </Link>
                 <Link to="/about" style={{ textDecoration: "none" }}>
                   <li>
-                    <a>dress</a>
+                    <p>dress</p>
                   </li>
                 </Link>
               </ul>
@@ -130,29 +128,6 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div class="footer-col">
-              <h4>follow us</h4>
-              <div class="social-links">
-                <Link to="/contact">
-                  <FaFacebookF style={{ color: "white", fontSize: "1.2em" }} />
-                </Link>
-
-                <Link to="/contact">
-                  <FaTwitter style={{ color: "white", fontSize: "1.2em" }} />
-                </Link>
-
-                <Link to="/contact">
-                  <AiOutlineInstagram
-                    style={{ color: "white", fontSize: "1.2em" }}
-                  />
-                </Link>
-
-                <Link to="/contact">
-                  <FaLinkedinIn style={{ color: "white", fontSize: "1.2em" }} />
-                </Link>
-              </div>
-            </div> */}
           </div>
         </div>
       </footer>
