@@ -33,16 +33,16 @@ const Contact = () => {
         </div>
         <div className="social-links">
           <p>Follow Us on Social Media</p>
-          <a href="">
+          <a href="/">
             <FaFacebookF style={{ color: "white", fontSize: "3em"  }} />
           </a>
-          <a href="">
+          <a href="/">
             <FaTwitter style={{ color: "white", fontSize: "3em"  }} />
           </a>
-          <a href="">
+          <a href="/">
             <AiOutlineInstagram style={{ color: "white", fontSize: "3em"  }} />
           </a>
-          <a href="">
+          <a href="/">
             <FaLinkedinIn style={{ color: "white", fontSize: "3em"  }} />
           </a>
         </div>

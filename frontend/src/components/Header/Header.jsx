@@ -6,9 +6,6 @@ import { AccountCircle } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 
-
-
-
 const Header = () => {
   const text = "BUY >";
   const headerTab = useRef(null);
