@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
-
 .footer-container{
 	max-width: 1170px;
 	margin:auto;
@@ -40,7 +38,7 @@ ul{
 .footer-col ul li:not(:last-child){
 	margin-bottom: 10px;
 }
-.footer-col ul li a{
+.footer-col ul li p{
 	font-size: 16px;
 	text-transform: capitalize;
 	color: #ffffff;
@@ -50,10 +48,10 @@ ul{
 	display: block;
 	transition: all 0.3s ease;
 	font-family:sans-serif;
-	padding: 5px 0px;
+	padding: 0px 0px;
 	font-weight: 500;
 }
-.footer-col ul li a:hover{
+.footer-col ul li p:hover{
 	color: #33a137;
 	padding-left: 8px;
 }
@@ -69,7 +67,6 @@ ul{
 	color: #ffffff;
 	transition: all 0.5s ease;
 	
-
 }
 .footer-col .social-links a:hover{
 	color: #24262b;
@@ -93,7 +90,7 @@ ul{
 	text-align: center;
 	padding-left: 32px;
 	border-radius: 50%;
-	padding-top: 10px;
+	padding-bottom: 5px;
 	color: white;
 
 }
