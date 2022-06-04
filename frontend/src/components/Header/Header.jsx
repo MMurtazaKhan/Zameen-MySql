@@ -3,14 +3,14 @@ import "./Header.css";
 // import logo from "../images/Home-logo.png";
 import { Settings } from "@material-ui/icons";
 import { AccountCircle } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 const Header = () => {
   const text = "BUY >";
   const headerTab = useRef(null);
   const [show, setShow] =useState("yes");
-
+  const history = useHistory();
   const switchTabs = (e, tab) =>{
 
     if(tab === "yes"){
@@ -44,7 +44,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="right-Container">
-          <input type="button" value="+ Add Property" />
+          <input type="button" value="+ Add Property" onClick={() => history.push("/reg-property")}/>
           <img src="/pak-flag.png" alt="Pak Flag" />
         <Link style={{color:"white",paddingLeft:"10px", paddingRight:"10px"}} to="/profile" > <Settings style={{ fontSize: "30px" }} /></Link>
          <Link style={{color:"white", paddingLeft:"10px"}} to="/register">  <AccountCircle style={{ fontSize: "30px" }} /></Link>
