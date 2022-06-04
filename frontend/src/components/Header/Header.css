@@ -11,6 +11,7 @@
   background-color: #33a137;
   color: white;
   height: 2.8rem;
+  padding-top: 5px;
   /* color: white; */
 }
 
@@ -50,6 +51,8 @@
   font-size: 18px;
   transition: all 1s;
   font-weight: 500;
+  padding-top: 5px;
+
 }
 
 .Link-tag{
@@ -111,6 +114,11 @@ input[type="button"] {
   font-size: 13px;
   border: white;
   background-color: white;
+}
+
+input[type="button"]:hover{
+  background-color: #e9e6e6;
+  transition: all 0.5s;
 }
 
 .Header-2 {

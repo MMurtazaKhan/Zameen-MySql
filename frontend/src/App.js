@@ -1,4 +1,4 @@
-import React
+import React,{ useEffect }
 // , { useEffect, useState }
  from "react";
  import "./App.css";
@@ -11,9 +11,17 @@ import Help from "./pages/Help/Help";
 import Profile from "./pages/Profile/Profile";
 import Contact from "./pages/Contact/Contact";
 import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
-import EditProfile from "./pages/EditProfile/EditProfile";
+import { loadUser } from "./actions/userAction";
+import store from "./store";
+
 
 function App() {
+
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+
+
   return (
     <div>
       <BrowserRouter>
@@ -24,7 +32,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/help" component={Help} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/editProfile" component={ EditProfile } />
+          <Route exact path="/reg-property" component={RegisterProperty} />
 
         </Switch>
         <Footer />
