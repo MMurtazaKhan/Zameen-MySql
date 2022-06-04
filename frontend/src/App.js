@@ -1,4 +1,4 @@
-import React
+import React,{ useEffect }
 // , { useEffect, useState }
  from "react";
  import "./App.css";
@@ -11,8 +11,17 @@ import Help from "./pages/Help/Help";
 import Profile from "./pages/Profile/Profile";
 import Contact from "./pages/Contact/Contact";
 import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
+import { loadUser } from "./actions/userAction";
+import store from "./store";
+
 
 function App() {
+
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+
+
   return (
     <div>
       <BrowserRouter>
