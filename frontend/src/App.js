@@ -13,13 +13,14 @@ import Contact from "./pages/Contact/Contact";
 import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
 import { loadUser } from "./actions/userAction";
 import store from "./store";
+import EditProfile from "./pages/EditProfile/EditProfile";
 
 
 function App() {
 
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
+  // useEffect(() => {
+  //   store.dispatch(loadUser());
+  // }, []);
 
 
   return (
@@ -33,6 +34,8 @@ function App() {
           <Route exact path="/help" component={Help} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/reg-property" component={RegisterProperty} />
+          <Route exact path="/EditProfile" component={EditProfile} />
+
 
         </Switch>
         <Footer />
