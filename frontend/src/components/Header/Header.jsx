@@ -4,26 +4,23 @@ import "./Header.css";
 import { Settings } from "@material-ui/icons";
 import { AccountCircle } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-// import Contact from "../../pages/Contact/Contact";
-
-
 
 
 const Header = () => {
   const text = "BUY >";
-  const optionTab = useRef(null);
+  const headerTab = useRef(null);
   const [show, setShow] =useState("yes");
 
   const switchTabs = (e, tab) =>{
 
     if(tab === "yes"){
-    optionTab.current.classList.add("null-container");
-    optionTab.current.classList.remove("collapse");  
+      headerTab.current.classList.add("null-container");
+      headerTab.current.classList.remove("header-collapse");  
     setShow("no");
     }
     else{
-      optionTab.current.classList.add("collapse");
-      optionTab.current.classList.remove("null-container");  
+      headerTab.current.classList.add("header-collapse");
+      headerTab.current.classList.remove("null-container");  
       setShow("yes");
     }
   }
@@ -49,7 +46,7 @@ const Header = () => {
         <div className="right-Container">
           <input type="button" value="+ Add Property" />
           <img src="/pak-flag.png" alt="Pak Flag" />
-        <Link style={{color:"white",paddingLeft:"10px", paddingRight:"10px"}}> <Settings style={{ fontSize: "30px" }} /></Link>
+        <Link style={{color:"white",paddingLeft:"10px", paddingRight:"10px"}} to="/profile" > <Settings style={{ fontSize: "30px" }} /></Link>
          <Link style={{color:"white", paddingLeft:"10px"}} to="/register">  <AccountCircle style={{ fontSize: "30px" }} /></Link>
         </div>
       </div>
@@ -65,10 +62,10 @@ const Header = () => {
           </div>
         </div>
         <div className="right-header">
-          <div className="collapse" onClick={(e) => switchTabs(e, show)}>
+          <div className="header-collapse" onClick={(e) => switchTabs(e, show)}>
             <h4>{text} </h4>
           </div>
-          <div className="options" ref={optionTab}>
+          <div className="options" ref={headerTab}>
             <ul>
               <li>HOMES</li>
               <li>PLOT</li>
