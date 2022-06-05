@@ -11,9 +11,10 @@ import Help from "./pages/Help/Help";
 import Profile from "./pages/Profile/Profile";
 import Contact from "./pages/Contact/Contact";
 import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
-import { loadUser } from "./actions/userAction";
-import store from "./store";
+// import { loadUser } from "./actions/userAction";
+// import store from "./store";
 import EditProfile from "./pages/EditProfile/EditProfile";
+import Booking from "./pages/BookingProperty/Booking";
 
 
 function App() {
@@ -35,8 +36,7 @@ function App() {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/reg-property" component={RegisterProperty} />
           <Route exact path="/EditProfile" component={EditProfile} />
-
-
+          <Route exact path="/book-property" component={Booking} />
         </Switch>
         <Footer />
       </BrowserRouter>

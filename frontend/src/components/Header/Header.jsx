@@ -75,7 +75,7 @@ const Header = () => {
           <div className="extends">
             <ul>
               <li>RENT</li>
-              <li>PROJECT</li>
+              <li onClick={ ()=> history.push("/book-property") } >PROJECT</li>
             </ul>
           </div>
         </div>
