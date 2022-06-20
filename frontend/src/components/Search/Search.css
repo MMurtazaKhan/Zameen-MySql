@@ -1,0 +1,86 @@
+.Search-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background-image: url('/public/back.jpg');
+    background-position: center;
+    
+    
+}
+
+.first-row{
+    display: flex;
+    margin: 5px;
+}
+
+.first-row input{
+    width: 260px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.first-row button{
+    height: 35px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 15px;
+    background-color: rgb(59, 163, 59);
+    border: 0px;
+    border-radius: 8px;
+}
+
+.second-row{
+    display: flex;
+    margin: 5px;
+}
+
+.drop-down{
+    display: flex;
+    flex-direction: column;
+    /* width: min-content; */
+    margin-left: 15px;
+    text-align: center;
+}
+
+.drop-down label{
+    /* font-size: 1.2rem; */
+    font-weight: bold;
+    color: rgb(5, 151, 54);
+}
+
+.drop-down p{
+    margin: 5px;
+}
+
+.drop-down select{
+    height: 35px;
+}
+.drop-down #City{
+    width: 100px;
+}
+.drop-down #Price{
+    width: 100px;
+}
+.drop-down #Beds{
+    width: 100px;
+}
+
+.min-max{
+    display: flex;
+    /* width:400px; */
+}
+
+.price-box {
+    width: 102px;
+}
+
+.area-box{
+    width: 102px;
+}
+
+.null-container{
+    display: none;
+}

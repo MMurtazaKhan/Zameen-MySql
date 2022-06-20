@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import "./Booking.css";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import FaceIcon from "@material-ui/icons/Face";
+
 
 const Booking = () => {
   return (
     <div className="BookingCont">
+    
         <Fragment>
       {/* {loading ? (
         <Loader />

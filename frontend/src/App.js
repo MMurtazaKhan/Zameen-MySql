@@ -17,6 +17,8 @@ import EditProfile from "./pages/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 
 
+
+
 function App() {
 
   // useEffect(() => {
@@ -28,6 +30,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
+        
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/register" component={SignUp} />
