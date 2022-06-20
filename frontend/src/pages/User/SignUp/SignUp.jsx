@@ -8,7 +8,7 @@ import { Phone } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, register
   , login 
-} from "../../actions/userAction";
+} from "../../../actions/userAction";
 import { useAlert } from "react-alert";
 import { Link } from "react-router-dom";
 
