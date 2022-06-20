@@ -6,14 +6,14 @@ import React,{ useEffect }
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import SignUp from "./pages/SignUp/SignUp";
+import SignUp from "./pages/User/SignUp/SignUp";
 import Help from "./pages/Help/Help";
-import Profile from "./pages/Profile/Profile";
+import Profile from "./pages/User/Profile/Profile";
 import Contact from "./pages/Contact/Contact";
 import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
 // import { loadUser } from "./actions/userAction";
 // import store from "./store";
-import EditProfile from "./pages/EditProfile/EditProfile";
+import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 
 
