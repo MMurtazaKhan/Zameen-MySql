@@ -1,4 +1,5 @@
-import React,{ useEffect }
+import React
+// ,{ useEffect }
 // , { useEffect, useState }
  from "react";
  import "./App.css";
@@ -15,6 +16,8 @@ import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
 // import store from "./store";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
+import Sell from "./pages/Sell/Sell";
+
 
 
 
@@ -40,6 +43,8 @@ function App() {
           <Route exact path="/reg-property" component={RegisterProperty} />
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
+          <Route exact path="/sell" component={Sell} />
+
         </Switch>
         <Footer />
       </BrowserRouter>
