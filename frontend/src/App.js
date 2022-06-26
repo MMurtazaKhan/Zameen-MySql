@@ -1,6 +1,6 @@
-import React,{ useEffect }
+
 // , { useEffect, useState }
- from "react";
+
  import "./App.css";
  import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -15,6 +15,9 @@ import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
 // import store from "./store";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
+import SellProperty from "./pages/BookingProperty/ProjectProperty";
+import ProjectDetail from "./pages/BookingProperty/ProjectDetail";
+
 
 
 
@@ -40,6 +43,9 @@ function App() {
           <Route exact path="/reg-property" component={RegisterProperty} />
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
+          <Route exact path="/projects" component={SellProperty} />
+          
+          <Route exact path="/projectDetail/:id" component={ProjectDetail} />
         </Switch>
         <Footer />
       </BrowserRouter>

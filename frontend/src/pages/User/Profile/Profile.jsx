@@ -22,7 +22,7 @@ const history = useHistory();
   return (
     <div className="profileContainer">
       <div className="profile-design"></div>
-      <h1>My Profile</h1>
+      <h1 className="profile-heading" >My Profile</h1>
       <div className="profile-main">
         <div className="profile-sideDesign"></div>
 
