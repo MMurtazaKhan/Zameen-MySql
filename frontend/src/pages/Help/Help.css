@@ -1,10 +1,11 @@
-.help-container{
- 
-    background-image: url('E:\Zameen\frontend\public\contact-bg.jpeg');
-     background-size: cover;
-     height: 600px;
-    }
-    
+.help-container {
+
+  background-image: url("../../Images/contact-bg.jpeg");
+
+  background-size: cover;
+  height: 600px;
+}
+
 .faq-container {
   display: flex;
   padding-top: 50px;
@@ -25,13 +26,13 @@
 }
 
 
-.help-collapse :hover{
-    background-color: rgb(5, 151, 54);
+.help-collapse :hover {
+  background-color: rgb(5, 151, 54);
 }
 
 
-.help-collapse:active{
-    color: wheat;
+.help-collapse:active {
+  color: wheat;
 }
 
 /* Style the collapsible content. Note: hidden by default */

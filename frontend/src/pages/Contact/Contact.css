@@ -11,14 +11,15 @@
 
 
 }  */
-.contact-page{
+.contact-page {
 
   margin-top: 0px;
   padding: 0px;
   height: 100vh;
-  background-image: url('E:\Zameen\frontend\public\contact.jpeg');
+  background-image: url("../../Images/contact.jpeg");
+
   width: 100%;
-  
+
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -26,8 +27,8 @@
   align-items: center;
 }
 
-.contact-svgs{
-  width :40px;
+.contact-svgs {
+  width: 40px;
   height: 40px;
   background-color: rgb(255, 242, 242, 1);
   display: flex;
@@ -38,7 +39,7 @@
 
 .contact-container {
   box-sizing: border-box;
-  
+
   width: 35%;
   height: 500px;
   border: 1px solid whitesmoke;
@@ -59,12 +60,12 @@
 }
 
 .social-links {
-  
+
   display: inline-block;
 }
 
 .social-links a {
-  
+
   display: inline-block;
   margin-right: 32px;
   text-align: center;
@@ -113,22 +114,3 @@ i {
   outline-color: rgb(243, 198, 126);
   ;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

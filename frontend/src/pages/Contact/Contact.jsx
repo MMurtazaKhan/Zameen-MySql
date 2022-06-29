@@ -9,6 +9,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import imageOne from "../../Images/contact.jpeg";
+
 
 const Contact = () => {
   return (
@@ -34,16 +36,16 @@ const Contact = () => {
         <div className="social-links">
           <p>Follow Us on Social Media</p>
           <a href="/">
-            <FaFacebookF style={{ color: "white", fontSize: "3em"  }} />
+            <FaFacebookF style={{ color: "white", fontSize: "3em" }} />
           </a>
           <a href="/">
-            <FaTwitter style={{ color: "white", fontSize: "3em"  }} />
+            <FaTwitter style={{ color: "white", fontSize: "3em" }} />
           </a>
           <a href="/">
-            <AiOutlineInstagram style={{ color: "white", fontSize: "3em"  }} />
+            <AiOutlineInstagram style={{ color: "white", fontSize: "3em" }} />
           </a>
           <a href="/">
-            <FaLinkedinIn style={{ color: "white", fontSize: "3em"  }} />
+            <FaLinkedinIn style={{ color: "white", fontSize: "3em" }} />
           </a>
         </div>
       </div>
