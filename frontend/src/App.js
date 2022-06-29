@@ -17,6 +17,7 @@ import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 import Sell from "./pages/Sell/Sell";
+import propertyDetails from "./pages/Sell/propertyDetails";
 
 
 
@@ -44,7 +45,9 @@ function App() {
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
           <Route exact path="/sell" component={Sell} />
+          <Route exact path="/property/:id" component={propertyDetails} />
 
+          
         </Switch>
         <Footer />
       </BrowserRouter>

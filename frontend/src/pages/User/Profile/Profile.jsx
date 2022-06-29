@@ -1,7 +1,9 @@
 
 // Fake
 
-import React,{useEffect} from "react";
+import React
+// ,{useEffect}
+ from "react";
 import "./Profile.css";
 import { useHistory } from "react-router-dom";
 
@@ -29,7 +31,7 @@ const history = useHistory();
         <div className="userImgCont">
           <img
             src="/profile.png"
-            alt="user image"
+            alt="userimage"
             style={{ Height: "100px", width: "100px" }}
           />
           <button className="btn btn-warning btn-lg" onClick={() =>history.push("/EditProfile")}>Edit Profile</button>
