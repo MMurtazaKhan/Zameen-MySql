@@ -2,7 +2,6 @@ import React from "react";
 import "./Help.css";
 import { Link } from 'react-router-dom'
 import { Accordion } from "react-bootstrap";
-import imageTwo from "../../Images/contact-bg.jpeg";
 
 
 const Help = () => {

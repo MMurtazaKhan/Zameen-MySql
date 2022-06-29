@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import './About.css'
-export default () => {
+const About =  () => {
 
     return (
         <div className="about_container">
@@ -70,4 +70,6 @@ export default () => {
         </div>
     );
 };
+
+export default About;
 
