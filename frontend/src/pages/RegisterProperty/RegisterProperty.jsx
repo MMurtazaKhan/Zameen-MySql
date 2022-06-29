@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React
+// , { useState }
+ from "react";
 import "./RegisterProperty.css";
 import { GoAlert } from "react-icons/go";
 
@@ -13,8 +15,8 @@ const RegisterProperty = () => {
   // const [description, setDescription] = useState("");
   // const [category, setCategory] = useState("");
   // const [Stock, setStock] = useState(0);
-  const [images, setImages] = useState([]);
-  const [imagesPreview, setImagesPreview] = useState([]);
+  // const [images, setImages] = useState([]);
+  // const [imagesPreview, setImagesPreview] = useState([]);
 
 
   // useEffect(() => {
@@ -48,23 +50,23 @@ const RegisterProperty = () => {
   };
 
   const createPropertyImagesChange = (e) => {
-    const files = Array.from(e.target.files);
+    // const files = Array.from(e.target.files);
 
-    setImages([]);
-    setImagesPreview([]);
+    // setImages([]);
+    // setImagesPreview([]);
 
-    files.forEach((file) => {
-      const reader = new FileReader();
+    // files.forEach((file) => {
+    //   const reader = new FileReader();
 
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setImagesPreview((old) => [...old, reader.result]);
-          setImages((old) => [...old, reader.result]);
-        }
-      };
+    //   reader.onload = () => {
+    //     if (reader.readyState === 2) {
+    //       setImagesPreview((old) => [...old, reader.result]);
+    //       setImages((old) => [...old, reader.result]);
+    //     }
+    //   };
 
-      reader.readAsDataURL(file);
-    });
+    //   reader.readAsDataURL(file);
+    // });
   };
 
 
@@ -205,9 +207,9 @@ const RegisterProperty = () => {
             </div>
           </div>
           <div id="createProductFormImage">
-            {imagesPreview.map((image, index) => (
+            {/* {imagesPreview.map((image, index) => (
               <img key={index} src={image} alt="Product Preview" />
-            ))}
+            ))} */}
           </div>
           <div className="regProp-container">
             <button>SUBMIT PROPERTY</button>

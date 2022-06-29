@@ -1,0 +1,98 @@
+.carousel{
+    height: 500px;
+    width: 600px;
+}
+
+.sellCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.sell-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: wheat;
+    height: 400px;
+    width: 100%;
+    background-image: url("/public/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    
+}
+
+.sell-carousel{
+    border-radius: 10px;
+}
+
+.yellow-color{
+    text-align: center;
+    color: white;
+    background-color: rgb(165, 165, 37);
+    padding: 3px;
+    margin: 3px;
+}
+
+.sellDet-label{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.sellDet-para{
+    font-size: 20px;
+}
+
+.sellDet-btn{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(56, 168, 56);
+    border: none;
+    border-radius: 5px;
+}
+
+.sellDet-btn:hover{
+    background-color: rgb(76, 185, 76);
+    transform: perspective(500px) translateZ(4px);
+    box-shadow: 3px 3px 3x rgb(119, 111, 111);
+}
+
+.sellDet-heading{
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.sell-detail{
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 2px solid rgb(39, 175, 39);
+    border-left: 2px solid rgb(39, 175, 39);
+    border-radius: 5px;
+}
+
+.sellDet-btn{
+    padding: 4px;
+    width:40%;
+  display: flex;
+  padding:3px 10px 5px 10px;
+  /* background-color: #47ac4a; */
+  background-color: #33a137;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  /* transition: 0.5 all; */
+}
+
+.sellDet-btn:hover{
+    width:45%;
+  border-radius: 0px 15px 15px 0px;
+  transition: 1 ease-in-out;
+}

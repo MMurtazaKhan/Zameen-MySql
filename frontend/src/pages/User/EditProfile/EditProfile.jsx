@@ -1,4 +1,6 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment
+  // , useState, useEffect 
+} from "react";
 import "./EditProfile.css"
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import FaceIcon from "@material-ui/icons/Face";

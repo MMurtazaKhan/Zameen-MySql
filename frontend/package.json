@@ -24,7 +24,11 @@
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+<<<<<<< HEAD
     "swiper": "^8.2.6",
+=======
+    "swiper": "^8.2.4",
+>>>>>>> 483590e587cf95be1c0480117975e5e86c30faa9
     "web-vitals": "^2.1.4",
     "webfontloader": "^1.6.28"
   },
