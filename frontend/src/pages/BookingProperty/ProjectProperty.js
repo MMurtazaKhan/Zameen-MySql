@@ -1,5 +1,6 @@
 import React from 'react'
 import Project from './Project'
+import "./ProjectDetail.css";
 
 
 const ProjectProperty = () => {
@@ -36,9 +37,10 @@ const ProjectProperty = () => {
     ]
   return (
     <div>
-        <h1 className="project-heading" style={{textAlign: "center"}}>Projects</h1>
-        <h3 className="project-heading" style={{textAlign: "center"}}>Book the amazing under construction projects and secure your future now!</h3>
-            
+        <div className='project-head'>
+        <h1 className="project-heading" style={{color: "wheat"}}>Projects</h1>
+        <h3 className="project-heading" style={{color: "wheat"}}>Book the amazing under construction projects and secure your future now!</h3>
+        </div>
         { property && property.map(( property )=>(
             <Project key={property._id} property = {property}/>
         )) }

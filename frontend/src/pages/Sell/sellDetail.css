@@ -3,7 +3,7 @@
     width: 600px;
 }
 
-.projectCard{
+.sellCard{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +11,7 @@
     margin-bottom: 50px;
 }
 
-.project-head{
+.sell-head{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,29 +24,62 @@
     background-size: cover;
     background-position: center center;
     text-align: center;
+    
+}
+
+.sell-carousel{
+    border-radius: 10px;
 }
 
 .yellow-color{
     text-align: center;
     color: white;
     background-color: rgb(165, 165, 37);
-    border-radius: 4px;
     padding: 3px;
     margin: 3px;
 }
 
-.projDet-label{
+.sellDet-label{
     font-size: 23px;
     font-weight: bold;
 }
 
-.projDet-para{
+.sellDet-para{
     font-size: 20px;
 }
 
-.projDet-btn{
+.sellDet-btn{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(56, 168, 56);
+    border: none;
+    border-radius: 5px;
+}
+
+.sellDet-btn:hover{
+    background-color: rgb(76, 185, 76);
+    transform: perspective(500px) translateZ(4px);
+    box-shadow: 3px 3px 3x rgb(119, 111, 111);
+}
+
+.sellDet-heading{
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.sell-detail{
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 2px solid rgb(39, 175, 39);
+    border-left: 2px solid rgb(39, 175, 39);
+    border-radius: 5px;
+}
+
+.sellDet-btn{
     padding: 4px;
-    width:50%;
+    width:40%;
   display: flex;
   padding:3px 10px 5px 10px;
   /* background-color: #47ac4a; */
@@ -58,22 +91,8 @@
   /* transition: 0.5 all; */
 }
 
-.projDet-btn:hover{
-    width:55%;
+.sellDet-btn:hover{
+    width:45%;
   border-radius: 0px 15px 15px 0px;
   transition: 1 ease-in-out;
-}
-
-.project-detail{
-    padding: 20px;
-    border-top: 2px solid rgb(39, 175, 39);
-    border-left: 2px solid rgb(39, 175, 39);
-    border-radius: 5px;
-}
-
-.projDet-heading{
-    font-size: 35px;
-    margin-top: 20px;
-    font-weight: bold;
-    text-decoration: underline;
 }

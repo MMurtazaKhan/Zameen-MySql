@@ -1,10 +1,7 @@
-
-
-
-
-
-import React from 'react'
-import Carousel from 'react-bootstrap/Carousel'
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
+import { BsArrowRight } from "react-icons/bs";
 import "./ProjectDetail.css";
 
 const ProjectDetail = () => {
@@ -20,24 +17,26 @@ const ProjectDetail = () => {
   return (
     
     <div className='projectCard'>
-        <h1>Thank You for showing interest in <br/><span className='yellow-color' style={{textAlign: "center"}}>In booking a project</span></h1>
-        <p>{property.title}</p>
-        <Carousel className='carousel'>
+       <div className="project-head">
+          <h1>Thank You for showing interest in <br/>Booking a House <span className='yellow-color' style={{textAlign: "center"}}>With Us!</span></h1>
+          </div>
+        <h2 className='projDet-heading'>{property.title}</h2>
+        <Carousel fade>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="back.jpg"
+      src={property.image}
       alt="First slide"
     />
     <Carousel.Caption>
       <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interum.</p>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="back.jpg"
+      src={property.image}
       alt="Second slide"
     />
 
@@ -49,7 +48,7 @@ const ProjectDetail = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="back.jpg"
+      src={property.image}
       alt="Third slide"
     />
 
@@ -59,6 +58,24 @@ const ProjectDetail = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+
+<div className="project-detail">
+<p className='projDet-para'><span className='projDet-label'>Installments available: </span>{property.installments}</p>
+<p className='projDet-para'><span className='projDet-label'>Condition: </span>{property.condition}</p>
+<Link to="/book-property" style={{textDecoration: "none"}}><button className='projDet-btn'>
+          Book Now{" "}
+          <span>
+            <BsArrowRight
+              style={{
+                marginLeft: "10px",
+                color: "white",
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
+            />
+          </span>
+        </button></Link>
+</div>
     </div>
   
      

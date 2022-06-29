@@ -50,15 +50,21 @@
 }
 
 .project-btn{
-    background-color: rgb(50, 156, 50);
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    border: none;
-    font-size: 22px;
+    padding: 4px;
+    width:130px;
+  display: flex;
+  padding:3px 10px 5px 10px;
+  /* background-color: #47ac4a; */
+  background-color: #33a137;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  /* transition: 0.5 all; */
 }
 
 .project-btn:hover{
-    background-color:  rgb(43, 136, 43);
-    
+    width:150px;
+  border-radius: 0px 15px 15px 0px;
+  transition: 1 ease-in-out;
 }

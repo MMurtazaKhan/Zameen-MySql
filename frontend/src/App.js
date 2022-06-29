@@ -1,4 +1,5 @@
-
+import React from 'react';
+// ,{ useEffect }
 // , { useEffect, useState }
 
  import "./App.css";
@@ -15,8 +16,11 @@ import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
 // import store from "./store";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
-import SellProperty from "./pages/BookingProperty/ProjectProperty";
-import ProjectDetail from "./pages/BookingProperty/ProjectDetail";
+import Sell from "./pages/Sell/Sell";
+import ProjectProperty from './pages/BookingProperty/ProjectProperty';
+import ProjectDetail from './pages/BookingProperty/ProjectDetail';
+import sellDetail from './pages/Sell/sellDetail';
+
 
 
 
@@ -43,9 +47,11 @@ function App() {
           <Route exact path="/reg-property" component={RegisterProperty} />
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
-          <Route exact path="/projects" component={SellProperty} />
-          
+          <Route exact path="/sell" component={Sell} />
+          <Route exact path="/sellDetail/:id" component={sellDetail} />
+          <Route exact path="/projects" component={ProjectProperty} />
           <Route exact path="/projectDetail/:id" component={ProjectDetail} />
+
         </Switch>
         <Footer />
       </BrowserRouter>

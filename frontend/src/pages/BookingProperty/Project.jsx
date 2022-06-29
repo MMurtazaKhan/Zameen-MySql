@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Project.css";
-
+import { BsArrowRight } from "react-icons/bs";
 
 
 const Project = ({property}) => {
@@ -27,7 +27,19 @@ const Project = ({property}) => {
                 <p className="project-para">{property.installments}</p>
                 <h5 className="project-heading">Condition</h5>
                 <p className="project-para">{property.condition}</p>
-                <button className="project-btn">View Details</button>
+                <button className='project-btn'>
+                  Details{" "}
+                  <span>
+                    <BsArrowRight
+                      style={{
+                        marginLeft: "10px",
+                        color: "white",
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+              }}
+            />
+          </span>
+        </button>
               </div>
               </div>
               </Link>   
