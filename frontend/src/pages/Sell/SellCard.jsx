@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { FaRulerVertical } from "react-icons/fa";
+
 // import "./Sell.css";
 
 
 const SellCard = ({ property }) => {
    
   return (
-    <Link className="propertyCard" to={`/property/${property._id}`}>
+    <Link className="propertyCard" to={`/sellDetail/${property._id}`}>
     <div className="property-img-container">
       <img src={property.image} alt="sellimage" />
     </div>

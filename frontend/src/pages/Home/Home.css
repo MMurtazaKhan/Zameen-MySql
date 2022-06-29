@@ -124,6 +124,44 @@
   text-transform: uppercase;
 }
 
+/* Card CSS */
+.home-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 350px;
+  height: 380px;
+  margin: 10px;
+  border: 2px solid grey;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card-img {
+  height: 220px;
+  width: 290px;
+  border-radius: 10px;
+}
+.card-btn {
+  height: 45px;
+  width: 280px;
+  background-color: #21a57e;
+  border: 2px solid #21a57e;
+  border-radius: 10px;
+  font-size: 22px;
+}
+
+.card-btn:hover {
+  background-color: #3dc9a0;
+  cursor: pointer;
+}
+
+
 /*responsive*/
 @media (max-width: 767px) {
   .footer-col {

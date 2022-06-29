@@ -1,7 +1,7 @@
-import React
+import React from 'react';
 // ,{ useEffect }
 // , { useEffect, useState }
- from "react";
+
  import "./App.css";
  import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -17,7 +17,14 @@ import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 import Sell from "./pages/Sell/Sell";
+<<<<<<< HEAD
 import propertyDetails from "./pages/Sell/propertyDetails";
+=======
+import ProjectProperty from './pages/BookingProperty/ProjectProperty';
+import ProjectDetail from './pages/BookingProperty/ProjectDetail';
+import sellDetail from './pages/Sell/sellDetail';
+
+>>>>>>> b49c442982fc9dc3d37545f71bb4cc7a6ec68846
 
 
 
@@ -45,7 +52,13 @@ function App() {
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
           <Route exact path="/sell" component={Sell} />
+<<<<<<< HEAD
           <Route exact path="/property/:id" component={propertyDetails} />
+=======
+          <Route exact path="/sellDetail/:id" component={sellDetail} />
+          <Route exact path="/projects" component={ProjectProperty} />
+          <Route exact path="/projectDetail/:id" component={ProjectDetail} />
+>>>>>>> b49c442982fc9dc3d37545f71bb4cc7a6ec68846
 
           
         </Switch>

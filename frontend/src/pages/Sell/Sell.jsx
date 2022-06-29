@@ -49,8 +49,10 @@ const Sell = () => {
 
   return (
     <div>
+      <div className="sellCards-head">
       <div className="sell-search-container">
         <Search />
+      </div>
       </div>
 
       <div className="sell-container">

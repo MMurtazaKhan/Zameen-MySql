@@ -1,5 +1,10 @@
 
-.profileContainer > h1{
+.profileBody{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-heading{
     margin: 20px;
     text-align: center;
     text-decoration: underline;
@@ -59,3 +64,17 @@
 #profileLabelId{
     margin-top: 10px;
 }
+
+.propertSell{
+    margin: 20px;
+}
+
+.projectsBook{
+    margin: 20px;
+}
+
+.profile-table-head{
+    background-color: rgb(78, 163, 78);
+    font-size: 20px;
+}
+

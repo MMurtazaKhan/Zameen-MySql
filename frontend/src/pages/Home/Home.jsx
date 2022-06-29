@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Search from "../../components/Search/Search";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -11,6 +12,37 @@ const Home = () => {
         </div> 
         
       </div>
+
+      <section>
+        <div className="container services">
+          <h1 className="sub-heading">Our Services</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit nostrum porro illo? Voluptates mollitia deleniti numquam incidunt commodi! Ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, esse. </p>
+          <div className="home-cards">
+          <div className="card">
+            <img className="card-img" src="s1.jpg" alt="" />
+            <p className="card-para">
+              To Sell your property, Click on the following button
+            </p>
+           <Link to="/reg-property"><button className="card-btn">Sell Now</button></Link> 
+          </div>
+          <div className="card">
+            <img className="card-img" src="s1.jpg" alt="" />
+            <p className="card-para">
+              To Buy your property, Click on the following button
+            </p>
+            <Link to="/sell"><button className="card-btn">Buy Now</button></Link> 
+          </div>
+          <div className="card">
+            <img className="card-img" src="s1.jpg" alt="" />
+            <p className="para">To Book your property, Click on the following button</p>
+            <Link to="/projects"><button className="card-btn">Book Now</button></Link> 
+          </div>
+          
+           
+          </div>
+        </div>
+      </section>
+
 
       <section>
         <div className="container mission">
