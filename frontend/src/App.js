@@ -1,9 +1,11 @@
 import React
-// ,{ useEffect }
-// , { useEffect, useState }
- from "react";
- import "./App.css";
- import { BrowserRouter, Route, Switch } from "react-router-dom";
+  // ,{ useEffect }
+  // , { useEffect, useState }
+  from "react";
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import About from "./pages/AboutUs/About";
+import Blog from './pages/Blog/BlogMain';
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -33,7 +35,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
-        
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/register" component={SignUp} />
@@ -44,6 +46,9 @@ function App() {
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
           <Route exact path="/sell" component={Sell} />
+          <Route exact path="/About" component={About} />
+          <Route exact path="/Blog" component={Blog} />
+
 
         </Switch>
         <Footer />
@@ -53,4 +58,3 @@ function App() {
 }
 
 export default App;
- 
