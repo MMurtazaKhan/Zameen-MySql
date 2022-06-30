@@ -56,7 +56,9 @@ const Header = () => {
       <div className="Header-2">
         <div className="left-header">
           <div className="first">
-            <img src="zameen.jpeg" alt="Zameen-logo" />
+            <img src=""
+            // "zameen.jpeg"
+             alt="Zameen-logo" />
           </div>
           <div className="second">
             <h2>zameen.com</h2>

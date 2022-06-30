@@ -20,12 +20,10 @@ import Sell from "./pages/Sell/Sell";
 import ProjectProperty from './pages/BookingProperty/ProjectProperty';
 import ProjectDetail from './pages/BookingProperty/ProjectDetail';
 import sellDetail from './pages/Sell/sellDetail';
-<<<<<<< HEAD
-import Dashboard from './pages/Admin/Dashboard/Dashboard';
-=======
 import About from './pages/AboutUs/About';
 import BlogMain from './pages/Blog/BlogMain';
->>>>>>> 2bead35393600a5453076fa26656a53964796523
+import Dashboard from './pages/Admin/Dashboard/Dashboard';
+import Property from './pages/Admin/Property/Property';
 
 
 
@@ -54,12 +52,6 @@ function App() {
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
           <Route exact path="/sell" component={Sell} />
-<<<<<<< HEAD
-          <Route exact path="/sellDetail/:id" component={sellDetail} />
-          <Route exact path="/projects" component={ProjectProperty} />
-          <Route exact path="/projectDetail/:id" component={ProjectDetail} />
-          <Route exact path="/admin/dashboard" component={Dashboard} />
-=======
 
           <Route exact path="/About" component={About} />
           <Route exact path="/Blog" component={BlogMain} />
@@ -67,9 +59,9 @@ function App() {
 
           <Route exact path="/sellDetail/:id" component={sellDetail} />
           <Route exact path="/projects" component={ProjectProperty} />
-          <Route exact path="/projectDetail/:id" component={ProjectDetail} />
-
->>>>>>> 2bead35393600a5453076fa26656a53964796523
+          <Route exact path="/admin/dashboard" component={Dashboard} />
+          <Route exact path="/admin/property" component={Property} />
+          
 
           
         </Switch>
