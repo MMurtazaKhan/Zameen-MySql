@@ -23,7 +23,8 @@ import sellDetail from './pages/Sell/sellDetail';
 import About from './pages/AboutUs/About';
 import BlogMain from './pages/Blog/BlogMain';
 import Dashboard from './pages/Admin/Dashboard/Dashboard';
-import Property from './pages/Admin/Property/Property';
+import PropertyList from './pages/Admin/PropertyList/PropertyList';
+
 
 
 
@@ -60,7 +61,7 @@ function App() {
           <Route exact path="/sellDetail/:id" component={sellDetail} />
           <Route exact path="/projects" component={ProjectProperty} />
           <Route exact path="/admin/dashboard" component={Dashboard} />
-          <Route exact path="/admin/property" component={Property} />
+          <Route exact path="/admin/property" component={PropertyList} />
           
 
           
