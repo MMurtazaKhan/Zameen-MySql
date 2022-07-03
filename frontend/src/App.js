@@ -18,7 +18,7 @@ import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 import Sell from "./pages/Sell/Sell";
 import ProjectProperty from './pages/BookingProperty/ProjectProperty';
-import ProjectDetail from './pages/BookingProperty/ProjectDetail';
+// import ProjectDetail from './pages/BookingProperty/ProjectDetail';
 import sellDetail from './pages/Sell/sellDetail';
 import About from './pages/AboutUs/About';
 import BlogMain from './pages/Blog/BlogMain';

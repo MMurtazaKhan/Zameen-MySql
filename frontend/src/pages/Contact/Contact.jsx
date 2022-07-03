@@ -9,7 +9,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import imageOne from "../../Images/contact.jpeg";
+// import imageOne from "../../Images/contact.jpeg";
 
 
 const Contact = () => {

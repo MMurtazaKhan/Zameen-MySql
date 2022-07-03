@@ -48,7 +48,7 @@ const BlogMain = () => {
                     <div className="blogPreview" key={blog.id}>
 
                         <Link to={`/blogs/${blog.id}`}>
-                            <div className="blogImages"><img src={blog.img}></img></div>
+                            <div className="blogImages"><img src={blog.img} alt="blogimage"></img></div>
                             <div className="blogInfo">
                                 <h1>{blog.title}</h1>
                                 <h2>Written by {blog.author}</h2>
