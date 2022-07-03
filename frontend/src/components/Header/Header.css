@@ -8,7 +8,7 @@
   align-items: center;
   /* justify-content: space-between; */
   /* padding: 10px 0px; */
-  background-color: #33a137;
+  background-color: rgb(11, 116, 11);
   color: white;
   height: 2.8rem;
   padding-top: 5px;
@@ -24,7 +24,7 @@
   /* border: 2px solid red; */
 }
 
-.left-Container > img {
+.left-Container>img {
   height: 150%;
 }
 
@@ -38,12 +38,12 @@
   align-items: center;
 }
 
-.center-Container > ul {
+.center-Container>ul {
   display: flex;
   padding-top: 10px;
 }
 
-.center-Container > ul > Li {
+.center-Container>ul>Li {
   padding: 0px 30px;
   text-decoration: none;
   list-style: none;
@@ -55,21 +55,26 @@
 
 }
 
-.Link-tag{
+.Link-tag {
   color: white;
   text-decoration: none;
   list-style: none;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 18px;
+  font-size: 21px;
   transition: all 1s;
   font-weight: 500;
+  width: 20px;
+
 }
 
-.Link-tag:hover{
+.Link-tag:hover {
   cursor: pointer;
-  border-bottom: 2px solid black;
-  color: black;
-  font-size: 20px;
+
+  color: whitesmoke;
+  text-decoration: underline;
+
+
+
 }
 
 /* .center-Container > ul > li:hover {
@@ -87,22 +92,22 @@
   align-items: center;
 }
 
-.right-Container > img {
+.right-Container>img {
   padding-left: 40px;
   margin-right: 10px;
   padding-right: 0px;
   height: 70%;
 }
 
-.right-Container > .MuiSvgIcon-root {
+.right-Container>.MuiSvgIcon-root {
   /* margin-left: 30px;
   margin-right: 10px; */
   height: 200%;
   margin-left: 20px;
 }
 
-.MuiSvgIcon-root{
- margin-left: 10px;
+.MuiSvgIcon-root {
+  margin-left: 10px;
 }
 
 input[type="button"] {
@@ -116,7 +121,7 @@ input[type="button"] {
   background-color: white;
 }
 
-input[type="button"]:hover{
+input[type="button"]:hover {
   background-color: #e9e6e6;
   transition: all 0.5s;
 }
@@ -149,15 +154,17 @@ input[type="button"]:hover{
   /* background-color: gold; */
 }
 
-.Header-2 > .left-header > .first > img {
+.Header-2>.left-header>.first>img {
   width: 25%;
   margin-top: 5px;
   margin-left: 10px;
 }
+
 .first {
   margin-right: -20px;
   margin-left: 10px;
 }
+
 .second {
   margin-left: -30px;
   height: 40px;
@@ -165,45 +172,50 @@ input[type="button"]:hover{
   text-align: left;
 }
 
-.Header-2 > .left-header > .second > h2 {
+.Header-2>.left-header>.second>h2 {
   color: black;
   font-size: 20px;
   font-weight: 900;
   margin-left: 15px;
 }
-.Header-2 > .left-header > .second > h4 {
+
+.Header-2>.left-header>.second>h4 {
   margin-left: 15px;
   color: #f9aa19;
   font-size: 10px;
   font-weight: bold;
 }
 
-.options > ul {
+.options>ul {
   display: flex;
 }
 
-.extends > ul {
+.extends>ul {
   display: flex;
 }
 
-.options > ul > li {
+.options>ul>li {
   padding: 0px 30px;
   text-decoration: none;
   list-style: none;
   transition: all 1s;
   font-weight: 400;
-  color: #848484;
+  color: #3f3d3d;
   font-size: 1rem;
 }
 
-.options > ul > li:hover {
+.options>ul>li:hover {
   cursor: pointer;
-  color: #33a137;
+  text-decoration: underline;
+
+  color: whitesmoke;
+
+
   text-decoration: underline;
   transition: all 1s;
 }
 
-.extends > ul > li {
+.extends>ul>li {
   padding: 0px 30px;
   text-decoration: none;
   list-style: none;
@@ -213,36 +225,39 @@ input[type="button"]:hover{
   font-weight: 400;
 }
 
-.options > ul > li:nth-child(3) {
+.options>ul>li:nth-child(3) {
   border-right: 2px solid #b1b1b1;
 }
 
 
-.extends > ul > li:nth-child(1) {
+.extends>ul>li:nth-child(1) {
   padding-left: 20px;
   /* border-left: 2px solid #b1b1b1; */
   border-right: 2px solid #b1b1b1;
 }
 
-.extends > ul > li:hover {
+.extends>ul>li:hover {
   cursor: pointer;
-  color: #33a137;
+  color: white;
   text-decoration: underline;
   transition: all 1s;
+  background: linear-gradient(90deg, rgb(9, 152, 109), rgb(11, 117, 99), rgb(44, 197, 161));
+
 }
 
-.header-collapse > h4 {
+.header-collapse>h4 {
   color: #848484;
   font-size: 1rem;
   font-weight: 500;
 }
-.header-collapse > h4:hover {
+
+.header-collapse>h4:hover {
   cursor: pointer;
   color: #33a137;
   font-weight: bold;
 }
 
-.null-container{
+.null-container {
   display: none;
   /* transition: all 0.5s; */
 }
