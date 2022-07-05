@@ -48,7 +48,7 @@ const Sidebar = () => {
               />
             </Link>
 
-            <Link to="/admin/project">
+            <Link to="/admin/createProject">
               <TreeItem
                 nodeId="3"
                 label="Create"

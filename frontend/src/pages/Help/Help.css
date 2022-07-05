@@ -13,8 +13,14 @@
 }
 
 .container__sidebar {
+  padding-right: 30px;
   padding-top: 30px;
   width: 30%;
+}
+
+.help-heading{
+  font-family: 'Gentium Book Plus', serif;
+  text-decoration: underline;
 }
 
 .container__main {

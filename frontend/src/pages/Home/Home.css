@@ -109,6 +109,22 @@
   margin: 10px;
 }
 
+.sub-heading{
+  font-family: 'Gentium Book Plus', serif;
+  text-decoration: underline;
+
+}
+
+.para-italic{
+  font-family: 'Mukta', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+.paragraph{
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  color: black;
+}
 .container__value {
   /* Big font size */
   font-size: 4rem;
@@ -148,6 +164,7 @@
   border-radius: 10px;
 }
 .card-btn {
+  font-family: 'Mukta', sans-serif;
   height: 45px;
   width: 280px;
   background-color: #21a57e;
@@ -159,6 +176,12 @@
 .card-btn:hover {
   background-color: #3dc9a0;
   cursor: pointer;
+}
+
+.card-para{
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  padding: 5px;
 }
 
 

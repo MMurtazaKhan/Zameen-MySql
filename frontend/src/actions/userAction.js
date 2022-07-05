@@ -39,6 +39,17 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
+// Logout
+export const logout = () => async (dispatch) => {
+  try {
+    await axios.get(`/api/v1/logout`);
+
+    dispatch({ type: LOGOUT_SUCCESS });
+  } catch (error) {
+    dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });
+  }
+};
+
 // Register
 export const register = (userData) => async (dispatch) => {
   try {
@@ -70,16 +81,7 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 
-// Logout User
-export const logout = () => async (dispatch) => {
-  try {
-    await axios.get(`/api/v1/logout`);
 
-    dispatch({ type: LOGOUT_SUCCESS });
-  } catch (error) {
-    dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });
-  }
-};
 
 //   Clear Errors:
 export const clearErrors = () => async (dispatch) => {

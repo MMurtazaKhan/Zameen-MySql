@@ -22,11 +22,12 @@ const Contact = () => {
             <BsFillTelephoneFill style={{ height: "100%" }} />
           </div>
 
-          <p>0308-0129892,0334-1387202,0340-2628648</p>
+          <p>0308-0129892  0334-1387202  0340-2628648</p>
+          
         </div>
         <div className="email">
           <HiMail style={{ color: "white", fontSize: "3em" }} />
-          <p>estateZ@gmail.com</p>
+          <p>contact@zameen.com</p>
         </div>
         <div className="map">
           <IoLocationSharp style={{ color: "white", fontSize: "3em" }} />

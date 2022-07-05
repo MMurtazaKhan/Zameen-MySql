@@ -14,6 +14,4 @@ export const LOGOUT_SUCCESS = "LOAD_SUCCESS";
 export const LOGOUT_FAIL = "LOGOUT_FAIL";
 
 
-
-
 export const CLEAR_ERRORS = "CLEAR_ERRORS";

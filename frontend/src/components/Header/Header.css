@@ -67,7 +67,20 @@
 
 }
 
-.Link-tag:hover {
+.Link-tagg{
+  color: #848484;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.Link-tagg :hover{
+  color: #33a137;
+  border-bottom: 1px solid #33a137;
+  cursor: pointer;
+}
+
+.Link-tag:hover{
   cursor: pointer;
 
   color: whitesmoke;
@@ -204,7 +217,7 @@ input[type="button"]:hover {
   font-size: 1rem;
 }
 
-.options>ul>li:hover {
+/* .options > ul > li:hover {
   cursor: pointer;
   text-decoration: underline;
 
@@ -213,7 +226,7 @@ input[type="button"]:hover {
 
   text-decoration: underline;
   transition: all 1s;
-}
+} */
 
 .extends>ul>li {
   padding: 0px 30px;
@@ -236,16 +249,21 @@ input[type="button"]:hover {
   border-right: 2px solid #b1b1b1;
 }
 
-.extends>ul>li:hover {
+/* .extends > ul > li:hover {
   cursor: pointer;
   color: white;
   text-decoration: underline;
   transition: all 1s;
-  background: linear-gradient(90deg, rgb(9, 152, 109), rgb(11, 117, 99), rgb(44, 197, 161));
+} */
 
+.link-rem{
+  color: #848484;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 1s;
 }
-
-.header-collapse>h4 {
+.header-collapse > h4 {
   color: #848484;
   font-size: 1rem;
   font-weight: 500;

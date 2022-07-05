@@ -3,7 +3,9 @@ import "./Home.css";
 import Search from "../../components/Search/Search";
 import { Link } from 'react-router-dom';
 
+
 const Home = () => {
+
   return (
     <div>
       <div className="landing">
@@ -16,7 +18,7 @@ const Home = () => {
       <section>
         <div className="container services">
           <h1 className="sub-heading">Our Services</h1>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit nostrum porro illo? Voluptates mollitia deleniti numquam incidunt commodi! Ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, esse. </p>
+          <p className="paragraph">Providing you the reliable services that include selling, buying, renting and booking houses without fear of any fraud</p>
           <div className="home-cards">
           <div className="card">
             <img className="card-img" src="s1.jpg" alt="" />
@@ -34,7 +36,7 @@ const Home = () => {
           </div>
           <div className="card">
             <img className="card-img" src="s1.jpg" alt="" />
-            <p className="para">To Book your property, Click on the following button</p>
+            <p className="card-para">To Book your property, Click on the following button</p>
             <Link to="/projects"><button className="card-btn">Book Now</button></Link> 
           </div>
           
@@ -48,17 +50,13 @@ const Home = () => {
         <div className="container mission">
           <h1 className="sub-heading">Our Mission</h1>
           <div className="mission-desc">
-            <img src="/z.jpeg" alt="" />
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
-              accusantium voluptates eos quos ab nobis deserunt minus voluptatum
-              magni quibusdam? Natus dicta aliquid, cumque neque quae distinctio
-              accusantium iure perspiciatis quasi obcaecati magni sint
-              reiciendis voluptates inventore ipsa! Modi obcaecati porro quia
-              ullam odit hic voluptates laborum odio, rem saepe cumque
-              perferendis et enim? Accusamus quisquam recusandae odit
-              perferendis nostrum quasi eligendi veritatis nobis repudiandae
-              quibusdam dicta molestiae, necessitatibus possimus!
+            <img src="/bg.jpg" alt="" />
+            <p className="para-italic">
+              "While we are considered a leader in off-plan properties, it is just one of our many areas of expertise in the industry. Developers of multi-unit properties trust our track record of quick, reliable bulk sales.
+
+They know they can trust us to match their premium developments with their ideal customers.
+
+Our success lies in our network of property experts and customers spanning the globe. Leading developers in the UAE entrust their multi-billion-dollar projects to us because they know that we believe in thinking big and can help them reach out to customers in China, Singapore, the UK, Saudi Arabia, Mozambique, Russia, Qatar and Nigeria."
             </p>
           </div>
         </div>
@@ -66,11 +64,8 @@ const Home = () => {
 
       <section class="container ratings-section">
         <h1 class="text-center sub-heading my-lg-5">Our Popularity</h1>
-        <p class="my-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-          delectus minima. Quos labore nostrum rerum beatae, nam magnam
-          temporibus perferendis id corporis! Quibusdam, eius odio. Maxime culpa
-          pariatur inventore enim!
+        <p class="my-5" className="paragraph">
+          For your general feedback, Please rate us according to your honest feedback. We are pleased with your feedback. 
         </p>
         <div class="ratings-container">
           <div class="ratings">

@@ -12,7 +12,7 @@ import { clearErrors, register
 import { useAlert } from "react-alert";
 import { Link } from "react-router-dom";
 
-const SignUp = ({ history }) => {
+const SignUp = ({ history, location }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
@@ -74,6 +74,8 @@ const SignUp = ({ history }) => {
     }
    };
 
+  // const redirect = location.search ? location.search.split("=")[1] : "/";
+
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -81,7 +83,7 @@ const SignUp = ({ history }) => {
     }
 
     if (isAuthenticated) {
-      history.push("/sss");
+      history.push("/");
     }
   }, [dispatch, error, alert, history, isAuthenticated]);
 

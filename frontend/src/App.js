@@ -9,7 +9,15 @@ import About from "./pages/AboutUs/About";
 import Blog from './pages/Blog/BlogMain';
 import BlogViewDetails from "./pages/Blog/BlogViewDetails";
 
+<<<<<<< HEAD
 
+=======
+import { useEffect, useState } from "react"
+// ,{ useEffect }
+// , { useEffect, useState }
+
+ import "./App.css";
+>>>>>>> 4f55ffce7feeb2870d272fe2e27b0af8b6c77d7c
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -23,17 +31,33 @@ import store from "./store";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 import Sell from "./pages/Sell/Sell";
+<<<<<<< HEAD
 
 import propertyDetails from "./pages/Sell/propertyDetails"
 import ProjectDetail from "./pages/BookingProperty/ProjectDetail"
 
 import ProjectProperty from './pages/BookingProperty/ProjectProperty';
+=======
+import ProjectProperty from "./pages/BookingProperty/ProjectProperty"
+import ProjectDetail from "./pages/BookingProperty/ProjectDetail"
+>>>>>>> 4f55ffce7feeb2870d272fe2e27b0af8b6c77d7c
 // import ProjectDetail from './pages/BookingProperty/ProjectDetail';
 import BlogMain from './pages/Blog/BlogMain';
 import Dashboard from './pages/Admin/Dashboard/Dashboard';
 import PropertyList from './pages/Admin/PropertyList/PropertyList';
+import CreateProject from './pages/Admin/CreateProject/CreateProject';
+import UserList from './pages/Admin/UserList/UserList';
+import ProjectList from './pages/Admin/ProjectList/ProjectList';
 import SellDetail from './pages/Sell/SellDetail';
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> 4f55ffce7feeb2870d272fe2e27b0af8b6c77d7c
 function App() {
 
   useEffect(() => {
@@ -56,6 +80,7 @@ function App() {
           <Route exact path="/EditProfile" component={EditProfile} />
           <Route exact path="/book-property" component={Booking} />
           <Route exact path="/sell" component={Sell} />
+<<<<<<< HEAD
 
 
           <Route exact path="/About" component={About} />
@@ -69,17 +94,26 @@ function App() {
           <Route exact path="/projects" component={ProjectProperty} />
           <Route exact path="/projectDetail/:id" component={ProjectDetail} />
 
+=======
+>>>>>>> 4f55ffce7feeb2870d272fe2e27b0af8b6c77d7c
 
           <Route exact path="/About" component={About} />
           <Route exact path="/Blog" component={BlogMain} />
 
 
           <Route exact path="/sellDetail/:id" component={SellDetail} />
+          <Route exact path="/projectDetail/:id" component={ProjectDetail} />
           <Route exact path="/projects" component={ProjectProperty} />
           <Route exact path="/admin/dashboard" component={Dashboard} />
           <Route exact path="/admin/property" component={PropertyList} />
+          <Route exact path="/admin/users" component={UserList} />
+          <Route exact path="/admin/projects" component={ProjectList} />
+          <Route exact path="/admin/createProject" component={CreateProject} />
           
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f55ffce7feeb2870d272fe2e27b0af8b6c77d7c
 
 
 

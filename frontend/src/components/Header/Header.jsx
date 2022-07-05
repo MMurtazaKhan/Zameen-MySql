@@ -7,6 +7,9 @@ import { Link, useHistory } from "react-router-dom";
 
 
 const Header = () => {
+
+  
+
   const text = "BUY >";
   const headerTab = useRef(null);
   const [show, setShow] = useState("yes");
@@ -35,7 +38,7 @@ const Header = () => {
           <ul>
 
             <li><Link className="Link-tag" to="" >HOME</Link></li>
-            <li><Link className="Link-tag" to="" >SERVICES</Link></li>
+            {/* <li><Link className="Link-tag" to="" >SERVICES</Link></li> */}
             <li><Link className="Link-tag" to="/Blog">BLOG</Link></li>
 
             <li><Link className="Link-tag" to="/About">ABOUT</Link>  </li>
@@ -71,15 +74,15 @@ const Header = () => {
           </div>
           <div className="options" ref={headerTab}>
             <ul>
-              <li>HOMES</li>
-              <li>PLOT</li>
-              <li>COMMERCIAL</li>
+             <li className="Link-tagg"><Link className="link-rem" to="/sell">HOMES</Link></li>
+             <li  className="Link-tagg"><Link className="link-rem" to="/projects">PROJECTS</Link></li>
+              {/* <li>COMMERCIAL</li> */}
             </ul>
           </div>
           <div className="extends">
             <ul>
-              <li>RENT</li>
-              <li onClick={() => history.push("/book-property")} >PROJECT</li>
+             <li className="Link-tagg" ><Link className="link-rem" to="/sell">RENT</Link></li> 
+             <li className="Link-tagg" ><Link className="link-rem" onClick={() => history.push("/book-property")} >BOOK PROJECT</Link></li> 
             </ul>
           </div>
         </div>

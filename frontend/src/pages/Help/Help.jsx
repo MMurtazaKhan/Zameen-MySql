@@ -12,7 +12,7 @@ const Help = () => {
     <div className="main-container">
       <section>
         <div className="help-container">
-          <h1 class="text-center text-align main-heading">Help Center</h1>
+          <h1 class="text-center text-align help-heading">Help Center</h1>
           <br />
           <h3 className="text-center padding-down sub-heading">
             Most Frequetly Asked Questions
@@ -21,12 +21,10 @@ const Help = () => {
       </section>
 
       <div className="faq-container container">
-        <aside className="container__sidebar">
+        <aside className="container__sidebar" >
           <h4>Ask a Question</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut laborum
-            explicabo obcaecati, reiciendis totam aperiam illum impedit nisi
-            repellat odio?
+          Zameen.com is head-quartered in Lahore but we have offices in Karachi and Islamabad as well. You can reach us via phone, email or walk right into any of our offices and we would be more than glad to help you
           </p>
           <a href="Contact.html">
             <button type="button" class="btn btn-lg btn-warning">
