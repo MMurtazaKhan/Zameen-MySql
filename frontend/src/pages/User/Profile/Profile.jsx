@@ -1,5 +1,125 @@
+// Real 
 
-// // Fake
+
+import React,{useEffect} from "react";
+import "./Profile.css";
+import { useHistory } from "react-router-dom";
+import { logout } from "../../../actions/userAction";
+import { useDispatch, useSelector } from "react-redux";
+import { useAlert } from "react-alert";
+
+
+
+
+const Profile = () => {
+
+  const history = useHistory();
+  const alert = useAlert();
+  const dispatch = useDispatch();
+
+
+
+    const { user,
+      //  loading,
+        isAuthenticated } = useSelector((state) => state.user);
+
+    useEffect(() => {
+        if (isAuthenticated === false) {
+          history.push("/register");
+        }
+      }, [history, isAuthenticated]);
+
+
+  const ColoredLine = ({ color }) => (
+    <hr
+      style={{
+        color: color,
+        backgroundColor: color,
+        height: 2,
+      }}
+    />
+  );
+
+  function logoutUser() {
+    dispatch(logout());
+    history.push("/");
+    alert.success("Logout Successfully");
+  }
+
+
+  return (
+
+    <div className="profileContainer">
+      <div className="profile-design"></div>
+      <h1>My Profile</h1>
+      <div className="profile-main">
+        <div className="profile-sideDesign"></div>
+
+        <div className="userImgCont">
+          <img
+            src={user.avatar.url}
+            alt="user-pic"
+            style={{ Height: "100px", width: "100px" }}
+          />
+          <button className="btn btn-warning btn-lg" onClick={() =>history.push("/EditProfile")}>Edit Profile</button>
+          <button className="btn btn-warning btn-lg" onClick={ () =>logoutUser()}>Logout</button>
+        
+        </div>
+
+        <div className="userInfoCont">
+          <h2 style={{ textDecoration: "underline" }}>Basic Info</h2>
+
+          <div id="profileLabelId" className="profile-label">
+            <h4>Full Name</h4>
+            <p>{user.name}</p>
+            <ColoredLine color="black" />
+          </div>
+
+          <div className="profile-label">
+            <h4>Email</h4>
+            <p>{user.email}</p>
+            <ColoredLine color="black" />
+          </div>
+
+          <div className="profile-label">
+            <h4>Phone No</h4>
+            <p>{user.phoneNo}</p>
+            <ColoredLine color="black" />
+          </div>
+
+          <div className="profile-label">
+            <h4>Joined On</h4>
+            <p>{String(user.createdAt).substr(0, 10)}</p>
+            <ColoredLine color="black" />
+          </div>
+        </div>
+
+        <div className="profile-sideDesign"></div>
+      </div>
+    </div>
+  );
+};
+
+export default Profile;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Fake
 
 // import React
 // // ,{useEffect}
@@ -8,12 +128,8 @@
 // import { useHistory } from "react-router-dom";
 // import Table from 'react-bootstrap/Table';
 // import { AiFillDelete } from "react-icons/ai";
-// import { useDispatch, useSelector } from "react-redux";
-// import { logout } from "../../../actions/userAction";
 
 // const Profile = () => {
-
-//   const dispatch= useDispatch();
 
 //   const data = [
 //     {
@@ -79,11 +195,6 @@
 //     />
 //   );
 
-//   function logoutUser() {
-//     dispatch(logout());
-//     alert.success("Logout Successfully");
-//   }
-
 //   return (
 //     <main className="profileBody">
 //     <div className="profileContainer">
@@ -99,7 +210,6 @@
 //             style={{ Height: "100px", width: "100px" }}
 //           />
 //           <button className="btn btn-warning btn-lg" onClick={() =>history.push("/EditProfile")}>Edit Profile</button>
-//           <button className="btn btn-warning btn-lg" onClick={logoutUser()} >Logout</button>
 //         </div>
 
 //         <div className="userInfoCont">
@@ -197,124 +307,3 @@
 // };
 
 // export default Profile;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Real 
-
-
-import React,{useEffect} from "react";
-import "./Profile.css";
-import { useHistory } from "react-router-dom";
-import { logout } from "../../../actions/userAction";
-import { useDispatch, useSelector } from "react-redux";
-import { useAlert } from 'react-alert';
-
-const Profile = () => {
-
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const alert = useAlert();
-
-    const { user,
-      //  loading,
-        isAuthenticated } = useSelector((state) => state.user);
-
-
-    useEffect(() => {
-        if (isAuthenticated === false) {
-          history.push("/register");
-        }
-      }, [history, isAuthenticated]);
-
-
-  const ColoredLine = ({ color }) => (
-    <hr
-      style={{
-        color: color,
-        backgroundColor: color,
-        height: 2,
-      }}
-    />
-  );
-
-  function logoutUser() {
-        dispatch(logout());
-        alert.success("Logout Successfully");
-
-      }
-
-  return (
-
-    <div className="profileContainer">
-      <div className="profile-design"></div>
-      <h1>My Profile</h1>
-      <div className="profile-main">
-        <div className="profile-sideDesign"></div>
-
-        <div className="userImgCont">
-          <img
-            src={user.avatar.url}
-            alt="user-pic"
-            style={{ Height: "100px", width: "100px" }}
-          />
-          <button className="btn btn-warning btn-lg" onClick={() =>history.push("/EditProfile")}>Edit Profile</button>
-          <button className="btn btn-warning btn-lg" onClick={()=>logoutUser()} >Logout</button>
-        </div>
-
-        <div className="userInfoCont">
-          <h2 style={{ textDecoration: "underline" }}>Basic Info</h2>
-
-          <div id="profileLabelId" className="profile-label">
-            <h4>Full Name</h4>
-            <p>{user.name}</p>
-            <ColoredLine color="black" />
-          </div>
-
-          <div className="profile-label">
-            <h4>Email</h4>
-            <p>{user.email}</p>
-            <ColoredLine color="black" />
-          </div>
-
-          <div className="profile-label">
-            <h4>Phone No</h4>
-            <p>{user.phoneNo}</p>
-            <ColoredLine color="black" />
-          </div>
-
-          <div className="profile-label">
-            <h4>Joined On</h4>
-            <p>{String(user.createdAt).substr(0, 10)}</p>
-            <ColoredLine color="black" />
-          </div>
-        </div>
-
-        <div className="profile-sideDesign"></div>
-      </div>
-    </div>
-  );
-};
-
-export default Profile;

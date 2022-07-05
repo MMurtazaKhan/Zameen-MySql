@@ -2,31 +2,33 @@ const Property = require("../models/sellModel");
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const ApiFeatures = require("../utils/apifeatures");
+const cloudinary = require("cloudinary");
+
 
 // Create Property :
 exports.createProperty = catchAsyncErrors(async (req, res, next) => {
-  // let images = [];
+  let images = [];
 
-  //   if (typeof req.body.images === "string") {
-  //     images.push(req.body.images);
-  //   } else {
-  //     images = req.body.images;
-  //   }
+  if (typeof req.body.images === "string") {
+    images.push(req.body.images);
+  } else {
+    images = req.body.images;
+  }
 
-  //   const imagesLinks = [];
+  const imagesLinks = [];
 
-  //   for (let i = 0; i < images.length; i++) {
-  //     const result = await cloudinary.v2.uploader.upload(images[i], {
-  //       folder: "products",
-  //     });
+  for (let i = 0; i < images.length; i++) {
+    const result = await cloudinary.v2.uploader.upload(images[i], {
+      folder: "property",
+    });
 
-  //     imagesLinks.push({
-  //       public_id: result.public_id,
-  //       url: result.secure_url,
-  //     });
-  //   }
+    imagesLinks.push({
+      public_id: result.public_id,
+      url: result.secure_url,
+    });
+  }
 
-  //   req.body.images = imagesLinks;
+  req.body.images = imagesLinks;
 
   req.body.user = req.user.id;
 
@@ -40,11 +42,11 @@ exports.createProperty = catchAsyncErrors(async (req, res, next) => {
 
 // Get All Property -->User
 exports.getAllProperties = catchAsyncErrors(async (req, res, next) => {
-  const resultPerPage = 4;
+  const resultPerPage = 10;
   const propertyCount = await Property.countDocuments();
   const apiFeature = new ApiFeatures(Property.find(), req.query)
-  .search()
-  .filter();
+    .search()
+    .filter();
   // .pagination(resultPerPage);
 
   let property = await apiFeature.query;
@@ -62,8 +64,6 @@ exports.getAllProperties = catchAsyncErrors(async (req, res, next) => {
     filteredPropertyCount,
   });
 });
-
-
 
 // Get Property Details:
 exports.getPropertyDetails = catchAsyncErrors(async (req, res, next) => {

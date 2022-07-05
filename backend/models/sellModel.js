@@ -18,7 +18,7 @@ const sellSchema = new mongoose.Schema({
     required: [true, "Please Enter City"],
   },
 
-  location: {
+  address: {
     type: String,
     required: [true, "Please Enter Location Of Your Property"],
   },

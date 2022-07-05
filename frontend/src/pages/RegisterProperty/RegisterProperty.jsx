@@ -1,83 +1,108 @@
-import React
-// , { useState }
- from "react";
+import React, { useState, useEffect } from "react";
 import "./RegisterProperty.css";
 import { GoAlert } from "react-icons/go";
+import { useSelector, useDispatch } from "react-redux";
+import { clearErrors, createProperty } from "../../actions/sellAction";
+import { useAlert } from "react-alert";
+import { NEW_PROPERTY_RESET } from "../../constants/sellContants";
+import {useHistory} from "react-router-dom";
 
 const RegisterProperty = () => {
-  // const dispatch = useDispatch();
-  // const alert = useAlert();
+  const dispatch = useDispatch();
+  const alert = useAlert();
+  const history = useHistory();
 
-  // const { loading, error, success } = useSelector((state) => state.newProduct);
+  const purposeCategories = [
+    "Sell",
+    "Rent"
+  ];
 
-  // const [name, setName] = useState("");
-  // const [price, setPrice] = useState(0);
-  // const [description, setDescription] = useState("");
-  // const [category, setCategory] = useState("");
-  // const [Stock, setStock] = useState(0);
-  // const [images, setImages] = useState([]);
-  // const [imagesPreview, setImagesPreview] = useState([]);
+  const pTypeCategories = [
+    "Home",
+    "Plots",
+    "Commercial"
+  ];
 
 
-  // useEffect(() => {
-  //   if (error) {
-  //     alert.error(error);
-  //     dispatch(clearErrors());
-  //   }
+  const { 
+    // loading,
+     error, success } = useSelector((state) => state.newProperty);
 
-  //   if (success) {
-  //     alert.success("Product Created Successfully");
-  //     history.push("/admin/dashboard");
-  //     dispatch({ type: NEW_PRODUCT_RESET });
-  //   }
-  // }, [dispatch, alert, error, history, success]);
+  const [purpose, setPurpose] = useState("");
+  const [propertyType, setPropertyType] = useState(0);
+  const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
+  const [propertyTitle, setPropertyTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState(0);
+  const [landArea, setLandArea] = useState(0);
+  const [images, setImages] = useState([]);
+  const [imagesPreview, setImagesPreview] = useState([]);
 
-  const createPrpertySubmitHandler = (e) => {
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+
+    if (success) {
+      alert.success("Property Created Successfully");
+      history.push("/");
+      dispatch({ type: NEW_PROPERTY_RESET });
+    }
+  }, [dispatch, alert, error, history, success]);
+
+  const createPropertySubmitHandler = (e) => {
     e.preventDefault();
 
-    // const myForm = new FormData();
+    const myForm = new FormData();
 
-    // myForm.set("name", name);
-    // myForm.set("price", price);
-    // myForm.set("description", description);
-    // myForm.set("category", category);
-    // myForm.set("Stock", Stock);
+    myForm.set("purpose", purpose);
+    myForm.set("propertyType", propertyType);
+    myForm.set("city", city);
+    myForm.set("address", address);
+    myForm.set("propertyTitle", propertyTitle);
+    myForm.set("description", description);
+    myForm.set("price", price);
+    myForm.set("landArea", landArea);
 
-    // images.forEach((image) => {
-    //   myForm.append("images", image);
-    // });
-    // dispatch(createProduct(myForm));
+    images.forEach((image) => {
+      myForm.append("images", image);
+    });
+    dispatch(createProperty(myForm));
   };
 
   const createPropertyImagesChange = (e) => {
-    // const files = Array.from(e.target.files);
+    const files = Array.from(e.target.files);
 
-    // setImages([]);
-    // setImagesPreview([]);
+    setImages([]);
+    setImagesPreview([]);
 
-    // files.forEach((file) => {
-    //   const reader = new FileReader();
+    files.forEach((file) => {
+      const reader = new FileReader();
 
-    //   reader.onload = () => {
-    //     if (reader.readyState === 2) {
-    //       setImagesPreview((old) => [...old, reader.result]);
-    //       setImages((old) => [...old, reader.result]);
-    //     }
-    //   };
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setImagesPreview((old) => [...old, reader.result]);
+          setImages((old) => [...old, reader.result]);
+        }
+      };
 
-    //   reader.readAsDataURL(file);
-    // });
+      reader.readAsDataURL(file);
+    });
   };
 
-
-
-
+  console.log("The result of operation purpose is", purpose);
+  console.log("The result of operation  propertyType is", propertyType);
 
 
   return (
     <div className="regProperty">
       <div className="propRegform">
-        <form encType="multipart/form-data" onSubmit={createPrpertySubmitHandler}>
+        <form
+          encType="multipart/form-data"
+          onSubmit={createPropertySubmitHandler}
+        >
           <div className="regProp-head">
             <h2
               style={{
@@ -101,28 +126,46 @@ const RegisterProperty = () => {
 
               <p>City:</p>
 
-              <p>Location:</p>
+              <p>address:</p>
             </div>
 
             <div className="regProp-con2">
               {/* Purpose */}
-              <select>
-                <option>Sell</option>
-                <option>Rent</option>
+
+              <select onChange={(e) => setPurpose(e.target.value)}>
+                <option value="">Choose Category</option>
+                {purposeCategories.map((cate) => (
+                  <option key={cate} value={cate}>
+                    {cate}
+                  </option>
+                ))}
               </select>
 
               {/* Property Type */}
-              <select>
-                <option>Home</option>
-                <option>Plots</option>
-                <option>Commercial</option>
+              
+              <select onChange={(e) => setPropertyType(e.target.value)}>
+                <option value="">Choose property type</option>
+                {pTypeCategories.map((cate) => (
+                  <option key={cate} value={cate}>
+                    {cate}
+                  </option>
+                ))}
               </select>
 
               {/* City */}
-              <input type="text" />
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
 
               {/* Location */}
-              <input type="text" style={{ width: "300px" }} />
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                style={{ width: "300px" }}
+              />
             </div>
           </div>
 
@@ -149,20 +192,37 @@ const RegisterProperty = () => {
 
             <div className="regProp-con2">
               {/* Property Title */}
-              <input type="text" style={{ width: "300px" }} />
+              <input
+                type="text"
+                value={propertyTitle}
+                onChange={(e) => setPropertyTitle(e.target.value)}
+                style={{ width: "300px" }}
+              />
 
               {/* Description */}
-              <textarea />
+              <textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
               <br />
 
               {/* Price */}
-              <input type="text" style={{ width: "250px" }} />
+              <input
+                type="text"
+                style={{ width: "250px" }}
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
 
               <p className="reg-prop-alert">Price must contain numbers only</p>
 
               <div className="reg-prop-area-unit" style={{ marginTop: "10px" }}>
                 {/*  Land Area  */}
-                <input type="text" />
+                <input
+                  type="text"
+                  value={landArea}
+                  onChange={(e) => setLandArea(e.target.value)}
+                />
 
                 {/*  Unit   */}
                 <p style={{ marginLeft: "20px", marginRight: "10px" }}>
@@ -207,9 +267,9 @@ const RegisterProperty = () => {
             </div>
           </div>
           <div id="createProductFormImage">
-            {/* {imagesPreview.map((image, index) => (
+            {imagesPreview.map((image, index) => (
               <img key={index} src={image} alt="Product Preview" />
-            ))} */}
+            ))}
           </div>
           <div className="regProp-container">
             <button>SUBMIT PROPERTY</button>

@@ -1,9 +1,19 @@
-import React from 'react';
+
+import React
+  // ,{ useEffect }
+  // , { useEffect, useState }
+  from "react";
+import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import About from "./pages/AboutUs/About";
+import Blog from './pages/Blog/BlogMain';
+import BlogViewDetails from "./pages/Blog/BlogViewDetails";
 
 import { useEffect, useState } from "react"
+// ,{ useEffect }
+// , { useEffect, useState }
 
  import "./App.css";
- import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -17,17 +27,16 @@ import store from "./store";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 import Sell from "./pages/Sell/Sell";
-import ProjectProperty from './pages/BookingProperty/ProjectProperty';
+import ProjectProperty from "./pages/BookingProperty/ProjectProperty"
+import ProjectDetail from "./pages/BookingProperty/ProjectDetail"
 // import ProjectDetail from './pages/BookingProperty/ProjectDetail';
-import sellDetail from './pages/Sell/sellDetail';
-import About from './pages/AboutUs/About';
 import BlogMain from './pages/Blog/BlogMain';
 import Dashboard from './pages/Admin/Dashboard/Dashboard';
 import PropertyList from './pages/Admin/PropertyList/PropertyList';
 import CreateProject from './pages/Admin/CreateProject/CreateProject';
 import UserList from './pages/Admin/UserList/UserList';
 import ProjectList from './pages/Admin/ProjectList/ProjectList';
-
+import SellDetail from './pages/Sell/SellDetail';
 
 
 
@@ -61,7 +70,8 @@ function App() {
           <Route exact path="/Blog" component={BlogMain} />
 
 
-          <Route exact path="/sellDetail/:id" component={sellDetail} />
+          <Route exact path="/sellDetail/:id" component={SellDetail} />
+          <Route exact path="/projectDetail/:id" component={ProjectDetail} />
           <Route exact path="/projects" component={ProjectProperty} />
           <Route exact path="/admin/dashboard" component={Dashboard} />
           <Route exact path="/admin/property" component={PropertyList} />
@@ -70,7 +80,9 @@ function App() {
           <Route exact path="/admin/createProject" component={CreateProject} />
           
 
-          
+
+
+
         </Switch>
         <Footer />
       </BrowserRouter>
