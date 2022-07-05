@@ -18,6 +18,7 @@
     justify-content: center;
     color: wheat;
     height: 400px;
+    font-family: 'Gentium Book Plus', serif;
     width: 100%;
     background-image: url("/public/background.jpg");
     background-repeat: no-repeat;

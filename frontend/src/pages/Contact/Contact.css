@@ -74,6 +74,12 @@
 
 }
 
+.social-links a:hover{
+  transition: width 2s, height 2s, transform 2s;
+  color: gray;
+  background-color: gray;
+}
+
 i {
 
   color: wheat;
@@ -112,5 +118,5 @@ i {
 
   background-color: rgb(3, 77, 99);
   outline-color: rgb(243, 198, 126);
-  ;
+  
 }

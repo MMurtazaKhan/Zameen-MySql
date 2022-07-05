@@ -1,6 +1,6 @@
 import React from 'react';
-// ,{ useEffect }
-// , { useEffect, useState }
+
+import { useEffect, useState } from "react"
 
  import "./App.css";
  import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -12,8 +12,8 @@ import Help from "./pages/Help/Help";
 import Profile from "./pages/User/Profile/Profile";
 import Contact from "./pages/Contact/Contact";
 import RegisterProperty from "./pages/RegisterProperty/RegisterProperty";
-// import { loadUser } from "./actions/userAction";
-// import store from "./store";
+import { loadUser } from "./actions/userAction";
+import store from "./store";
 import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 import Sell from "./pages/Sell/Sell";
@@ -24,6 +24,9 @@ import About from './pages/AboutUs/About';
 import BlogMain from './pages/Blog/BlogMain';
 import Dashboard from './pages/Admin/Dashboard/Dashboard';
 import PropertyList from './pages/Admin/PropertyList/PropertyList';
+import CreateProject from './pages/Admin/CreateProject/CreateProject';
+import UserList from './pages/Admin/UserList/UserList';
+import ProjectList from './pages/Admin/ProjectList/ProjectList';
 
 
 
@@ -33,9 +36,9 @@ import PropertyList from './pages/Admin/PropertyList/PropertyList';
 
 function App() {
 
-  // useEffect(() => {
-  //   store.dispatch(loadUser());
-  // }, []);
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
 
 
   return (
@@ -62,6 +65,9 @@ function App() {
           <Route exact path="/projects" component={ProjectProperty} />
           <Route exact path="/admin/dashboard" component={Dashboard} />
           <Route exact path="/admin/property" component={PropertyList} />
+          <Route exact path="/admin/users" component={UserList} />
+          <Route exact path="/admin/projects" component={ProjectList} />
+          <Route exact path="/admin/createProject" component={CreateProject} />
           
 
           

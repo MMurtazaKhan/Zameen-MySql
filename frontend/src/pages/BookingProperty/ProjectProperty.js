@@ -38,8 +38,8 @@ const ProjectProperty = () => {
   return (
     <div>
         <div className='project-head'>
-        <h1 className="project-heading" style={{color: "wheat"}}>Projects</h1>
-        <h3 className="project-heading" style={{color: "wheat"}}>Book the amazing under construction projects and secure your future now!</h3>
+        <h1 className="project-heading" style={{color: "wheat", fontSize: "45px"}}>Projects</h1>
+        <h3 className="project-heading" style={{color: "wheat", fontSize: "35px"}}>Book the amazing under <span className='yellow-color'>construction projects</span>  and secure your future now!</h3>
         </div>
         { property && property.map(( property )=>(
             <Project key={property._id} property = {property}/>

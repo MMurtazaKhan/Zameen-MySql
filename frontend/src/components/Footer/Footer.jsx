@@ -30,64 +30,51 @@ const Footer = () => {
                     <p>privacy policy</p>
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
-                  <li>
-                    <p>affiliate program</p>
-                  </li>
-                </Link>
+                
               </ul>
             </div>
             <div class="footer-col">
               <h4>get help</h4>
               <ul>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/help" style={{ textDecoration: "none" }}>
                   <li>
                     <p>FAQ</p>
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/contact" style={{ textDecoration: "none" }}>
                   <li>
-                    <p>shipping</p>
+                    <p>contact</p>
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/blog" style={{ textDecoration: "none" }}>
                   <li>
-                    <p>returns</p>
+                    <p>blog</p>
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
-                  <li>
-                    <p>order status</p>
-                  </li>
-                </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
-                  <li>
-                    <p>payment options</p>
-                  </li>
-                </Link>
+               
               </ul>
             </div>
             <div class="footer-col">
-              <h4>online shop</h4>
+              <h4>options</h4>
               <ul>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/sell" style={{ textDecoration: "none" }}>
                   <li>
-                    <p>watch</p>
+                    <p>buy</p>
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/projects" style={{ textDecoration: "none" }}>
                   <li>
-                    <p>bag</p>
+                    <p>projects</p>
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/reg-property" style={{ textDecoration: "none" }}>
                   <li>
-                    <p>shoes</p>
+                    <p>post an ad</p>
                   </li>
                 </Link>
-                <Link to="/about" style={{ textDecoration: "none" }}>
+                <Link to="/book-property" style={{ textDecoration: "none" }}>
                   <li>
-                    <p>dress</p>
+                    <p>book project</p>
                   </li>
                 </Link>
               </ul>
