@@ -56,6 +56,8 @@ const SignUp = ({ history }) => {
   };
 
   const registerDataChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+
     if (e.target.name === "avatar") {
       const reader = new FileReader();
 
@@ -70,7 +72,7 @@ const SignUp = ({ history }) => {
     } else {
       setUser({ ...user, [e.target.name]: e.target.value });
     }
-  };
+   };
 
   useEffect(() => {
     if (error) {

@@ -3,6 +3,16 @@
     width: 600px;
 }
 
+/* .sell-detail-carousal{
+    width: 150px;
+    height: 200px;
+} */
+
+.CarouselImage {
+    height: 350px;
+  }
+
+
 .sellCard{
     display: flex;
     flex-direction: column;

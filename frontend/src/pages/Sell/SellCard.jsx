@@ -11,7 +11,7 @@ const SellCard = ({ property }) => {
   return (
     <Link className="propertyCard" to={`/sellDetail/${property._id}`}>
     <div className="property-img-container">
-      <img src={property.image} alt="sellimage" />
+      <img src={property.images[0].url} alt={property.name} />
     </div>
     <div className="property-card-contact">
       <div className="sell-card-icons">
@@ -36,7 +36,7 @@ const SellCard = ({ property }) => {
       <div className="sell-card-description">
         <h4>{property.propertyTitle}</h4>
         <p>
-          {property.description}
+          {property.description.lenght}
         </p>
       </div>
 

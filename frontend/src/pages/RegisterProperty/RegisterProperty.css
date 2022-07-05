@@ -7,11 +7,13 @@
 }
 
 .propRegform{
-    height: 120vh;
-    width: 1000px;
+     /* height: 120vh; */
+     height: auto;
+        width: 1000px;
     background-color:white;
     border-radius: 5px;
     padding-left: 20px;
+    padding-bottom: 30px;
 }
 
 .regProp-span{
