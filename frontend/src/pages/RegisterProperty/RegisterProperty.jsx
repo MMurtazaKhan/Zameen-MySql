@@ -92,9 +92,6 @@ const RegisterProperty = () => {
     });
   };
 
-  console.log("The result of operation purpose is", purpose);
-  console.log("The result of operation  propertyType is", propertyType);
-
 
   return (
     <div className="regProperty">

@@ -26,13 +26,9 @@
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
-<<<<<<< HEAD
-=======
-    "swiper": "^8.2.6",
-    "swiper": "^8.2.4",
->>>>>>> ff36f5258852534972e2970bca047e91ab3cb9f2
     "web-vitals": "^2.1.4",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "swiper": "^8.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -58,14 +54,6 @@
       "last 1 safari version"
     ]
   },
-<<<<<<< HEAD
   "proxy": "http://192.168.1.110:4000"
-=======
-<<<<<<< HEAD
-  "proxy": "http://192.168.1.108:4000"
 }
-=======
-  "proxy": "http://192.168.1.107:4000"
->>>>>>> 2281340cf67d9116895a5c86fba24172b8fe0c1d
-}
->>>>>>> ff36f5258852534972e2970bca047e91ab3cb9f2
+
