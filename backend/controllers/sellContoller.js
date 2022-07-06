@@ -3,7 +3,7 @@ const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const ApiFeatures = require("../utils/apifeatures");
 const cloudinary = require("cloudinary");
-
+const User = require("../models/userModel");
 // Create Property :
 
 exports.createProperty = catchAsyncErrors(async (req, res, next) => {
@@ -28,11 +28,13 @@ exports.createProperty = catchAsyncErrors(async (req, res, next) => {
     });
   }
 
+
+
   req.body.images = imagesLinks;
+  // const property = await Property.findById(req.params.id);
+  const userr = await User.findById(req.user.id);
 
-  req.body.user = req.user._id;
-
-
+  req.body.user = userr;
 
   const property = await Property.create(req.body);
 
