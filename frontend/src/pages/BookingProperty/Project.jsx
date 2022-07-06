@@ -17,16 +17,16 @@ const Project = ({property}) => {
             <div className="project-cards">
             <Link className="project-link" to= {`/projectDetail/${property._id}`}  >
             <div className="project-card">
-              <img className="project-img" src={property.image} alt="" />
+              <img className="project-img" src={property.images[0].url} alt="" />
               <div className="project-data">
                 <h5 className="project-heading">Project ID</h5>
                 <p className="project-para">{property._id}</p>
                 <h5 className="project-heading">Project Name</h5>
-                <p className="project-para">{property.title}</p>
-                <h5 className="project-heading">Installments</h5>
-                <p className="project-para">{property.installments}</p>
-                <h5 className="project-heading">Condition</h5>
-                <p className="project-para">{property.condition}</p>
+                <p className="project-para">{property.projectName}</p>
+                <h5 className="project-heading">Address</h5>
+                <p className="project-para">{`${property.city}, ${property.location }`}</p>
+                <h5 className="project-heading">Price</h5>
+                <p className="project-para">{property.price}</p>
                 <button className='project-btn'>
                   Details{" "}
                   <span>

@@ -114,7 +114,7 @@ const projectSchema = new mongoose.Schema({
     default: 25000,
   },
 
-  inverstors: [
+  inverstors: 
     {
       companyName: [
         {
@@ -127,7 +127,7 @@ const projectSchema = new mongoose.Schema({
         default: 0,
       },
     },
-  ],
+  
 });
 
 module.exports = mongoose.model("Project", projectSchema);

@@ -1,6 +1,6 @@
 
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import "./CreateProject.css";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -11,22 +11,89 @@ import StorageIcon from "@material-ui/icons/Storage";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import { AiOutlineCalendar, AiFillHome } from "react-icons/ai";
+import { NEW_PROJECT_RESET } from "../../../constants/projectConstants";
+
+import { useAlert } from "react-alert";
+import { useSelector, useDispatch } from "react-redux";
+import {useHistory} from "react-router-dom";
+import { clearErrors, createProject } from "../../../actions/projectAction";
 
 
 const CreateProject = () => {
 
-  
-  const [name, setName] = useState("");
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const { 
+    // loading,
+     error, success } = useSelector((state) => state.newProperty);
+
+  const [projectName, setprojectName] = useState("");
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [startTime, setStartTime] = useState();
   const [endTime, setEndTime] = useState();
   const [landArea, setLandArea] = useState(0);
-  const [units, setUnits] = useState("sq. ft");
+  const [investors, setInvestors] = useState("");
   const [images, setImages] = useState([]);
+  const [location, setLocation] = useState("");
+  const [city, setCity] = useState("");
   const [imagesPreview, setImagesPreview] = useState([]);
   const [show, setShow] = useState("yes");
   const sidebarTab = useRef(null);
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+
+    if (success) {
+      alert.success("Project Created Successfully");
+      history.push("/");
+      dispatch({ type: NEW_PROJECT_RESET });
+    }
+  }, [dispatch, alert, error, history, success]);
+
+  const createProjectSubmitHandler = (e) => {
+    e.preventDefault();
+
+    const myForm = new FormData();
+
+    myForm.set("projectName", projectName);
+    myForm.set("price", price);
+    myForm.set("location", location);
+    myForm.set("landArea", landArea);
+    myForm.set("investors", investors);
+    myForm.set("city", city);
+    myForm.set("startTime", startTime);
+    myForm.set("endTime", endTime);
+    myForm.set("description", description);
+
+    images.forEach((image) => {
+      myForm.append("images", image);
+    });
+    dispatch(createProject(myForm));
+  };
+
+  const createProjectImagesChange = (e) => {
+    const files = Array.from(e.target.files);
+
+    setImages([]);
+    setImagesPreview([]);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setImagesPreview((old) => [...old, reader.result]);
+          setImages((old) => [...old, reader.result]);
+        }
+      };
+
+      reader.readAsDataURL(file);
+    });
+  };
 
   const controlSidebar = (e, tab) => {
     if (tab === "yes") {
@@ -54,7 +121,7 @@ const CreateProject = () => {
           <form
             className="createProjectForm"
             encType="multipart/form-data"
-           
+            onSubmit={createProjectSubmitHandler}
           >
             <h1>Create Project</h1>
 
@@ -64,8 +131,8 @@ const CreateProject = () => {
                 type="text"
                 placeholder="Project Name"
                 required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={projectName}
+                onChange={(e) => setprojectName(e.target.value)}
               />
             </div>
             <div>
@@ -75,6 +142,15 @@ const CreateProject = () => {
                 placeholder="Price"
                 required
                 onChange={(e) => setPrice(e.target.value)}
+              />
+            </div>
+            <div>
+              <AttachMoneyIcon />
+              <input
+                type="text"
+                placeholder="City"
+                required
+                onChange={(e) => setCity(e.target.value)}
               />
             </div>
 
@@ -89,12 +165,21 @@ const CreateProject = () => {
             </div>
 
             <div>
-              <StorageIcon/>
+              <AiFillHome />
               <input
                 type="text"
-                placeholder="Units"
+                placeholder="Location"
                 required
-                onChange={(e) => setUnits(e.target.value)}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </div>
+            <div>
+              <StorageIcon/>
+              <input
+                type="string"
+                placeholder="Investors"
+                required
+                onChange={(e) => setInvestors(e.target.value)}
               />
             </div>
               
@@ -144,7 +229,7 @@ const CreateProject = () => {
                 type="file"
                 name="avatar"
                 accept="image/*"
-            
+                onChange={createProjectImagesChange}
                 multiple
               />
             </div>
@@ -155,13 +240,13 @@ const CreateProject = () => {
               ))}
             </div>
 
-            <Button
+            <button
               id="createProjectBtn"
               type="submit"
 
             >
               Create
-            </Button>
+            </button>
           </form>
         </div> 
         </div> 
