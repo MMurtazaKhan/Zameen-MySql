@@ -5,8 +5,15 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { DataGrid } from "@material-ui/data-grid";
 import { MdDelete } from "react-icons/md";
 import { Button } from "@material-ui/core";
+import { getAllUsers, clearErrors
+  // , deleteUser
+ } from "../../../actions/userAction";
+import { useSelector, useDispatch } from "react-redux";
 
 const UserList = () => {
+
+  const dispatch = useDispatch();
+  const { error, users } = useSelector((state) => state.allUsers);
 
 
   const [show, setShow] = useState("yes");
@@ -25,50 +32,50 @@ const UserList = () => {
   };
 
 
-  const property = [
-    {
-      _id: 1,
-      image: "/s1.jpg",
-      name: "Murtaza Khan",
-      email: "murtaza@gmail.com",
-      phoneNo: "034273733",
-      createdAt: "2-jun-22"
+  // const property = [
+  //   {
+  //     _id: 1,
+  //     image: "/s1.jpg",
+  //     name: "Murtaza Khan",
+  //     email: "murtaza@gmail.com",
+  //     phoneNo: "034273733",
+  //     createdAt: "2-jun-22"
 
-    },
-    {
-      _id: 2,
-      image: "/s1.jpg",
-      name: "Abdullah Shujabad",
-      email: "abdullah@gmail.com",
-      phoneNo: "034273733",
-      createdAt: "1-jun-22"
+  //   },
+  //   {
+  //     _id: 2,
+  //     image: "/s1.jpg",
+  //     name: "Abdullah Shujabad",
+  //     email: "abdullah@gmail.com",
+  //     phoneNo: "034273733",
+  //     createdAt: "1-jun-22"
 
-    },
-    {
-      _id: 3,
-      image: "/s1.jpg",
-      name: "Aziz Malir",
-      email: "aziz@gmail.com",
-      phoneNo: "034273733",
-      createdAt: "2-apr-22"
+  //   },
+  //   {
+  //     _id: 3,
+  //     image: "/s1.jpg",
+  //     name: "Aziz Malir",
+  //     email: "aziz@gmail.com",
+  //     phoneNo: "034273733",
+  //     createdAt: "2-apr-22"
 
-    },
+  //   },
     
-  ];
+  // ];
 
   const columns = [
-    { field: "id", headerName: "User ID", minWidth: 150, flex: 0.5 },
+    { field: "id", headerName: "User ID", minWidth: 220, flex: 0.5 },
 
     {
       field: "name",
       headerName: "Name",
-      minWidth: 250,
+      minWidth: 150,
       flex: 0.3,
     },
     {
       field: "email",
       headerName: "Email",
-      minWidth: 250,
+      minWidth: 200,
       flex: 0.5,
     },
     {
@@ -82,7 +89,7 @@ const UserList = () => {
       field: "createdAt",
       headerName: "Joined Since",
       type: "number",
-      minWidth: 150,
+      minWidth: 250,
       flex: 0.3,
     },
     {
@@ -110,8 +117,8 @@ const UserList = () => {
 
   const rows = [];
 
-  property &&
-    property.forEach((item) => {
+  users &&
+    users.forEach((item) => {
       rows.push({
         id: item._id,
         name: item.name,
@@ -120,6 +127,30 @@ const UserList = () => {
         createdAt: item.createdAt,
       });
     });
+
+    useEffect(() => {
+      if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+      }
+  
+      // if (deleteError) {
+      //   alert.error(deleteError);
+      //   dispatch(clearErrors());
+      // }
+  
+      // if (isDeleted) {
+      //   alert.success(message);
+      //   history.push("/admin/users");
+      //   dispatch({ type: DELETE_USER_RESET });
+      // }
+  
+      dispatch(getAllUsers());
+    }, [dispatch, error
+      // , deleteError, history, isDeleted, message
+    ]);
+  
+
 
   return (
     <div className="dashboard">

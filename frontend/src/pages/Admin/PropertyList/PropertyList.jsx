@@ -1,15 +1,28 @@
-import React, { Fragment,
-  //  useEffect,
-    useRef, useState } from "react";
+import React, {
+  Fragment,
+   useEffect,
+  useRef,
+  useState,
+} from "react";
 import "./PropertyList.css";
 import Sidebar from "../Sidebar/Sidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { DataGrid } from "@material-ui/data-grid";
 import { MdDelete } from "react-icons/md";
 import { Button } from "@material-ui/core";
+import { getProperty, clearErrors } from "../../../actions/sellAction";
+import { useSelector, useDispatch } from "react-redux";
 
 const PropertyList = () => {
-
+  const dispatch = useDispatch();
+  const {
+    // loading,
+    error,
+    // propertyCount,
+    // resultPerPage,
+    property,
+    // filteredPropertyCount,
+  } = useSelector((state) => state.property);
 
   const [show, setShow] = useState("yes");
   const sidebarTab = useRef(null);
@@ -26,53 +39,52 @@ const PropertyList = () => {
     }
   };
 
-
-  const property = [
-    {
-      _id: 1,
-      image: "/s1.jpg",
-      views: 4,
-      price: 45000,
-      address: "House-No:210 near azizabad malir",
-      city: "Karachi",
-      landArea: "200",
-      propertyTitle: "This is property title",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      createdAt: "14-7-22",
-    },
-    {
-      _id: 2,
-      image: "/s2.jpg",
-      views: 18,
-      price: 590000,
-      address: "House-No:21 near shah faisal masjid",
-      city: "Islamabad",
-      landArea: "200",
-      propertyTitle: "This is property title",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      createdAt: "14-7-20",
-    },
-    {
-      _id: 3,
-      image: "/s1.jpg",
-      views: 47,
-      price: 760000,
-      address: "House-No:210 near shalimar garden",
-      city: "Lahore",
-      landArea: "200",
-      propertyTitle: "This is property title",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      createdAt: "13-5-20",
-    },
-  ];
+  // const property = [
+  //   {
+  //     _id: 1,
+  //     image: "/s1.jpg",
+  //     views: 4,
+  //     price: 45000,
+  //     address: "House-No:210 near azizabad malir",
+  //     city: "Karachi",
+  //     landArea: "200",
+  //     propertyTitle: "This is property title",
+  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //     createdAt: "14-7-22",
+  //   },
+  //   {
+  //     _id: 2,
+  //     image: "/s2.jpg",
+  //     views: 18,
+  //     price: 590000,
+  //     address: "House-No:21 near shah faisal masjid",
+  //     city: "Islamabad",
+  //     landArea: "200",
+  //     propertyTitle: "This is property title",
+  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //     createdAt: "14-7-20",
+  //   },
+  //   {
+  //     _id: 3,
+  //     image: "/s1.jpg",
+  //     views: 47,
+  //     price: 760000,
+  //     address: "House-No:210 near shalimar garden",
+  //     city: "Lahore",
+  //     landArea: "200",
+  //     propertyTitle: "This is property title",
+  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+  //     createdAt: "13-5-20",
+  //   },
+  // ];
 
   const columns = [
-    { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
+    { field: "id", headerName: "Product ID", minWidth: 220, flex: 0.5 },
 
     {
       field: "city",
       headerName: "City",
-      minWidth: 350,
+      minWidth: 120,
       flex: 0.3,
     },
     {
@@ -85,14 +97,14 @@ const PropertyList = () => {
       field: "price",
       headerName: "Price",
       type: "number",
-      minWidth: 150,
+      minWidth: 100,
       flex: 0.4,
     },
     {
       field: "landArea",
       headerName: "Land Area",
       type: "number",
-      minWidth: 150,
+      minWidth: 120,
       flex: 0.3,
     },
     {
@@ -130,6 +142,31 @@ const PropertyList = () => {
         landArea: item.landArea,
       });
     });
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+
+    // if (deleteError) {
+    //   alert.error(deleteError);
+    //   dispatch(clearErrors());
+    // }
+
+    // if (isDeleted) {
+    //   alert.success("Product Deleted Successfully");
+    //   history.push("/admin/dashboard");
+    //   dispatch({ type: DELETE_PRODUCT_RESET });
+    // }
+
+    dispatch(getProperty());
+  }, [
+    dispatch,
+    alert,
+    error,
+    //  deleteError, history, isDeleted
+  ]);
 
   return (
     <div className="dashboard">
@@ -173,20 +210,20 @@ export default PropertyList;
 // import { Button } from "@material-ui/core";
 
 // const Property = () => {
-  // const [show, setShow] = useState("yes");
-  // const sidebarTab = useRef(null);
+// const [show, setShow] = useState("yes");
+// const sidebarTab = useRef(null);
 
-  // const controlSidebar = (e, tab) => {
-  //   if (tab === "yes") {
-  //     sidebarTab.current.classList.add("sideBarMoveToLeft");
-  //     sidebarTab.current.classList.remove("admin-sidebar");
-  //     setShow("no");
-  //   } else {
-  //     sidebarTab.current.classList.add("admin-sidebar");
-  //     sidebarTab.current.classList.remove("sideBarMoveToLeft");
-  //     setShow("yes");
-  //   }
-  // };
+// const controlSidebar = (e, tab) => {
+//   if (tab === "yes") {
+//     sidebarTab.current.classList.add("sideBarMoveToLeft");
+//     sidebarTab.current.classList.remove("admin-sidebar");
+//     setShow("no");
+//   } else {
+//     sidebarTab.current.classList.add("admin-sidebar");
+//     sidebarTab.current.classList.remove("sideBarMoveToLeft");
+//     setShow("yes");
+//   }
+// };
 
 // const property = [
 //   {

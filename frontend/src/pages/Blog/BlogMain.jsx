@@ -21,13 +21,6 @@ const BlogMain = () => {
                 return (
                     <div className="blogPreview" key={blog.id}>
 
-<<<<<<< HEAD
-                        <Link to={`/Blogs/Blogdata/${blog.id}`}>
-                            <div className="blogImages"><img src={blog.img}></img></div>
-                            <div className="blogInfo">
-                                <h1>{blog.title}</h1>
-=======
->>>>>>> 4f55ffce7feeb2870d272fe2e27b0af8b6c77d7c
                                 <h2>Written by {blog.author}</h2>
                             </div>
                    

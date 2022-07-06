@@ -49,7 +49,7 @@
   .MuiDataGrid-columnHeader div {
     display: flex;
     color: rgb(255, 255, 255);
-    justify-content: start;
+    justify-content: flex-start;
     background-color: rgb(236, 30, 30);
   }
   
