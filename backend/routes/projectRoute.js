@@ -15,7 +15,7 @@ const { isAuthenticatedUser, authorizedRoles } = require("../middleware/auth");
 const router = express.Router();
 
 // post
-router.route("/project/new").post(isAuthenticatedUser, authorizedRoles("admin"), createProject);
+router.route("/project/new").post(isAuthenticatedUser, authorizedRoles("user"), createProject);
 
 // get
 router.route("/projects").get(getAllProjects);

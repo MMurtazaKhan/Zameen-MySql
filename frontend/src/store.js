@@ -3,6 +3,8 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {  allUsersReducer, userReducer } from "./reducers/userReducer";
 import { newPropertyReducer, propertyDetailsReducer, propertyReducer } from "./reducers/sellReducer";
+import { projectDetailsReducer, projectReducer } from "./reducers/projectReducer";
+
 
 
 
@@ -11,7 +13,12 @@ const reducer = combineReducers({
   newProperty: newPropertyReducer,
   property:propertyReducer,
   propertyDetails:propertyDetailsReducer,
+<<<<<<< HEAD
   allUsers: allUsersReducer,
+=======
+  project: projectReducer,
+  projectDetails: projectDetailsReducer
+>>>>>>> 5b849d1793440373b7d9653c4bfd0be4bbad204a
 });
 
 let initialState = {
