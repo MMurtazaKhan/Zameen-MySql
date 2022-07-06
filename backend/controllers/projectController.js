@@ -2,7 +2,7 @@ const Project = require("../models/projectModel");
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const ApiFeatures = require("../utils/apifeatures");
-
+const cloudinary = require("cloudinary");
 
 // Create Project :
 exports.createProject = catchAsyncErrors(async (req, res, next) => {
