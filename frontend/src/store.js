@@ -13,12 +13,9 @@ const reducer = combineReducers({
   newProperty: newPropertyReducer,
   property:propertyReducer,
   propertyDetails:propertyDetailsReducer,
-<<<<<<< HEAD
   allUsers: allUsersReducer,
-=======
   project: projectReducer,
   projectDetails: projectDetailsReducer
->>>>>>> 5b849d1793440373b7d9653c4bfd0be4bbad204a
 });
 
 let initialState = {

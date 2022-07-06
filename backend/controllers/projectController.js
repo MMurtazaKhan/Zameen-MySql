@@ -3,10 +3,6 @@ const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const ApiFeatures = require("../utils/apifeatures");
 const cloudinary = require("cloudinary");
-<<<<<<< HEAD
-=======
-
->>>>>>> 5b849d1793440373b7d9653c4bfd0be4bbad204a
 
 // Create Project :
 exports.createProject = catchAsyncErrors(async (req, res, next) => {
