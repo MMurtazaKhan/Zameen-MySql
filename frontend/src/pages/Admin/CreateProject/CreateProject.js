@@ -4,8 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import "./CreateProject.css";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Button } from "@material-ui/core";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
+// import { Button } from "@material-ui/core";
+// import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import DescriptionIcon from "@material-ui/icons/Description";
 import StorageIcon from "@material-ui/icons/Storage";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
@@ -20,12 +20,12 @@ import { clearErrors, createProject } from "../../../actions/projectAction";
 
 
 const CreateProject = () => {
-
+  const alert = useAlert();
   const history = useHistory();
   const dispatch = useDispatch();
   const { 
     // loading,
-     error, success } = useSelector((state) => state.newProperty);
+     error, success } = useSelector((state) => state.newProject);
 
   const [projectName, setprojectName] = useState("");
   const [price, setPrice] = useState(0);

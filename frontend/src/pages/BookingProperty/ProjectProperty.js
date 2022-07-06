@@ -9,12 +9,12 @@ const ProjectProperty = () => {
 
     const dispatch = useDispatch();
   const {
-    loading,
+    // loading,
     error,
-    projectCount,
-    resultPerPage,
+    // projectCount,
+    // resultPerPage,
     project,
-    filteredProjectCount,
+    // filteredProjectCount,
   } = useSelector((state) => state.project);
 
   useEffect(() => {

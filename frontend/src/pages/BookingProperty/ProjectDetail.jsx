@@ -11,7 +11,9 @@ const ProjectDetail = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { property, loading, error } = useSelector(
+  const { project
+    // , loading
+    , error } = useSelector(
     (state) => state.projectDetails
   );
 
@@ -46,12 +48,12 @@ const ProjectDetail = ({ match }) => {
           </span>
         </h1>
       </div>
-      <h2 className="projDet-heading">{property.projectName}</h2>
-      <h2 className="projDet-para">{property.description}</h2>
+      <h2 className="projDet-heading">{project.projectName}</h2>
+      <h2 className="projDet-para">{project.description}</h2>
       <div className="sell-detail-carousal">
         <Carousel fade className="project-carousel">
-          {property.images &&
-            property.images.map((item, i) => (
+          {project.images &&
+            project.images.map((item, i) => (
               <Carousel.Item>
                 <img
                   className="d-block w-100 CarouselImage"
@@ -70,28 +72,28 @@ const ProjectDetail = ({ match }) => {
 
       <div className="project-detail">
         <p className="projDet-para">
-          <span className="projDet-label">Price: </span>
-          {property.price}
+          <span className="projDet-label">Price :</span>
+          {project.price}
         </p>
         <p className="projDet-para">
           <span className="projDet-label">Installments available: </span>6
           Months
         </p>
         <p className="projDet-para">
-          <span className="projDet-label">City</span>
-          {property.city}
+          <span className="projDet-label">City: </span>
+          {project.city}
         </p>
         <p className="projDet-para">
           <span className="projDet-label">Location: </span>
-          {property.location}
+          {project.location}
         </p>
         <p className="projDet-para">
           <span className="projDet-label">Start Date: </span>
-          {property.startTime}
+          {project.startTime}
         </p>
         <p className="projDet-para">
           <span className="projDet-label">End Date: </span>
-          {property.endTime}
+          {project.endTime}
         </p>
         <Link to="/book-property" style={{ textDecoration: "none" }}>
           <button className="projDet-btn">
