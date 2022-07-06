@@ -13,7 +13,9 @@ const SellDetail = ({match}) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { property, loading, error } = useSelector(
+  const { property, 
+    // loading,
+     error } = useSelector(
     (state) => state.propertyDetails
   );
 
@@ -42,6 +44,7 @@ const SellDetail = ({match}) => {
   }, [dispatch, match.params.id, error, alert]);
 
 
+  console.log(property.user);
   return (
     <div className="sellCard">
       <div className="sell-head">
@@ -72,8 +75,9 @@ const SellDetail = ({match}) => {
                 alt={`${i} Slide`}
               />
               <Carousel.Caption>
-                <h3>{item.purpose}</h3>
-                <p>{item.propertyTitle}</p>
+                {/* <h3>{item.purpose}</h3> */}
+                {/* <h3>First slide label</h3> */}
+                {/* <p>{item.propertyTitle}</p> */}
               </Carousel.Caption>
             </Carousel.Item>
           ))}
@@ -128,15 +132,16 @@ const SellDetail = ({match}) => {
           <span className="sellDet-label">Price: </span>
           {property.price}
         </p>
-        {/* <p className="sellDet-para">
-          <span className="sellDet-label">Property Owner: </span>
-          {property.user}
-        </p>
+        {/* {order.user && order.user.name} */}
         <p className="sellDet-para">
+          <span className="sellDet-label">Property Owner: </span>
+          {property.user && property.user}
+        </p>
+        {/* <p className="sellDet-para">
           <span className="sellDet-label">Owner Contact: </span>
           {property.user}
-        </p>
-        <p className="sellDet-para">
+        </p> */}
+        {/* <p className="sellDet-para">
           <span className="sellDet-label">Owner Email: </span>
           {property.user}
         </p> */}

@@ -4,8 +4,8 @@ const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const ApiFeatures = require("../utils/apifeatures");
 const cloudinary = require("cloudinary");
 
-
 // Create Property :
+
 exports.createProperty = catchAsyncErrors(async (req, res, next) => {
   let images = [];
 
@@ -30,7 +30,9 @@ exports.createProperty = catchAsyncErrors(async (req, res, next) => {
 
   req.body.images = imagesLinks;
 
-  req.body.user = req.user.id;
+  req.body.user = req.user._id;
+
+
 
   const property = await Property.create(req.body);
 

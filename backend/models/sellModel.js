@@ -106,6 +106,7 @@ const sellSchema = new mongoose.Schema({
 
   // User who created:
   user: {
+    name:"Abdullah",
     type: mongoose.Schema.ObjectId,
     ref: "User",
     required: true,
