@@ -9,6 +9,9 @@ import {
   PROPERTY_DETAILS_REQUEST,
   PROPERTY_DETAILS_FAIL,
   PROPERTY_DETAILS_SUCCESS,
+  ADMIN_PROPERTY_REQUEST,
+  ADMIN_PROPERTY_SUCCESS,
+  ADMIN_PROPERTY_FAIL,
   CLEAR_ERRORS,
 } from "../constants/sellContants";
 
@@ -39,12 +42,36 @@ export const createProperty = (propertyData) => async (dispatch) => {
   }
 };
 
+// Get All Property For Admin
+export const getAdminProperty = () => async (dispatch) => {
+  try {
+    dispatch({ type: ADMIN_PROPERTY_REQUEST });
+
+    const { data } = await axios.get("/api/v1/admin/properties");
+
+    dispatch({
+      type: ADMIN_PROPERTY_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ADMIN_PROPERTY_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
 // Get All
 
-export const getProperty = () => async (dispatch) => {
+export const getProperty = (keyword = "", purpose="",  price = "", landArea = "") => async (dispatch) => {
   try {
     dispatch({ type: ALL_PROPERTY_REQUEST });
-    const { data } = await axios.get(`/api/v1/properties`);
+
+      let link = `/api/v1/properties?city=${keyword}&purpose=${purpose}&price[lte]=${price}&landArea[lte]=${landArea}`;
+
+
+
+    const { data } = await axios.get(link);
 
     dispatch({ type: ALL_PROPERTY_SUCCESS, payload: data });
   } catch (error) {
@@ -52,32 +79,6 @@ export const getProperty = () => async (dispatch) => {
   }
 };
 
-// Get All Property --with filters
-// export const getProperty =
-//   (keyword = "", currentPage = 1, price = [0, 25000], category, ratings = 0) =>
-//   async (dispatch) => {
-//     try {
-//       dispatch({ type: ALL_PRODUCT_REQUEST });
-
-//       let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
-
-//       if (category) {
-//         link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
-//       }
-
-//       const { data } = await axios.get(link);
-
-//       dispatch({
-//         type: ALL_PRODUCT_SUCCESS,
-//         payload: data,
-//       });
-//     } catch (error) {
-//       dispatch({
-//         type: ALL_PRODUCT_FAIL,
-//         payload: error.response.data.message,
-//       });
-//     }
-//   };
 
 // Get Property Details
 export const getPropertyDetails = (id) => async (dispatch) => {

@@ -72,12 +72,12 @@ const ProjectDetail = ({ match }) => {
 
       <div className="project-detail">
         <p className="projDet-para">
-          <span className="projDet-label">Price :</span>
-          {project.price}
+          <span className="projDet-label">Total Capacity :</span>
+          {project.totalCapacity}
         </p>
         <p className="projDet-para">
-          <span className="projDet-label">Installments available: </span>6
-          Months
+          <span className="projDet-label">Monthly Installation: </span>
+          {project.monthlyInstallations}
         </p>
         <p className="projDet-para">
           <span className="projDet-label">City: </span>
@@ -95,7 +95,7 @@ const ProjectDetail = ({ match }) => {
           <span className="projDet-label">End Date: </span>
           {project.endTime}
         </p>
-        <Link to="/book-property" style={{ textDecoration: "none" }}>
+        <Link to={`/book-property/${project._id}`} style={{ textDecoration: "none" }}>
           <button className="projDet-btn">
             Book Now{" "}
             <span>

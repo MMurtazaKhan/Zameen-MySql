@@ -7,6 +7,8 @@ import { TreeView, TreeItem } from "@material-ui/lab";
 import {MdDashboard} from "react-icons/md";
 import {FaListAlt} from "react-icons/fa";
 import {IoAdd} from "react-icons/io5";
+import {AiFillProject} from "react-icons/ai";
+
 
 
 
@@ -58,6 +60,15 @@ const Sidebar = () => {
           </TreeItem>
         </TreeView>
       </Link>
+
+      <Link to="/admin/proj-registeration">
+        <p>
+          <AiFillProject />
+          Project Registeration
+        </p>
+      </Link>
+
+
     </div>
   );
 };

@@ -32,7 +32,7 @@ exports.registerationInProject = catchAsyncErrors(async (req, res, next) => {
   } 
   
   else {
-    register = await Register.create({ project: req.params.id, user:req.user.id });
+   register = await Register.create({ project: req.params.id, user:req.user.id });
 
     res.status(201).json({
       success: true,

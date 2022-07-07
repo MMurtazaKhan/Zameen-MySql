@@ -25,11 +25,11 @@ const projectSchema = new mongoose.Schema({
     // required: [true, "Please Enter Product Description"],
   },
 
-  price: {
-    type: Number,
-    required: [true, "Please Enter Property Price"],
-    minLength: [4, "Price should more than 4 characters"],
-  },
+  // price: {
+  //   type: Number,
+  //   required: [true, "Please Enter Property Price"],
+  //   minLength: [4, "Price should more than 4 characters"],
+  // },
 
   landArea: {
     type: Number,

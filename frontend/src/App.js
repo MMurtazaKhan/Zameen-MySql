@@ -1,12 +1,11 @@
-
-import React
-  ,{ useEffect }
+import React, {
+  useEffect,
   // , { useEffect, useState }
-  from "react";
+} from "react";
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import About from "./pages/AboutUs/About";
-import Blog from './pages/Blog/BlogMain';
+import Blog from "./pages/Blog/BlogMain";
 import BlogViewDetails from "./pages/Blog/BlogViewDetails";
 
 import Home from "./pages/Home/Home";
@@ -23,25 +22,24 @@ import EditProfile from "./pages/User/EditProfile/EditProfile";
 import Booking from "./pages/BookingProperty/Booking";
 import Sell from "./pages/Sell/Sell";
 
-import propertyDetails from "./pages/Sell/propertyDetails"
-import ProjectDetail from "./pages/BookingProperty/ProjectDetail"
+import propertyDetails from "./pages/Sell/propertyDetails";
+import ProjectDetail from "./pages/BookingProperty/ProjectDetail";
 
-import ProjectProperty from './pages/BookingProperty/ProjectProperty';
+import ProjectProperty from "./pages/BookingProperty/ProjectProperty";
 // import ProjectDetail from './pages/BookingProperty/ProjectDetail';
-import BlogMain from './pages/Blog/BlogMain';
-import Dashboard from './pages/Admin/Dashboard/Dashboard';
-import PropertyList from './pages/Admin/PropertyList/PropertyList';
-import CreateProject from './pages/Admin/CreateProject/CreateProject';
-import UserList from './pages/Admin/UserList/UserList';
-import ProjectList from './pages/Admin/ProjectList/ProjectList';
-import SellDetail from './pages/Sell/SellDetail';
+import BlogMain from "./pages/Blog/BlogMain";
+import Dashboard from "./pages/Admin/Dashboard/Dashboard";
+import PropertyList from "./pages/Admin/PropertyList/PropertyList";
+import CreateProject from "./pages/Admin/CreateProject/CreateProject";
+import UserList from "./pages/Admin/UserList/UserList";
+import ProjectList from "./pages/Admin/ProjectList/ProjectList";
+import SellDetail from "./pages/Sell/SellDetail";
+import ProjectRegisteration from "./pages/Admin/ProjectRegisteration/ProjectRegisteration";
 
 function App() {
-
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
-
 
   return (
     <div>
@@ -56,14 +54,20 @@ function App() {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/reg-property" component={RegisterProperty} />
           <Route exact path="/EditProfile" component={EditProfile} />
-          <Route exact path="/book-property" component={Booking} />
-          <Route exact path="/sell" component={Sell} />
+          <Route exact path="/book-property/:id" component={Booking} />
 
+          {/* search ki facility ispe krni he */}
+          <Route exact path="/sell" component={Sell} />
+          {/* keyword: city */}
+          <Route
+            exact
+            path="/sell/:keyword/:purpose/:price/:landArea"
+            component={Sell}
+          />
 
           <Route exact path="/About" component={About} />
           <Route exact path="/Blog" component={Blog} />
           <Route exact path="/Blogs/Blogdata/:id" component={BlogViewDetails} />
-
 
           <Route exact path="/property/:id" component={propertyDetails} />
 
@@ -71,10 +75,8 @@ function App() {
           <Route exact path="/projects" component={ProjectProperty} />
           <Route exact path="/projectDetail/:id" component={ProjectDetail} />
 
-
           <Route exact path="/About" component={About} />
           <Route exact path="/Blog" component={BlogMain} />
-
 
           <Route exact path="/sellDetail/:id" component={SellDetail} />
           <Route exact path="/projectDetail/:id" component={ProjectDetail} />
@@ -84,11 +86,11 @@ function App() {
           <Route exact path="/admin/users" component={UserList} />
           <Route exact path="/admin/projects" component={ProjectList} />
           <Route exact path="/admin/createProject" component={CreateProject} />
-          
-
-
-
-
+          <Route
+            exact
+            path="/admin/proj-registeration"
+            component={ProjectRegisteration}
+          />
         </Switch>
         <Footer />
       </BrowserRouter>

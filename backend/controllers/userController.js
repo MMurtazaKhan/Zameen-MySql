@@ -112,7 +112,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
     "host"
   )}/api/v1/password/reset/${resetToken}`;
   const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\n If you have ot requested this email 
-      then, ignore it`;
+    then, ignore it`;
 
   try {
     await sendEmail({
@@ -286,18 +286,18 @@ exports.updateUserRole = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Delete User --Admin
+// Delete User --Admin
 exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
-    return next(
-      new ErrorHander(`User does not exist with Id: ${req.params.id}`, 400)
-    );
+    return next(new ErrorHandler("Please enter password and email", 400));
   }
+  const imageId = user.avatar.public_id;
+  await cloudinary.v2.uploader.destroy(imageId);
+  await user.remove();
 
-  // const imageId = user.avatar.public_id;
-  // await cloudinary.v2.uploader.destroy(imageId);
-  // await user.remove();
+
 
   res.status(200).json({
     success: true,

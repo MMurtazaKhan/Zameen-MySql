@@ -1,4 +1,8 @@
-import React, { useEffect } from "react";
+import React, {
+  // useRef,
+  useEffect,
+  // useState,
+} from "react";
 import "./Sell.css";
 import Search from "../../components/Search/Search";
 import { IoReloadSharp } from "react-icons/io5";
@@ -6,66 +10,35 @@ import SellCard from "./SellCard";
 import { getProperty, clearErrors } from "../../actions/sellAction";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
-// import { Link } from "react-router-dom";
-// import { BsArrowRight } from "react-icons/bs";
-// import { FaRulerVertical } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 
-const Sell = () => {
+const Sell = ({ match }) => {
+  // const history = useHistory();
+  const alert = useAlert();
+
+  const {keyword, purpose, price, landArea} = useParams();
+
   const dispatch = useDispatch();
   const {
-    loading,
+    // loading,
     error,
-    propertyCount,
-    resultPerPage,
+    // propertyCount,
+    // resultPerPage,
     property,
     filteredPropertyCount,
   } = useSelector((state) => state.property);
-  // const property = [
-  //   {
-  //     _id: 1,
-  //     image: "/s1.jpg",
-  //     views: 4,
-  //     price: 45000,
-  //     address: "House-No:210 near azizabad malir",
-  //     city: "Karachi",
-  //     landArea: "200",
-  //     propertyTitle: "This is property title",
-  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  //     createdAt: "14-7-22",
-  //   },
-  //   {
-  //     _id: 2,
-  //     image: "/s2.jpg",
-  //     views: 18,
-  //     price: 590000,
-  //     address: "House-No:21 near shah faisal masjid",
-  //     city: "Islamabad",
-  //     landArea: "200",
-  //     propertyTitle: "This is property title",
-  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  //     createdAt: "14-7-20",
-  //   },
-  //   {
-  //     _id: 3,
-  //     image: "/s1.jpg",
-  //     views: 47,
-  //     price: 760000,
-  //     address: "House-No:210 near shalimar garden",
-  //     city: "Lahore",
-  //     landArea: "200",
-  //     propertyTitle: "This is property title",
-  //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  //     createdAt: "13-5-20",
-  //   },
-  // ];
+
+
+
+
 
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-    dispatch(getProperty());
-  }, []);
+    dispatch(getProperty(keyword, purpose, price, landArea));
+  }, [dispatch, keyword, error, alert, purpose, price, landArea]);
 
   return (
     <div>
@@ -78,7 +51,7 @@ const Sell = () => {
       <div className="sell-container">
         <div className="sell-left">
           <div className="sell-left-head">
-            <p>5 result found </p>
+            <p>{filteredPropertyCount} result found </p>
             <button>
               <IoReloadSharp />
             </button>
@@ -97,3 +70,64 @@ const Sell = () => {
 };
 
 export default Sell;
+
+// import React, { useEffect } from "react";
+// import "./Sell.css";
+// import Search from "../../components/Search/Search";
+// import { IoReloadSharp } from "react-icons/io5";
+// import SellCard from "./SellCard";
+// import { getProperty, clearErrors } from "../../actions/sellAction";
+// import { useSelector, useDispatch } from "react-redux";
+// import { useAlert } from "react-alert";
+
+// const Sell = ({match}) => {
+//   const dispatch = useDispatch();
+//   const {
+//     // loading,
+//     error,
+//     // propertyCount,
+//     // resultPerPage,
+//     property,
+//     filteredPropertyCount,
+//   } = useSelector((state) => state.property);
+
+//   const city = match.params.keyword;
+
+//   useEffect(() => {
+//     if (error) {
+//       alert.error(error);
+//       dispatch(clearErrors());
+//     }
+//     dispatch(getProperty( city ));
+//   }, [dispatch, city]);
+
+//   return (
+//     <div>
+//       <div className="sellCards-head">
+//         <div className="sell-search-container">
+//           <Search />
+//         </div>
+//       </div>
+
+//       <div className="sell-container">
+//         <div className="sell-left">
+//           <div className="sell-left-head">
+//             <p>5 result found </p>
+//             <button>
+//               <IoReloadSharp />
+//             </button>
+//           </div>
+//           <div className="sell-left-body">
+//             {property &&
+//               property.map((property) => (
+//                 <SellCard key={property._id} property={property} />
+//               ))}
+//           </div>
+//         </div>
+//         <div className="sell-right"></div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Sell;

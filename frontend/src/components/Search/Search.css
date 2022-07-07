@@ -32,7 +32,7 @@
   padding-left: 5px;
 }
 
-.first-row button {
+.first-row input[type="submit"]{
   height: 35px;
   width: 110px;
   margin-top: 20px;
@@ -41,8 +41,18 @@
   color: white;
   border: 0px;
   font-weight: 600;
-  /* border-radius: 8px; */
 }
+/* .first-row button {
+  height: 35px;
+  width: 110px;
+  margin-top: 20px;
+  margin-left: 15px;
+  background-color: rgb(59, 163, 59);
+  color: white;
+  border: 0px;
+  font-weight: 600;
+  // border-radius: 8px; 
+} */
 
 .second-row {
   display: flex;

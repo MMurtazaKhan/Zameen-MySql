@@ -1,19 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./UserList.css";
+import React, {  useEffect, useRef, useState } from "react";
+import "./ProjectRegisteration";
 import Sidebar from "../Sidebar/Sidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { DataGrid } from "@material-ui/data-grid";
-import { MdDelete } from "react-icons/md";
-import { Button } from "@material-ui/core";
-import { useAlert } from "react-alert";
-import { getAllUsers, clearErrors } from "../../../actions/userAction";
-
+import { getRegisterations, clearErrors
+  // , deleteUser
+ } from "../../../actions/registerationAction";
 import { useSelector, useDispatch } from "react-redux";
 
-const UserList = ({ history }) => {
-  const alert = useAlert();
+const ProjectRegisteration = () => {
+
   const dispatch = useDispatch();
-  const { error, users } = useSelector((state) => state.allUsers);
+  const { error, registerations } = useSelector((state) => state.allRegisterations);
+
 
   const [show, setShow] = useState("yes");
   const sidebarTab = useRef(null);
@@ -30,75 +29,66 @@ const UserList = ({ history }) => {
     }
   };
 
-  useEffect(() => {
-    if (error) {
-      alert.error(error);
-      dispatch(clearErrors());
-    }
-
-    dispatch(getAllUsers());
-  }, [dispatch, error, alert]);
 
   const columns = [
-    { field: "id", headerName: "User ID", minWidth: 220, flex: 0.5 },
+    { field: "id", headerName: "Registeration ID", minWidth: 220, flex: 0.5 },
+    // { field: "id2", headerName: "Project ID", minWidth: 220, flex: 0.5 },
+    // { field: "id3", headerName: "User ID", minWidth: 220, flex: 0.5 },
+
 
     {
-      field: "name",
-      headerName: "Name",
+      field: "totalInstallments",
+      headerName: "Total Installments",
       minWidth: 150,
       flex: 0.3,
     },
+
     {
-      field: "email",
-      headerName: "Email",
-      minWidth: 200,
-      flex: 0.5,
-    },
-    {
-      field: "phoneNo",
-      headerName: "Phone No",
-      type: "number",
-      minWidth: 150,
-      flex: 0.3,
-    },
-    {
-      field: "createdAt",
-      headerName: "Joined Since",
+      field: "registeredAt",
+      headerName: "Registered On",
       type: "number",
       minWidth: 250,
       flex: 0.3,
-    },
-    {
-      field: "actions",
-      flex: 0.3,
-      headerName: "Actions",
-      minWidth: 150,
-      type: "number",
-      sortable: false,
-      renderCell: (params) => {
-        return (
-          <Button
-            // onClick={() => deleteUserHandler(params.getValue(params.id, "id"))}
-          >
-            <MdDelete style={{ fontSize: "1.2rem" }} />
-          </Button>
-        );
-      },
     },
   ];
 
   const rows = [];
 
-  users &&
-    users.forEach((item) => {
+  registerations &&
+  registerations.forEach((item) => {
       rows.push({
         id: item._id,
-        name: item.name,
-        email: item.email,
-        phoneNo: item.phoneNo,
-        createdAt: item.createdAt,
+        // id2: item._id,
+        // id3: item._id,
+
+        totalInstallments: item.totalInstallments,
+        registeredAt: item.registeredAt,
       });
     });
+
+    useEffect(() => {
+      if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+      }
+  
+      // if (deleteError) {
+      //   alert.error(deleteError);
+      //   dispatch(clearErrors());
+      // }
+  
+      // if (isDeleted) {
+      //   alert.success(message);
+      //   history.push("/admin/users");
+      //   dispatch({ type: DELETE_USER_RESET });
+      // }
+  
+      dispatch(getRegisterations());
+    }, [dispatch, error
+      // , deleteError, history, isDeleted, message
+    ]);
+  
+
 
   return (
     <div className="dashboard">
@@ -122,7 +112,8 @@ const UserList = ({ history }) => {
               disableSelectionOnClick
               className="userListTable"
               autoHeight
-              style={{ textAlign: "start" }}
+
+              style={{textAlign: "start"}}
             />
           </div>
         </div>
@@ -131,4 +122,4 @@ const UserList = ({ history }) => {
   );
 };
 
-export default UserList;
+export default ProjectRegisteration;
