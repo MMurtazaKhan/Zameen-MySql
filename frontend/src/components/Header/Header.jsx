@@ -6,27 +6,27 @@ import { AccountCircle } from "@material-ui/icons";
 import { Link, useHistory } from "react-router-dom";
 
 
+ 
+
 const Header = () => {
 
-  
 
   const text = "BUY >";
   const headerTab = useRef(null);
   const [show, setShow] = useState("yes");
   const history = useHistory();
-  const switchTabs = (e, tab) => {
 
+  const switchTabs = (e, tab) => {
     if (tab === "yes") {
       headerTab.current.classList.add("null-container");
       headerTab.current.classList.remove("header-collapse");
       setShow("no");
-    }
-    else {
+    } else {
       headerTab.current.classList.add("header-collapse");
       headerTab.current.classList.remove("null-container");
       setShow("yes");
     }
-  }
+  };
 
   return (
     <div className="Header">
@@ -36,32 +36,66 @@ const Header = () => {
         </div>
         <div className="center-Container">
           <ul>
-
-            <li><Link className="Link-tag" to="" >HOME</Link></li>
+            <li>
+              <Link className="Link-tag" to="">
+                HOME
+              </Link>
+            </li>
             {/* <li><Link className="Link-tag" to="" >SERVICES</Link></li> */}
-            <li><Link className="Link-tag" to="/Blog">BLOG</Link></li>
+            <li>
+              <Link className="Link-tag" to="/Blog">
+                BLOG
+              </Link>
+            </li>
 
-            <li><Link className="Link-tag" to="/About">ABOUT</Link>  </li>
+            <li>
+              <Link className="Link-tag" to="/About">
+                ABOUT
+              </Link>{" "}
+            </li>
 
+            <li>
+              <Link className="Link-tag" to="/contact">
+                CONTACT
+              </Link>
+            </li>
 
-
-            <li><Link className="Link-tag" to="/contact" >CONTACT</Link></li>
+            {/* <CheckUser /> */}
           </ul>
         </div>
         <div className="right-Container">
-          <input type="button" value="+ Add Property" onClick={() => history.push("/reg-property")} />
+          <input
+            type="button"
+            value="+ Add Property"
+            onClick={() => history.push("/reg-property")}
+          />
           <img src="/pak-flag.png" alt="Pak Flag" />
-          <Link style={{ color: "white", paddingLeft: "10px", paddingRight: "10px" }} to="/profile" > <Settings style={{ fontSize: "30px" }} /></Link>
-          <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">  <AccountCircle style={{ fontSize: "30px" }} /></Link>
+          <Link
+            style={{
+              color: "white",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+            }}
+            to="/profile"
+          >
+            {" "}
+            <Settings style={{ fontSize: "30px" }} />
+          </Link>
+          <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
+            {" "}
+            <AccountCircle style={{ fontSize: "30px" }} />
+          </Link>
         </div>
       </div>
 
       <div className="Header-2">
         <div className="left-header">
           <div className="first">
-            <img src=""
-            // "zameen.jpeg"
-             alt="Zameen-logo" />
+            <img
+              src=""
+              // "zameen.jpeg"
+              alt="Zameen-logo"
+            />
           </div>
           <div className="second">
             <h2>zameen.com</h2>
@@ -74,15 +108,34 @@ const Header = () => {
           </div>
           <div className="options" ref={headerTab}>
             <ul>
-             <li className="Link-tagg"><Link className="link-rem" to="/sell">HOMES</Link></li>
-             <li  className="Link-tagg"><Link className="link-rem" to="/projects">PROJECTS</Link></li>
+              <li className="Link-tagg">
+                <Link className="link-rem" to="/sell">
+                  HOMES
+                </Link>
+              </li>
+              <li className="Link-tagg">
+                <Link className="link-rem" to="/projects">
+                  PROJECTS
+                </Link>
+              </li>
               {/* <li>COMMERCIAL</li> */}
             </ul>
           </div>
           <div className="extends">
             <ul>
-             <li className="Link-tagg" ><Link className="link-rem" to="/sell">RENT</Link></li> 
-             <li className="Link-tagg" ><Link className="link-rem" onClick={() => history.push("/book-property")} >BOOK PROJECT</Link></li> 
+              <li className="Link-tagg">
+                <Link className="link-rem" to="/sell">
+                  RENT
+                </Link>
+              </li>
+              <li className="Link-tagg">
+                <Link
+                  className="link-rem"
+                  onClick={() => history.push("/book-property")}
+                >
+                  BOOK PROJECT
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -93,32 +146,12 @@ const Header = () => {
 
 export default Header;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, {useRef, useState} from "react";
 // import "./Header.css";
 // // import logo from "../images/Home-logo.png";
 // import { Settings } from "@material-ui/icons";
 // import { AccountCircle } from "@material-ui/icons";
 // import { Link } from "react-router-dom";
-
-
-
 
 // const Header = () => {
 //   const text = "BUY >";

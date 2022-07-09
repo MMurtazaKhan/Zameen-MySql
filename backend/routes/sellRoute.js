@@ -17,7 +17,7 @@ const { isAuthenticatedUser, authorizedRoles } = require("../middleware/auth");
 const router = express.Router();
 
 // get
-router.route("/admin/properties").get(authorizedRoles("admin"), getAllPropertiesForAdmin);
+router.route("/admin/properties").get(isAuthenticatedUser, authorizedRoles("admin"), getAllPropertiesForAdmin);
 
 // get --User
 router.route("/properties").get(getAllProperties);

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import About from "./pages/AboutUs/About";
 import Blog from "./pages/Blog/BlogMain";
 import BlogViewDetails from "./pages/Blog/BlogViewDetails";
+import ProtectedRoute from "./components/Route/ProtectedRoute";
 
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
@@ -51,10 +52,13 @@ function App() {
           <Route exact path="/register" component={SignUp} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/help" component={Help} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/reg-property" component={RegisterProperty} />
+          <ProtectedRoute
+            exact
+            path="/reg-property"
+            component={RegisterProperty}
+          />
           <Route exact path="/EditProfile" component={EditProfile} />
-          <Route exact path="/book-property/:id" component={Booking} />
+          <ProtectedRoute exact path="/book-property/:id" component={Booking} />
 
           {/* search ki facility ispe krni he */}
           <Route exact path="/sell" component={Sell} />
@@ -81,12 +85,46 @@ function App() {
           <Route exact path="/sellDetail/:id" component={SellDetail} />
           <Route exact path="/projectDetail/:id" component={ProjectDetail} />
           <Route exact path="/projects" component={ProjectProperty} />
-          <Route exact path="/admin/dashboard" component={Dashboard} />
-          <Route exact path="/admin/property" component={PropertyList} />
-          <Route exact path="/admin/users" component={UserList} />
-          <Route exact path="/admin/projects" component={ProjectList} />
-          <Route exact path="/admin/createProject" component={CreateProject} />
-          <Route
+          {/* <Route exact path="/admin/dashboard" component={Dashboard} /> */}
+          <ProtectedRoute
+            isAdmin={true}
+            exact
+            path="/admin/property"
+            component={PropertyList}
+          />
+
+          <ProtectedRoute
+            isAdmin={true}
+            exact
+            path="/admin/users"
+            component={UserList}
+          />
+
+          <ProtectedRoute
+            isAdmin={true}
+            exact
+            path="/admin/projects"
+            component={ProjectList}
+          />
+
+          <ProtectedRoute
+            isAdmin={true}
+            exact
+            path="/admin/createProject"
+            component={CreateProject}
+          />
+
+          <ProtectedRoute
+            isAdmin={true}
+            exact
+            path="/admin/dashboard"
+            component={Dashboard}
+          />
+
+          {/* <Route exact path="/profile" component={Profile} /> */}
+          <ProtectedRoute exact path="/profile" component={Profile} />
+          <ProtectedRoute
+            isAdmin={true}
             exact
             path="/admin/proj-registeration"
             component={ProjectRegisteration}

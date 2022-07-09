@@ -51,7 +51,7 @@ export const getAdminProperty = () => async (dispatch) => {
 
     dispatch({
       type: ADMIN_PROPERTY_SUCCESS,
-      payload: data,
+      payload: data.property,
     });
   } catch (error) {
     dispatch({

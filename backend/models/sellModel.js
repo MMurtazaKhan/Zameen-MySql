@@ -65,8 +65,8 @@ const sellSchema = new mongoose.Schema({
 
   numOfReviews: {
     type: Number,
-    default: 0
-},
+    default: 0,
+  },
 
   reviews: [
     {
@@ -108,6 +108,15 @@ const sellSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
+    required: true,
+  },
+
+  ownerName: {
+    type: String,
+    required: true,
+  },
+  ownerContact: {
+    type: Number,
     required: true,
   },
 });

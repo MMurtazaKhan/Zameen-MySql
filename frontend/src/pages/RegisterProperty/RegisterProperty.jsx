@@ -5,28 +5,28 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, createProperty } from "../../actions/sellAction";
 import { useAlert } from "react-alert";
 import { NEW_PROPERTY_RESET } from "../../constants/sellContants";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const RegisterProperty = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const history = useHistory();
 
-  const purposeCategories = [
-    "Sell",
-    "Rent"
-  ];
+  const purposeCategories = ["Sell", "Rent"];
 
-  const pTypeCategories = [
-    "Home",
-    "Plots",
-    "Commercial"
-  ];
+  const pTypeCategories = ["Home", "Plots", "Commercial"];
 
-
-  const { 
+  const {
     // loading,
-     error, success } = useSelector((state) => state.newProperty);
+    error,
+    success,
+  } = useSelector((state) => state.newProperty);
+
+  const {
+    user,
+    //  loading,
+    // isAuthenticated,
+  } = useSelector((state) => state.user);
 
   const [purpose, setPurpose] = useState("");
   const [propertyType, setPropertyType] = useState(0);
@@ -38,8 +38,15 @@ const RegisterProperty = () => {
   const [landArea, setLandArea] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
+  const [ownerContact, setOwnerContact] = useState();
+  const [ownerName, setOwnerName] = useState("");
 
   useEffect(() => {
+    if (user) {
+      setOwnerContact(user.phoneNo);
+      setOwnerName(user.name);
+    }
+
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
@@ -50,7 +57,7 @@ const RegisterProperty = () => {
       history.push("/");
       dispatch({ type: NEW_PROPERTY_RESET });
     }
-  }, [dispatch, alert, error, history, success]);
+  }, [dispatch, alert, error, history, success, user]);
 
   const createPropertySubmitHandler = (e) => {
     e.preventDefault();
@@ -65,6 +72,8 @@ const RegisterProperty = () => {
     myForm.set("description", description);
     myForm.set("price", price);
     myForm.set("landArea", landArea);
+    myForm.set("ownerName", ownerName);
+    myForm.set("ownerContact", ownerContact);
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -91,7 +100,6 @@ const RegisterProperty = () => {
       reader.readAsDataURL(file);
     });
   };
-
 
   return (
     <div className="regProperty">
@@ -139,7 +147,7 @@ const RegisterProperty = () => {
               </select>
 
               {/* Property Type */}
-              
+
               <select onChange={(e) => setPropertyType(e.target.value)}>
                 <option value="">Choose property type</option>
                 {pTypeCategories.map((cate) => (
@@ -268,6 +276,37 @@ const RegisterProperty = () => {
               <img key={index} src={image} alt="Product Preview" />
             ))}
           </div>
+
+          <span className="regProp-span">PROPERTY DETAILS</span>
+          <div className="regProp-container">
+            <div className="regProp-con1">
+              <p>Owner Name:</p>
+              <br />
+
+              <p>Owner Contact:</p>
+            </div>
+
+            <div className="regProp-con2">
+              {/* Owner Name */}
+              <input
+                type="text"
+                value={ownerName}
+                onChange={(e) => setOwnerName(e.target.value)}
+                style={{ width: "300px" }}
+                readOnly
+              />
+              <br />
+              {/* Owner Contact */}
+              <input
+                type="text"
+                value={ownerContact}
+                onChange={(e) => setOwnerContact(e.target.value)}
+                style={{ width: "300px" }}
+                readOnly
+              />
+            </div>
+          </div>
+
           <div className="regProp-container">
             <button>SUBMIT PROPERTY</button>
           </div>

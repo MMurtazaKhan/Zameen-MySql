@@ -4,9 +4,10 @@ import "./ProjectDetail.css";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from "react";
 import { clearErrors, getProject } from '../../actions/projectAction';
+import { useAlert } from 'react-alert';
 
 const ProjectProperty = () => {
-
+  const alert = useAlert();
     const dispatch = useDispatch();
   const {
     // loading,
@@ -23,7 +24,7 @@ const ProjectProperty = () => {
       dispatch(clearErrors());
     }
     dispatch(getProject());
-  }, []);
+  }, [dispatch, error, alert]);
 
     // const property = [
     //     {

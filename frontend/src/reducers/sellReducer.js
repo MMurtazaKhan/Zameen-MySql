@@ -38,7 +38,7 @@ export const propertyReducer = (state = { property: [] }, action) => {
     case ADMIN_PROPERTY_SUCCESS:
       return {
         loading: false,
-        property: action.payload.property,
+        property: action.payload,
       };
 
     case ADMIN_PROPERTY_FAIL:

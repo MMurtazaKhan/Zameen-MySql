@@ -9,6 +9,45 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 
 
+// const CheckUser = () => {
+//   const {
+//     user,
+//     //  loading,
+//     // isAuthenticated
+//   } = useSelector((state) => state.user);
+
+//   if(user){
+//     if(user.role === "admin"){
+//       return (
+//         <li>
+//           <Link className="Link-tag" to="/admin/dashboard">
+//             DASHBOARD
+//           </Link>
+//         </li>
+//       );
+//     }
+//     if(user.role === "user"){
+//       return (
+//         <li>
+//           <Link className="Link-tag" to="/profile">
+//             DASHBOARD
+//           </Link>
+//         </li>
+//       );
+//     }
+//   }else{
+//     return (
+//       <li>
+//         <Link className="Link-tag" to="/register">
+//           DASHBOARD
+//         </Link>
+//       </li>
+//     );
+//   }
+
+// }
+
+  
 
 
 const Profile = () => {
@@ -63,6 +102,10 @@ const Profile = () => {
           />
           <button className="btn btn-warning btn-lg" onClick={() =>history.push("/EditProfile")}>Edit Profile</button>
           <button className="btn btn-warning btn-lg" onClick={ () =>logoutUser()}>Logout</button>
+          
+          {user && user.role === "admin" ? <button className="btn btn-warning btn-lg" onClick={ () =>history.push("/admin/dashboard")}>Admin Dashboard</button>:("")}
+          {/* // <button className="btn btn-warning btn-lg" onClick={ () =>history.push("/admin/dashboard")}>Admin Dashboard</button> */}
+
         
         </div>
 
