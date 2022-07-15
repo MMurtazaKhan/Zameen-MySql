@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import "./Header.css";
 // import logo from "../images/Home-logo.png";
-import { Settings } from "@material-ui/icons";
-import { AccountCircle } from "@material-ui/icons";
+import {MdSettings} from "react-icons/md"
+import { MdAccountCircle } from "react-icons/md";
 import { Link, useHistory } from "react-router-dom";
 
 
@@ -79,11 +79,11 @@ const Header = () => {
             to="/profile"
           >
             {" "}
-            <Settings style={{ fontSize: "30px" }} />
+            <MdSettings style={{ fontSize: "30px" }} />
           </Link>
           <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
             {" "}
-            <AccountCircle style={{ fontSize: "30px" }} />
+            <MdAccountCircle style={{ fontSize: "30px" }} />
           </Link>
         </div>
       </div>
