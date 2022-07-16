@@ -1,0 +1,211 @@
+.regProperty{
+    background-color:antiquewhite;
+    height: 130vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.propRegform{
+     /* height: 120vh; */
+     height: auto;
+        width: 1000px;
+    background-color:white;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+}
+
+.regProp-span{
+    background-color: #008000;
+    display: block;
+    width: 97%;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 2px 2px 4px -2px #a7a7a7, -2px 2px 4px -2px #a7a7a7;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    height: 30px;
+}
+
+
+
+.regProp-container{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: flex-start;
+}
+
+.regProp-con1{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.regProp-con1 > p{
+    color: #483f3f;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.regProp-con2{
+    
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.regProp-con2 > select{
+    
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #CACACA;
+   box-shadow: 0 0 7px 3px #f4f4f4 inset;
+   color: #737373;
+   padding: 2px 5px;
+   margin-top: -4px;
+    width: 200px;
+   border-radius: 4px;
+   font-family: Arial;
+
+}
+
+
+.regProp-con2 > input{
+    border: 1px solid #CACACA;
+    box-shadow: 0 0 7px 3px #f4f4f4 inset;
+    color: #737373;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 10px;
+   margin-bottom: 15px;
+   border-radius: 4px;
+   padding: 2px 5px;
+   margin-top: -6px;
+   width: 200px;
+   font-family: Arial;
+
+   height: 30px;
+}
+
+.regProp-con2 > input:nth-child(2) {
+    width: 300px;
+  }
+  
+.regProp-con2 > textarea{
+    margin-left: 10px;
+    border: 1px solid #CACACA;
+    box-shadow: 0 0 7px 3px #f4f4f4 inset;
+    color: #737373;
+    padding: 6px;
+    font-size: 0.8rem;
+    height: 100px;
+    width: 440px;
+    font-family: Arial;
+
+}
+
+
+.reg-prop-alert{
+    background-color: #e4e4e4;
+    border: 1px solid #bebebe;
+    border-radius: 6px;
+   text-align: left;
+   padding-left: 10px;
+   margin-left: 10px;
+   padding-top: 3px;
+   height: 30px;
+   width: 440px;
+
+   font-family: Arial;
+   font-size: 0.9rem;
+}
+
+
+
+
+  .reg-prop-area-unit{
+      display: flex;
+
+  }
+
+  .regProp-con2 > .reg-prop-area-unit > input{
+    border: 1px solid #CACACA;
+    box-shadow: 0 0 7px 3px #f4f4f4 inset;
+    color: #737373;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-left: 10px;
+   margin-bottom: 15px;
+
+   border-radius: 4px;
+   padding: 2px 5px;
+   margin-top: -6px;
+   width: 200px;
+   font-family: Arial;
+
+   height: 30px;
+  }
+
+  .regProp-con2 > .reg-prop-area-unit > p{
+    color: #483f3f;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+
+  /* Images */
+
+  #createProductFormImage {
+    width: 100%;
+    overflow: auto;
+  }
+  
+  #createProductFormImage > img {
+    width: 3vmax;
+    margin: 0 0.5vmax;
+  }
+
+
+  #createProductBtn {
+    border: none;
+    background-color: tomato;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  }
+  
+  #createProductBtn:hover {
+    background-color: rgb(179, 66, 46);
+  }
+
+
+
+  .regProp-container > button{
+    cursor: pointer;
+    background: linear-gradient(to bottom,rgba(133,133,133,1) 0%,rgba(82,82,82,1) 100%);
+    padding: 10px 40px;
+    color: white;
+    -webkit-box-shadow: 2px 2px 4px -2px #a7a7a7, -2px 2px 4px -2px #a7a7a7;
+    border: 0 none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.5s;
+  }
+
+  .regProp-container > button:hover{
+    transform:translateY(-3px);
+  }

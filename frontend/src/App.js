@@ -6,6 +6,9 @@ import Home from "./pages/Home/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import SignUp from "./pages/SignUp/SignUp";
+import RegisterProperty from "./pages/RegiterProperty/RegisterProperty";
+import Sell from "./pages/Sell/Sell";
+import SellDetail from "./pages/Sell/SellDetail";
 
 function App() {
   return (
@@ -16,6 +19,11 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/register" component={SignUp} />
+          <Route exact path="/reg-property" component={RegisterProperty} />
+          <Route exact path="/sell" component={Sell} />
+          <Route exact path="/sellDetail/:PID" component={SellDetail} />
+
+
 
           {/* <Route exact path="/addContact" component={AddEdit} />
           <Route exact path="/update/:id" component={AddEdit} />

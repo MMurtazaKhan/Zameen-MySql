@@ -1,0 +1,255 @@
+.sell-search-container {
+    background-color: #24262b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sell-container {
+    height: auto;
+    display: flex;
+    margin: 30px 120px 30px 120px;
+    /* background-color: antiquewhite; */
+  }
+  
+  .sell-left {
+    display: flex;
+    flex: 7;
+    flex-direction: column;
+    /* height: 100vh; */
+    /* background-color: #f8f9fb; */
+    /* background-color: yellow; */
+    height: auto;
+  }
+  
+  .sellCards-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 100%;
+    background-image: url("/public/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .sell-right {
+    /* height: 100vh; */
+    height: auto;
+  
+    display: flex;
+    flex: 3;
+    background-color: blue;
+  }
+  
+  .sell-left-head {
+    border: 0.1rem solid #ededed;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+  }
+  
+  .sell-left-head > button {
+    background-color: transparent;
+    border: none;
+    margin-right: 2rem;
+    font-size: 20px;
+    transition: 0.5 all;
+  }
+  
+  .sell-left-head > button:hover {
+    transform: perspective(100px) translateZ(-15px);
+  }
+  
+  .sell-left-head > p {
+    margin-left: 2rem;
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  
+  .sell-left-body {
+    background-color: #f8f9fb;
+    /* height: 100vh; */
+    height: auto;
+  
+    border: 0.1rem solid #ededed;
+    /* padding: 0.5rem; */
+    padding-right: 60px;
+  }
+  
+  .propertyCard{
+    width: 100%;
+    height: 320px;
+    display: flex;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 2vmax;
+    transition: all 0.5s;
+    /* padding-bottom: 0.5vmax; */
+    background-color: #f8f9fb;
+    border: 0.1rem solid #ededed;
+    /* background-color: aqua; */
+    margin-right: 2rem;
+  }
+  
+  .property-img-container{
+  display: flex;
+  /* flex: 3; */
+  /* width: 367px; */
+  width: 350px;
+  
+  /* border: 2px solid yellow; */
+  
+  }
+  
+  
+  .propertyCard > .property-img-container > img {
+    width: 100%;
+    height: auto; 
+    /* width: auto;
+    /* object-fit: contain; */
+    /* object-fit: cover; */
+  }
+  
+  .property-card-contact{
+    display: flex;
+    flex-direction: column;
+    /* flex: 7; */
+  width: 500px;
+  /* border: 2px solid red; */
+    padding: 1rem;
+  
+  }
+  .sell-card-icons{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /* border: 2px solid red; */
+  }
+  
+  .sell-card-icons > img{
+    width: 5%;
+  }
+  
+  .property-card-contact > h3{
+    /* font-family: Helvetica,sans-serif; */
+      color: #222;
+    font-size: 20px;
+  }
+  
+  .property-card-contact > h3 > span{
+    font-size: 30px;
+  
+  }
+  .property-card-contact > p{
+  
+        letter-spacing: normal;
+        color: #222;
+      font-weight: 500;
+  }
+  
+  .property-card-contact > span{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  .sell-card-description{
+    margin-top: 5px;
+  }
+  .sell-card-description > h4{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: -3px;
+  }
+  
+  .property-card-contact > h4{
+    color: #998f8f;
+    font-size: 1rem;
+  }
+  
+  .sell-card-footer{
+    margin-top: 7px;
+  }
+  
+  .property-card-contact >.sell-card-footer > button{
+    width:30%;
+    display: flex;
+    padding:3px 10px 5px 10px;
+    /* background-color: #47ac4a; */
+    background-color: #33a137;
+    border: none;
+    color: white;
+    font-weight: 700;
+    /* transition: 0.5 all; */
+  
+  }
+  
+  .property-card-contact >.sell-card-footer > button:hover{
+    width:35%;
+    border-radius: 0px 15px 15px 0px;
+    transition: 1 ease-in-out;
+  }
+  
+  .propertyCard:hover{
+    color: #222;
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+    /* transform: perspective(1000px) translateZ(1px); */
+    transform: translateY(-3px);
+  
+  }
+  
+  
+  
+  
+  /* .productCard {
+    width: 14vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+  }
+  
+  .productCard > img {
+    width: 14vmax;
+  }
+  
+  .productCard > div {
+    margin: 0.5vmax;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .productCardSpan {
+    margin: 0.5vmax;
+    font: 300 0.7vmax "Roboto";
+  }
+  
+  .productCard > p {
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+  }
+  
+  .productCard > span {
+    margin: 0.5vmax;
+    color: tomato;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1vmax;
+  }
+  
+  .productCard:hover {
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+  
+    transform: translateY(-1vmax);
+  } */

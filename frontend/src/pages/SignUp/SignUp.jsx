@@ -110,7 +110,9 @@ const SignUp = ({ location }) => {
           password: loginPassword,
         })
         .then((response) => {
+          // console.log(response.data);
           console.log(response);
+
           // console.log
         });
     }
