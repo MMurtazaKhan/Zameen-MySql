@@ -10,6 +10,15 @@ import { toast } from "react-toastify";
 
 
 const RegisterProperty = () => {
+  
+  const CID=localStorage.getItem("CID");
+
+  // console.log("The value of cid recieved is ", CID);
+  // console.log("The value of cid recieved is ");
+
+
+
+
   const history = useHistory();
 
   const purposeCategories = ["Sell", "Rent"];
@@ -35,6 +44,7 @@ const RegisterProperty = () => {
 
     axios
       .post("http://localhost:5000/api/property/me", {
+        CID: CID,
         purpose: purpose,
         type: type,
         city: city,

@@ -111,8 +111,14 @@ const SignUp = ({ location }) => {
         })
         .then((response) => {
           // console.log(response.data);
-          console.log(response);
+          console.log(response.data[0].CID);
+          if (response.data[0].CID) {
+            localStorage.removeItem("CID");
+            localStorage.setItem("CID", JSON.stringify(response.data[0].CID));
 
+          } else {
+            localStorage.setItem("CID", JSON.stringify(response.data[0].CID));
+          }
           // console.log
         });
     }

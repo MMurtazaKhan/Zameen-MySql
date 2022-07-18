@@ -1,15 +1,18 @@
 import React, { useRef, useState } from "react";
 import "./Header.css";
 // import logo from "../images/Home-logo.png";
-import {MdSettings} from "react-icons/md"
+import { MdSettings } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { Link, useHistory } from "react-router-dom";
-
-
- 
+import Button from "react-bootstrap/Button";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const Header = () => {
+  const CID = localStorage.getItem("CID");
 
+  const removeUser = () => {
+    localStorage.removeItem("CID");
+  };
 
   const text = "BUY >";
   const headerTab = useRef(null);
@@ -27,6 +30,7 @@ const Header = () => {
       setShow("yes");
     }
   };
+  console.log(CID);
 
   return (
     <div className="Header">
@@ -78,9 +82,46 @@ const Header = () => {
             }}
             to="/profile"
           >
+            {/* <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
             {" "}
+            <MdAccountCircle style={{ fontSize: "30px" }} />
+          </Link> */}{" "}
             <MdSettings style={{ fontSize: "30px" }} />
           </Link>
+
+          {CID ? (
+            <Button
+              variant="dark"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "3px",
+                height: "35px",
+              }}
+              onClick={() => removeUser()}
+            >
+              LogOut <AiOutlineLogout style={{ marginLeft: "5px" }} />
+            </Button>
+          ) : (
+            ""
+          )}
+          {/* {CID ? (
+            <button
+              style={{
+                borderRadius: "10px",
+                fontSize: "13px",
+                backgroundColor: "lightyellow",
+                color: "white",
+                border: "none",
+                // font: "300 0.9vmax Roboto"
+              }}
+              onClick={() => removeUser()}
+            >
+              LogOut
+            </button>
+          ) : (
+            ""
+          )} */}
           <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
             {" "}
             <MdAccountCircle style={{ fontSize: "30px" }} />

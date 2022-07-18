@@ -9,6 +9,8 @@ import SignUp from "./pages/SignUp/SignUp";
 import RegisterProperty from "./pages/RegiterProperty/RegisterProperty";
 import Sell from "./pages/Sell/Sell";
 import SellDetail from "./pages/Sell/SellDetail";
+import Dashboard from "./pages/Admin/Dashboard/Dashboard";
+import CreateProject from "./pages/Admin/CreateProject/CreateProject";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
           <Route exact path="/reg-property" component={RegisterProperty} />
           <Route exact path="/sell" component={Sell} />
           <Route exact path="/sellDetail/:PID" component={SellDetail} />
+          <Route exact path="/admin/dashboard" component={Dashboard} />
+          <Route exact path="/admin/dashboard" component={Dashboard} />
+          <Route exact path="/admin/createProject" component={CreateProject} />
 
 
 

@@ -3,7 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 const cors = require("cors");
-const e = require("express");
+// const e = require("express");
+
 
 app.use(cors());
 app.use(express.json());
@@ -45,6 +46,13 @@ app.post("/api/login", (req, res) => {
   );
 });
 
+
+
+
+
+
+
+
 // register property:
 
 app.get("/api/properties", (req, res) => {
@@ -54,8 +62,53 @@ app.get("/api/properties", (req, res) => {
   });
 });
 
+
+
+// cloudinat code :)
+
+// app.post("/api/property/me", (req, res) => {
+
+  
+//   const CID = req.body.CID;
+//   const purpose = req.body.purpose;
+//   const type = req.body.type;
+//   const city = req.body.city;
+//   const address = req.body.address;
+//   const price = req.body.price;
+//   const area = req.body.area;
+//   const contact = req.body.contact;
+//   const description = req.body.description;
+
+//   db.query(
+//     "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+//     [CID, purpose, type, city, address, price, area, contact, description],
+//     (err, result) => {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         res.send("Values inserted");
+//       }
+//     }
+//   );
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Running code:
+
 app.post("/api/property/me", (req, res) => {
   // const { purpose, property_type, city, address, price, land_area, contact, description } = req.body;
+  const CID = req.body.CID;
   const purpose = req.body.purpose;
   const type = req.body.type;
   const city = req.body.city;
@@ -66,8 +119,8 @@ app.post("/api/property/me", (req, res) => {
   const description = req.body.description;
 
   db.query(
-    "INSERT INTO sell (purpose, type, city, address, price, area, contact, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-    [purpose, type, city, address, price, area, contact, description],
+    "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [CID, purpose, type, city, address, price, area, contact, description],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -99,7 +152,7 @@ app.get("/api/get", (req, res) => {
 
 // app.get("/", (req, res) => {
 //   const sqlInsert =
-//   "INSERT INTO sell (purpose, property_type, city, address, price, land_area, contact, description) VALUES ('aziz', 'sell', 'karachi', 'malir', '200000', '120','34455666', 'house')";
+//   "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description) VALUES ('8', 'aziz', 'sell', 'karachi', 'malir', '200000', '120','34455666', 'house')";
 //   db.query(sqlInsert, (error, result) => {
 //     console.log("error", error);
 //     console.log("result", result);
