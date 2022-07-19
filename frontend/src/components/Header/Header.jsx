@@ -9,6 +9,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 
 const Header = () => {
   const CID = localStorage.getItem("CID");
+  const history = useHistory();
 
   const removeUser = () => {
     localStorage.removeItem("CID");
@@ -17,7 +18,6 @@ const Header = () => {
   const text = "BUY >";
   const headerTab = useRef(null);
   const [show, setShow] = useState("yes");
-  const history = useHistory();
 
   const switchTabs = (e, tab) => {
     if (tab === "yes") {
@@ -30,7 +30,6 @@ const Header = () => {
       setShow("yes");
     }
   };
-  console.log(CID);
 
   return (
     <div className="Header">

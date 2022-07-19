@@ -1,286 +1,347 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from "react";
+import Sidebar from "../Sidebar/Sidebar";
+import "./CreateProject.css";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-const CreateProject = () => {
-  return (
-    <div>CreateProject</div>
-  )
-}
+import { MdDescription } from "react-icons/md";
+import { MdOutlineStorage } from "react-icons/md";
+import { FaSpellCheck } from "react-icons/fa";
+import { MdOutlineAttachMoney } from "react-icons/md";
 
-export default CreateProject
+import axios from "axios";
+import { toast } from "react-toastify";
 
-
-
-
-
-// import React, { useState, useRef, useEffect } from "react";
-// import Sidebar from "../Sidebar/Sidebar";
-// import "./CreateProject.css";
-// import { GiHamburgerMenu } from "react-icons/gi";
-// // import { Button } from "@material-ui/core";
-// // import AccountTreeIcon from "@material-ui/icons/AccountTree";
 // import DescriptionIcon from "@material-ui/icons/Description";
 // import StorageIcon from "@material-ui/icons/Storage";
 // import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 // import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-// import { AiOutlineCalendar, AiFillHome } from "react-icons/ai";
-// import { MdOutlineReduceCapacity } from "react-icons/md";
-// import { NEW_PROJECT_RESET } from "../../../constants/projectConstants";
-// import { useAlert } from "react-alert";
-// import { useSelector, useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom";
-// import { clearErrors, createProject } from "../../../actions/projectAction";
 
-// const CreateProject = () => {
-//   const alert = useAlert();
-//   const history = useHistory();
-//   const dispatch = useDispatch();
-//   const {
-//     // loading,
-//     error,
-//     success,
-//   } = useSelector((state) => state.newProject);
+import { AiOutlineCalendar, AiFillHome } from "react-icons/ai";
+import { MdOutlineReduceCapacity } from "react-icons/md";
+import { useHistory } from "react-router-dom";
 
-//   const [projectName, setprojectName] = useState("");
-//   const [totalCap, settotalCap] = useState(0);
-//   const [description, setDescription] = useState("");
-//   const [startTime, setStartTime] = useState();
-//   const [endTime, setEndTime] = useState();
-//   const [landArea, setLandArea] = useState(0);
-//   const [investors, setInvestors] = useState("");
-//   const [images, setImages] = useState([]);
-//   const [location, setLocation] = useState("");
-//   const [city, setCity] = useState("");
-//   const [imagesPreview, setImagesPreview] = useState([]);
-//   const [monthlyInstallations, setMonthlyInstallations] = useState();
-//   const [show, setShow] = useState("yes");
+import { storage } from "../../../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
 
-//   const sidebarTab = useRef(null);
 
-//   useEffect(() => {
-//     if (error) {
-//       alert.error(error);
-//       dispatch(clearErrors());
-//     }
 
-//     if (success) {
-//       alert.success("Project Created Successfully");
-//       history.push("/");
-//       dispatch({ type: NEW_PROJECT_RESET });
-//     }
-//   }, [dispatch, alert, error, history, success]);
+const CreateProject = () => {
+  const history = useHistory();
 
-//   const createProjectSubmitHandler = (e) => {
-//     e.preventDefault();
+  const [name, setName] = useState("");
+  const [city, setCity] = useState("");
+  const [location, setLocation] = useState("");
+  const [area, setArea] = useState("");
+  const [start_time, setStartTime] = useState();
+  const [end_time, setEndTime] = useState();
+  const [investor, setInvestor] = useState("");
+  const [total, setTotal] = useState("");
+  const [monthly_installment, setInstallment] = useState("");
+  const [image, setImage] = useState("");
+  const [show, setShow] = useState("yes");
 
-//     const myForm = new FormData();
+  // const [images, setImages] = useState([]);
 
-//     myForm.set("projectName", projectName);
-//     myForm.set("totalCap", totalCap);
-//     myForm.set("location", location);
-//     myForm.set("landArea", landArea);
-//     myForm.set("investors", investors);
-//     myForm.set("city", city);
-//     myForm.set("startTime", startTime);
-//     myForm.set("endTime", endTime);
-//     myForm.set("description", description);
-//     myForm.set("monthlyInstallations", monthlyInstallations);
 
-//     images.forEach((image) => {
-//       myForm.append("images", image);
-//     });
-//     dispatch(createProject(myForm));
-//   };
+  const sidebarTab = useRef(null);
 
-//   const createProjectImagesChange = (e) => {
-//     const files = Array.from(e.target.files);
+  // useEffect(() => {
+  //   if (error) {
+  //     alert.error(error);
+  //     dispatch(clearErrors());
+  //   }
 
-//     setImages([]);
-//     setImagesPreview([]);
+  //   if (success) {
+  //     alert.success("Project Created Successfully");
+  //     history.push("/");
+  //     dispatch({ type: NEW_PROJECT_RESET });
+  //   }
+  // }, [dispatch, alert, error, history, success]);
 
-//     files.forEach((file) => {
-//       const reader = new FileReader();
 
-//       reader.onload = () => {
-//         if (reader.readyState === 2) {
-//           setImagesPreview((old) => [...old, reader.result]);
-//           setImages((old) => [...old, reader.result]);
-//         }
-//       };
 
-//       reader.readAsDataURL(file);
-//     });
-//   };
+  
+  const createProjectSubmitHandler = (e) => {
+    e.preventDefault();
 
-//   const controlSidebar = (e, tab) => {
-//     if (tab === "yes") {
-//       sidebarTab.current.classList.add("sideBarMoveToLeft");
-//       sidebarTab.current.classList.remove("admin-sidebar");
-//       setShow("no");
-//     } else {
-//       sidebarTab.current.classList.add("admin-sidebar");
-//       sidebarTab.current.classList.remove("sideBarMoveToLeft");
-//       setShow("yes");
-//     }
-//   };
+    // console.log(image.name);
+    const imageRef = ref(storage, `images/${image.name + v4()}`);
+    // console.log("hi");
+    uploadBytes(imageRef, image).then(() => {
+      getDownloadURL(imageRef)
+        .then((url) => {
+          // setURL(url);
+          // uploadImage(url);
 
-//   return (
-//     <div className="dashboard">
-//       <div className="admin-sidebar" ref={sidebarTab}>
-//         <Sidebar />
-//       </div>
-//       <div className="admin-container">
-//         <div className="dashboard-nav">
-//           <button onClick={(e) => controlSidebar(e, show)}>
-//             <GiHamburgerMenu style={{ fontSize: "1.5rem" }} />
-//           </button>
-//           <div className="newProjectContainer">
-//             <form
-//               className="createProjectForm"
-//               encType="multipart/form-data"
-//               onSubmit={createProjectSubmitHandler}
-//             >
-//               <h1>Create Project</h1>
+          axios
+            .post("http://localhost:5000/api/project/new", {
+              name: name,
+              city: city,
+              location: location,
+              area: area,
+              start_time: start_time,
+              end_time: end_time,
+              total: total,
+              monthly_installment: monthly_installment,
+              investor: investor,
+              image: url,
+            })
+            .then((response) => {
+              console.log(response);
+              history.push("/");
+              toast.success("Project Added Successfully");
+            })
+            .catch((error) => {
+              console.log(error.message, "error getting the image url");
+            });
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    });
+  };
 
-//               <div>
-//                 <SpellcheckIcon />
-//                 <input
-//                   type="text"
-//                   placeholder="Project Name"
-//                   required
-//                   value={projectName}
-//                   onChange={(e) => setprojectName(e.target.value)}
-//                 />
-//               </div>
-//               <div>
-//                 <MdOutlineReduceCapacity />
-//                 <input
-//                   type="number"
-//                   placeholder="total Capacity"
-//                   required
-//                   // value={totalCap}
-//                   onChange={(e) => settotalCap(e.target.value)}
-//                 />
-//               </div>
-//               <div>
-//                 <AttachMoneyIcon />
-//                 <input
-//                   type="text"
-//                   placeholder="City"
-//                   value={city}
-//                   required
-//                   onChange={(e) => setCity(e.target.value)}
-//                 />
-//               </div>
 
-//               <div>
-//                 <AttachMoneyIcon />
-//                 <input
-//                   type="text"
-//                   placeholder="monthly installments"
-//                   value={monthlyInstallations}
-//                   required
-//                   onChange={(e) => setMonthlyInstallations(e.target.value)}
-//                 />
-//               </div>
 
-//               <div>
-//                 <AiFillHome />
-//                 <input
-//                   type="text"
-//                   placeholder="Land Area"
-//                   // value={landArea}
-//                   required
-//                   onChange={(e) => setLandArea(e.target.value)}
-//                 />
-//               </div>
+  // const createProjectSubmitHandler = (e) => {
+  //   e.preventDefault();
 
-//               <div>
-//                 <AiFillHome />
-//                 <input
-//                   type="text"
-//                   placeholder="Location"
-//                   value={location}
-//                   required
-//                   onChange={(e) => setLocation(e.target.value)}
-//                 />
-//               </div>
-//               <div>
-//                 <StorageIcon />
-//                 <input
-//                   type="string"
-//                   placeholder="Investors"
-//                   value={investors}
-//                   required
-//                   onChange={(e) => setInvestors(e.target.value)}
-//                 />
-//               </div>
+  //   axios
+  //     .post("http://localhost:5000/api/project/new", {
+        // name: name,
+        // city: city,
+        // location: location,
+        // area: area,
+        // start_time: start_time,
+        // end_time: end_time,
+        // total: total,
+        // monthly_installment: monthly_installment,
+        // investor: investor,
+  //     })
+  //     .then((response) => {
+  //       console.log(response);
 
-//               <label style={{ fontSize: "15px", color: "gray" }}>
-//                 Start Date
-//               </label>
-//               <div>
-//                 <AiOutlineCalendar />
-//                 <input
-//                   type="date"
-//                   placeholder="Start Time"
-//                   value={startTime}
-//                   required
-//                   onChange={(e) => setStartTime(e.target.value)}
-//                 />
-//               </div>
+  //       history.push("/admin/dashboard");
+  //       toast.success("Project Added Successfully");
+  //     });
 
-//               <label style={{ fontSize: "15px", color: "gray" }}>
-//                 End Date
-//               </label>
-//               <div>
-//                 <AiOutlineCalendar />
+    // const myForm = new FormData();
 
-//                 <input
-//                   type="date"
-//                   placeholder="End Time"
-//                   value={endTime}
-//                   required
-//                   onChange={(e) => setEndTime(e.target.value)}
-//                 />
-//               </div>
+    // myForm.set("projectName", projectName);
+    // myForm.set("totalCap", totalCap);
+    // myForm.set("location", location);
+    // myForm.set("landArea", landArea);
+    // myForm.set("investors", investors);
+    // myForm.set("city", city);
+    // myForm.set("startTime", startTime);
+    // myForm.set("endTime", endTime);
+    // myForm.set("description", description);
+    // myForm.set("monthlyInstallations", monthlyInstallations);
 
-//               <div>
-//                 <DescriptionIcon />
+    // images.forEach((image) => {
+    //   myForm.append("images", image);
+    // });
+    // dispatch(createProject(myForm));
+  // };
 
-//                 <textarea
-//                   placeholder="Project Description"
-//                   value={description}
-//                   onChange={(e) => setDescription(e.target.value)}
-//                   cols="30"
-//                   rows="1"
-//                 ></textarea>
-//               </div>
+  // const createProjectImagesChange = (e) => {
+  //   const files = Array.from(e.target.files);
 
-//               <div id="createProjectFormFile">
-//                 <input
-//                   type="file"
-//                   name="avatar"
-//                   accept="image/*"
-//                   onChange={createProjectImagesChange}
-//                   multiple
-//                 />
-//               </div>
+  //   setImages([]);
+  //   setImagesPreview([]);
 
-//               <div id="createProjectFormImage">
-//                 {imagesPreview.map((image, index) => (
-//                   <img key={index} src={image} alt="Project Preview" />
-//                 ))}
-//               </div>
+  //   files.forEach((file) => {
+  //     const reader = new FileReader();
 
-//               <button id="createProjectBtn" type="submit">
-//                 Create
-//               </button>
-//             </form>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+  //     reader.onload = () => {
+  //       if (reader.readyState === 2) {
+  //         setImagesPreview((old) => [...old, reader.result]);
+  //         setImages((old) => [...old, reader.result]);
+  //       }
+  //     };
 
-// export default CreateProject;
+  //     reader.readAsDataURL(file);
+  //   });
+  // };
+
+  const controlSidebar = (e, tab) => {
+    if (tab === "yes") {
+      sidebarTab.current.classList.add("sideBarMoveToLeft");
+      sidebarTab.current.classList.remove("admin-sidebar");
+      setShow("no");
+    } else {
+      sidebarTab.current.classList.add("admin-sidebar");
+      sidebarTab.current.classList.remove("sideBarMoveToLeft");
+      setShow("yes");
+    }
+  };
+
+
+  const handleFileChange = (e) => {
+    // console.log(e.target.files[0]);
+    // console.log("hoo")
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+
+  return (
+    <div className="dashboard">
+      <div className="admin-sidebar" ref={sidebarTab}>
+        <Sidebar />
+      </div>
+      <div className="admin-container">
+        <div className="dashboard-nav">
+          <button onClick={(e) => controlSidebar(e, show)}>
+            <GiHamburgerMenu style={{ fontSize: "1.5rem" }} />
+          </button>
+          <div className="newProjectContainer">
+            <form
+              className="createProjectForm"
+              encType="multipart/form-data"
+              onSubmit={createProjectSubmitHandler}
+            >
+              <h1>Create Project</h1>
+
+              <div>
+                <FaSpellCheck />
+                <input
+                  type="text"
+                  placeholder="Project Name"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div>
+                <MdOutlineReduceCapacity />
+                <input
+                  type="number"
+                  placeholder="total Capacity"
+                  required
+                  value={total}
+                  onChange={(e) => setTotal(e.target.value)}
+                />
+              </div>
+              <div>
+                <MdOutlineAttachMoney />
+                <input
+                  type="text"
+                  placeholder="City"
+                  value={city}
+                  required
+                  onChange={(e) => setCity(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <MdOutlineAttachMoney />
+                <input
+                  type="text"
+                  placeholder="monthly installments"
+                  value={monthly_installment}
+                  required
+                  onChange={(e) => setInstallment(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <AiFillHome />
+                <input
+                  type="text"
+                  placeholder="Land Area"
+                  value={area}
+                  required
+                  onChange={(e) => setArea(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <AiFillHome />
+                <input
+                  type="text"
+                  placeholder="Location"
+                  value={location}
+                  required
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+              </div>
+              <div>
+                <MdOutlineStorage />
+                <input
+                  type="string"
+                  placeholder="Investors"
+                  value={investor}
+                  required
+                  onChange={(e) => setInvestor(e.target.value)}
+                />
+              </div>
+
+              <label style={{ fontSize: "15px", color: "gray" }}>
+                Start Date
+              </label>
+              <div>
+                <AiOutlineCalendar />
+                <input
+                  type="date"
+                  placeholder="Start Time"
+                  value={start_time}
+                  required
+                  onChange={(e) => setStartTime(e.target.value)}
+                />
+              </div>
+
+              <label style={{ fontSize: "15px", color: "gray" }}>
+                End Date
+              </label>
+              <div>
+                <AiOutlineCalendar />
+
+                <input
+                  type="date"
+                  placeholder="End Time"
+                  value={end_time}
+                  required
+                  onChange={(e) => setEndTime(e.target.value)}
+                />
+              </div>
+
+              <div id="createProjectFormFile">
+                <input
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                />
+              </div>
+
+              {/* <div id="createProjectFormFile">
+                <input
+                  type="file"
+                  name="avatar"
+                  accept="image/*"
+                  onChange={createProjectImagesChange}
+                  multiple
+                />
+              </div> */}
+
+              {/* <div id="createProjectFormImage">
+                {imagesPreview.map((image, index) => (
+                  <img key={index} src={image} alt="Project Preview" />
+                ))}
+              </div> */}
+
+              <button id="createProjectBtn" type="submit">
+                Create
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CreateProject;

@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./RegisterProperty.css";
 import { GoAlert } from "react-icons/go";
-
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-
-
+import { storage } from "../../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
 
 const RegisterProperty = () => {
-  
-  const CID=localStorage.getItem("CID");
+  const CID = localStorage.getItem("CID");
 
   // console.log("The value of cid recieved is ", CID);
   // console.log("The value of cid recieved is ");
-
-
-
 
   const history = useHistory();
 
@@ -33,8 +29,8 @@ const RegisterProperty = () => {
   const [area, setArea] = useState("");
   const [ownerContact, setOwnerContact] = useState("");
   const [description, setDescription] = useState("");
-
-
+  const [image, setImage] = useState("");
+  // const [url, setUrl] = useState("");
   // const [images, setImages] = useState([]);
   // const [imagesPreview, setImagesPreview] = useState([]);
   // const [ownerName, setOwnerName] = useState("");
@@ -42,44 +38,102 @@ const RegisterProperty = () => {
   const createPropertySubmitHandler = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:5000/api/property/me", {
-        CID: CID,
-        purpose: purpose,
-        type: type,
-        city: city,
-        address: address,
-        price: price,
-        area: area,
-        contact: ownerContact,
-        description: description,
-      })
-      .then((response) => {
-        console.log(response);
+    // console.log(image.name);
+    const imageRef = ref(storage, `images/${image.name + v4()}`);
+    // console.log("hi");
+    uploadBytes(imageRef, image).then(() => {
+      getDownloadURL(imageRef)
+        .then((url) => {
+          // setURL(url);
+          // uploadImage(url);
 
-        history.push("/");
-      toast.success("Contact Added Successfully");
-
-      });
-
-    // const myForm = new FormData();
-
-    // myForm.set("purpose", purpose);
-    // myForm.set("propertyType", propertyType);
-    // myForm.set("city", city);
-    // myForm.set("address", address);
-    // myForm.set("propertyTitle", propertyTitle);
-    // myForm.set("description", description);
-    // myForm.set("price", price);
-    // myForm.set("landArea", landArea);
-    // myForm.set("ownerName", ownerName);
-    // myForm.set("ownerContact", ownerContact);
-
-    // images.forEach((image) => {
-    //   myForm.append("images", image);
-    // });
-    // dispatch(createProperty(myForm));
+          axios
+            .post("http://localhost:5000/api/property/me", {
+              CID: CID,
+              purpose: purpose,
+              type: type,
+              city: city,
+              address: address,
+              price: price,
+              area: area,
+              contact: ownerContact,
+              description: description,
+              image: url,
+            })
+            .then((response) => {
+              console.log(response);
+              history.push("/");
+              toast.success("Property Added Successfully");
+            })
+            .catch((error) => {
+              console.log(error.message, "error getting the image url");
+            });
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    });
   };
+  // axios
+  //   .post("http://localhost:5000/api/property/me", {
+  //     CID: CID,
+  //     purpose: purpose,
+  //     type: type,
+  //     city: city,
+  //     address: address,
+  //     price: price,
+  //     area: area,
+  //     contact: ownerContact,
+  //     description: description,
+  //   })
+  //   .then((response) => {
+  //     console.log(response);
+
+  //     history.push("/");
+  //     toast.success("Property Added Successfully");
+  //   });
+
+  // const myForm = new FormData();
+
+  // myForm.set("purpose", purpose);
+  // myForm.set("propertyType", propertyType);
+  // myForm.set("city", city);
+  // myForm.set("address", address);
+  // myForm.set("propertyTitle", propertyTitle);
+  // myForm.set("description", description);
+  // myForm.set("price", price);
+  // myForm.set("landArea", landArea);
+  // myForm.set("ownerName", ownerName);
+  // myForm.set("ownerContact", ownerContact);
+
+  // images.forEach((image) => {
+  //   myForm.append("images", image);
+  // });
+  // dispatch(createProperty(myForm));
+
+  const handleFileChange = (e) => {
+    // console.log(e.target.files[0]);
+    // console.log("hoo")
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+  // console.log(image.name);
+  //       const imageRef = ref(storage,`images/${image.name + v4()}`);
+  //       console.log("hi");
+  //       uploadBytes(imageRef,image).then(()=>{
+  //           getDownloadURL(imageRef).then((url)=>{
+  //               setURL(url);
+  //               uploadImage(url);
+  //           })
+  //           .catch((error)=>{
+  //               console.log(error.message,"error getting the image url");
+  //           })
+  //       })
+  //       .catch((error)=>{
+  //           console.log(error.message);
+  //       })
 
   //   const createPropertyImagesChange = (e) => {
   //     const files = Array.from(e.target.files);
@@ -239,17 +293,16 @@ const RegisterProperty = () => {
             </div>
           </div>
 
-          {/* <span className="regProp-span">ADD IMAGES</span>
+          <span className="regProp-span">ADD IMAGES</span>
 
           <div className="regProp-container">
             <div className="regProp-con2">
               <div id="createProductFormFile">
                 <input
                   type="file"
-                  name="avatar"
+                  name="image"
                   accept="image/*"
-                  onChange={createPropertyImagesChange}
-                  multiple
+                  onChange={handleFileChange}
                 />
               </div>
 
@@ -271,7 +324,8 @@ const RegisterProperty = () => {
               </p>
             </div>
           </div>
-          <div id="createProductFormImage">
+
+          {/* <div id="createProductFormImage">
             {imagesPreview.map((image, index) => (
               <img key={index} src={image} alt="Product Preview" />
             ))}
@@ -280,7 +334,6 @@ const RegisterProperty = () => {
           <span className="regProp-span">PROPERTY DETAILS</span>
           <div className="regProp-container">
             <div className="regProp-con1">
-
               <p>Owner Contact:</p>
             </div>
 
@@ -300,7 +353,6 @@ const RegisterProperty = () => {
                 value={ownerContact}
                 onChange={(e) => setOwnerContact(e.target.value)}
                 style={{ width: "300px" }}
-                
               />
             </div>
           </div>

@@ -11,6 +11,13 @@ import Sell from "./pages/Sell/Sell";
 import SellDetail from "./pages/Sell/SellDetail";
 import Dashboard from "./pages/Admin/Dashboard/Dashboard";
 import CreateProject from "./pages/Admin/CreateProject/CreateProject";
+import ProjectProperty from "./pages/BookingProperty/ProjectProperty";
+import ProjectDetail from "./pages/BookingProperty/ProjectDetail";
+import Booking from "./pages/BookingProperty/Booking";
+
+
+
+
 
 function App() {
   return (
@@ -27,6 +34,12 @@ function App() {
           <Route exact path="/admin/dashboard" component={Dashboard} />
           <Route exact path="/admin/dashboard" component={Dashboard} />
           <Route exact path="/admin/createProject" component={CreateProject} />
+
+
+          <Route exact path="/projects" component={ProjectProperty} />
+          <Route exact path="/projectDetail/:PRID" component={ProjectDetail} />
+          <Route exact path="/book-property/:PRID" component={Booking} />
+
 
 
 

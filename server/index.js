@@ -3,8 +3,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const mysql = require("mysql2");
 const cors = require("cors");
-// const e = require("express");
-
 
 app.use(cors());
 app.use(express.json());
@@ -46,13 +44,6 @@ app.post("/api/login", (req, res) => {
   );
 });
 
-
-
-
-
-
-
-
 // register property:
 
 app.get("/api/properties", (req, res) => {
@@ -62,13 +53,16 @@ app.get("/api/properties", (req, res) => {
   });
 });
 
-
-
 // cloudinat code :)
 
 // app.post("/api/property/me", (req, res) => {
+//   const image = "";
+//   const myCloud = await cloudinary.v2.uploader.upload(req.body.image, {
+//     folder: "property",
+//     // width: 150,
+//     // crop: "scale",
+//   });
 
-  
 //   const CID = req.body.CID;
 //   const purpose = req.body.purpose;
 //   const type = req.body.type;
@@ -80,29 +74,17 @@ app.get("/api/properties", (req, res) => {
 //   const description = req.body.description;
 
 //   db.query(
-//     "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-//     [CID, purpose, type, city, address, price, area, contact, description],
+//     "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+//     [CID, purpose, type, city, address, price, area, contact, description, image= myCloud.secure_url],
 //     (err, result) => {
 //       if (err) {
-//         console.log(err);
+//         console.log("The error in reg property is ", err);
 //       } else {
 //         res.send("Values inserted");
 //       }
 //     }
 //   );
 // });
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Running code:
 
@@ -117,10 +99,11 @@ app.post("/api/property/me", (req, res) => {
   const area = req.body.area;
   const contact = req.body.contact;
   const description = req.body.description;
+  const image = req.body.image;
 
   db.query(
-    "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-    [CID, purpose, type, city, address, price, area, contact, description],
+    "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [CID, purpose, type, city, address, price, area, contact, description, image],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -130,6 +113,12 @@ app.post("/api/property/me", (req, res) => {
     }
   );
 });
+
+
+
+
+
+
 
 app.get("/api/property/:PID", (req, res) => {
   const { PID } = req.params;
@@ -142,7 +131,6 @@ app.get("/api/property/:PID", (req, res) => {
   });
 });
 
-
 app.get("/api/get", (req, res) => {
   const sqlGet = "SELECT * FROM sell";
   db.query(sqlGet, (error, result) => {
@@ -150,15 +138,93 @@ app.get("/api/get", (req, res) => {
   });
 });
 
-// app.get("/", (req, res) => {
-//   const sqlInsert =
-//   "INSERT INTO sell (CID, purpose, type, city, address, price, area, contact, description) VALUES ('8', 'aziz', 'sell', 'karachi', 'malir', '200000', '120','34455666', 'house')";
-//   db.query(sqlInsert, (error, result) => {
-//     console.log("error", error);
-//     console.log("result", result);
-//     res.send("hello");
-//   });
-//   });
+
+
+// register project:
+
+app.post("/api/project/new", (req, res) => {
+  const name = req.body.name;
+  const city = req.body.city;
+  const location = req.body.location;
+  const area = req.body.area;
+  const start_time = req.body.start_time;
+  const end_time = req.body.end_time;
+  const total = req.body.total;
+  const investor = req.body.investor;
+  const monthly_installment = req.body.monthly_installment;
+  const image = req.body.image;
+
+
+  db.query(
+    "INSERT INTO project ( name, city, location, area, start_time, end_time, total, investor, monthly_installment, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    [name, city, location, area, start_time, end_time, total, investor, monthly_installment, image],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values inserted");
+      }
+    }
+  );
+});
+
+
+app.get("/api/project/:PRID", (req, res) => {
+  const { PRID } = req.params;
+  const sqlGet = "SELECT * FROM project WHERE PRID=?";
+  db.query(sqlGet, PRID, (error, result) => {
+    if (error) {
+      console.log(error);
+    }
+    res.send(result);
+  });
+});
+
+app.get("/api/projects", (req, res) => {
+  const sqlGet = "SELECT * FROM project";
+  db.query(sqlGet, (error, result) => {
+    res.send(result);
+  });
+});
+
+
+
+
+// Registeration:
+
+app.post("/api/project/registeration/:PRID", (req, res) => {
+  // const { purpose, property_type, city, address, price, land_area, contact, description } = req.body;
+  const { PRID } = req.params;
+
+  const CID = req.body.CID;
+  const installation = req.body.installation;
+ 
+  db.query(
+    "INSERT INTO registeration (PRID, CID, installation) VALUES (?, ?, ?)",
+    [PRID, CID, installation],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values inserted");
+      }
+    }
+  );
+});
+
+
+
+
+
+app.get("/", (req, res) => {
+  const sqlInsert =
+  "INSERT INTO registeration ( PRID, CID, installation) VALUES ('3', '5', '6')";
+  db.query(sqlInsert, (error, result) => {
+    console.log("error", error);
+    console.log("result", result);
+    res.send("hello");
+  });
+  });
 
 // app.get("/", (req, res) => {
 // const sqlInsert =

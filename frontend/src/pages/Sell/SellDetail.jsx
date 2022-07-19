@@ -49,24 +49,7 @@ const SellDetail = ({ match }) => {
         {property.description}
       </p>
 
-      {/* <div className="sell-detail-carousal">
-        <Carousel fade className="sell-carousel">
-          {property.images &&
-            property.images.map((item, i) => (
-              <Carousel.Item>
-                <img
-                  className="d-block w-100 CarouselImage"
-                  key={i}
-                  src={item.url}
-                  alt={`${i} Slide`}
-                />
-                <Carousel.Caption>
-          
-                </Carousel.Caption>
-              </Carousel.Item>
-            ))}
-        </Carousel>
-      </div> */}
+      <img src={property.image} />
 
       <div className="sell-detail">
         <p className="sellDet-para">

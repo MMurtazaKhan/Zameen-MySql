@@ -110,14 +110,19 @@ const SignUp = ({ location }) => {
           password: loginPassword,
         })
         .then((response) => {
-          // console.log(response.data);
-          console.log(response.data[0].CID);
+         
           if (response.data[0].CID) {
             localStorage.removeItem("CID");
             localStorage.setItem("CID", JSON.stringify(response.data[0].CID));
+            history.push("/");
+            toast.success("Successfully login");
+
 
           } else {
             localStorage.setItem("CID", JSON.stringify(response.data[0].CID));
+            history.push("/");
+            toast.success("Successfully login");
+
           }
           // console.log
         });
