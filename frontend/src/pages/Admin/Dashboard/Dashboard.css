@@ -1,6 +1,8 @@
 .dashboard {
 
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
+    /* background-color: yellow; */
     /* background-color: aqua; */
     display: flex;
   }
@@ -12,7 +14,8 @@
   }
   
   .admin-container {
-    height: 100vh;
+    height: auto;
+
     /* background-color: darkgray; */
     width: 100%;
     display: flex;

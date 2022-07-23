@@ -3,9 +3,10 @@ import "./Header.css";
 // import logo from "../images/Home-logo.png";
 import { MdSettings } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { AiOutlineLogout } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const CID = localStorage.getItem("CID");
@@ -13,6 +14,7 @@ const Header = () => {
 
   const removeUser = () => {
     localStorage.removeItem("CID");
+    toast.success("User Logout successfully");
   };
 
   const text = "BUY >";
@@ -30,6 +32,8 @@ const Header = () => {
       setShow("yes");
     }
   };
+
+
 
   return (
     <div className="Header">
@@ -79,7 +83,7 @@ const Header = () => {
               paddingLeft: "10px",
               paddingRight: "10px",
             }}
-            to="/profile"
+            to={`/profile/${CID}`}
           >
             {/* <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
             {" "}
