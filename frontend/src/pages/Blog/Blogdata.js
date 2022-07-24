@@ -22,14 +22,14 @@ const blogs = [
     },
     {
         "title": "Estate Agencies and Their Roles",
-        "author": "Shayan Kakkar",
+        "author": "Shayan Askari",
         "body": "Estate agency is a fast moving industry that has evolved over the years and will continue to do so. It is drastically different now than twenty years ago, and with the current climate and ongoing uncertainty in the world, never has an estate agent been more important when selling or buying a property.Agency is an essential function of the property industry and involves the buying/renting and selling/leasing of property. Estate agents can specialise within a particular property market, such as commercial or residential real estate. The job of an estate agent contains elements of marketing, sales and administration.Real estate agencies will help you end up in an excellent location that you will appreciate. They make sure that you get to access all that you need to know about where the property they have for you is like which will come in handy in making a decision on whether you like it or not. Real estate gets people to have information on property that is on sale real fast which is helpful to buyers and investors. This way, for anyone who is looking to invest or purchase any property, they can easily do so as fast as possible.",
         "id": 3,
         "img": "/blogimg4.jpg"
     },
     {
         "title": "Online Estate Agenicies and Their worth",
-        "author": "Raza Chandio",
+        "author": "Raza Soomro",
         "body": "As mentioned above, the biggest draw is the reduction in agency fees but there are other advantages to using an online agent.The internet is a 24/7 service which means it is essentially open for business around the clock. Potential buyers are available to view your property all day and night and so you are less likely to miss out on a sale. Additionally the internet is wide reaching and so your property can be viewed all over the world at any time.The internet is a fast and easy solution for house searching. Thanks to fast broadband, buyers and sellers can be connected within milliseconds.Most buyers will tend to use Rightmove or Zoopla when they think about moving home. Unlike private listings or “do-it yourself” websites, online agencies can advertise on these sites and so you still reach thousands of potential buyers at the click of a few buttons.If you are happy to be in control of the house selling process, with more of a secondary support network from your online estate agent, who will put the house on the market, organise viewings and broker the deal, with you being the face of your property, then this is probably a great option for you.",
         "id": 4,
         "img": "/blogimg5.jpg"

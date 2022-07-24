@@ -9,6 +9,10 @@ import { AiOutlineLogout } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const Header = () => {
+
+  const mobile = window.innerWidth <= 574 ? true : false
+  const [menuopened, setMenuopened] = useState(false);
+
   const CID = localStorage.getItem("CID");
   const history = useHistory();
 
@@ -36,6 +40,10 @@ const Header = () => {
 
 
   return (
+    <div className="mainHeader">
+      {(menuopened === false && mobile === true) ? (
+                <div className='barsNav' onClick={() => { setMenuopened(true) }} ><img style={{ height: '1.5rem', width: '1.9rem', }} src="/barz.png" alt="" /></div>
+            ) :
     <div className="Header">
       <div className="Header-1">
         <div className="left-Container">
@@ -44,25 +52,25 @@ const Header = () => {
         <div className="center-Container">
           <ul>
             <li>
-              <Link className="Link-tag" to="">
+              <Link className="Link-tag" to="" onClick={() => { setMenuopened(false) }}>
                 HOME
               </Link>
             </li>
             {/* <li><Link className="Link-tag" to="" >SERVICES</Link></li> */}
             <li>
-              <Link className="Link-tag" to="/Blog">
+              <Link className="Link-tag" to="/Blog" onClick={() => { setMenuopened(false) }}>
                 BLOG
               </Link>
             </li>
 
             <li>
-              <Link className="Link-tag" to="/About">
+              <Link className="Link-tag" to="/About" onClick={() => { setMenuopened(false) }}>
                 ABOUT
               </Link>{" "}
             </li>
 
             <li>
-              <Link className="Link-tag" to="/contact">
+              <Link className="Link-tag" to="/contact" onClick={() => { setMenuopened(false) }}>
                 CONTACT
               </Link>
             </li>
@@ -186,6 +194,8 @@ const Header = () => {
           </div>
         </div>
       </div>
+    </div>
+}
     </div>
   );
 };

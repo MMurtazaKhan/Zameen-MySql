@@ -4,6 +4,7 @@
     margin: 0 auto;
 }
 
+<<<<<<< HEAD
 .blog-head{
     display: flex;
     flex-direction: column;
@@ -20,6 +21,8 @@
     text-align: center;
     
 }
+=======
+>>>>>>> 1cbe29210762985438a6831662adc38c8996cc5f
 
 .yellow-color{
     text-align: center;
@@ -64,12 +67,6 @@
 
 }
 
-.blog-image{
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-}
-
 .blogPreview a .blogImages {
     width: 25%;
     height: 60%;
@@ -77,8 +74,8 @@
 }
 
 .blogPreview a .blogImages img {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 
 }
@@ -97,13 +94,14 @@
 
 } */
 
-.blogPreview a .blogInfo h1 {
+.blogPreview a .blogInfo h2 {
     text-transform: capitalize;
     /* text-decoration: underline; */
+    font-size: 25px;
 }
 
 .BlogViewDetails {
-    height: 600px;
+    /* height: 600px; */
     width: 100%;
 }
 
@@ -153,4 +151,65 @@
 .blogParadetails p {
     font-size: 18px;
     margin-left: 5px;
+}
+@media (max-width: 574px){
+    .blogParadetails p {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    .bloglist {
+        width: 500px;
+        padding: 10px;
+        /* margin: 0 auto; */
+
+    }
+    .blogPreview  {
+        width:280px;
+        margin-right: 100px;
+        margin-bottom: 30px;
+        height: 250px;
+    padding-right: 0;
+    padding-left: 40px;
+
+
+
+    }
+    .blogPreview a{
+        flex-direction: column;
+        justify-content: space-evenly;
+
+    }
+    
+.blogPreview a .blogInfo h2{
+    font-size: 18px;
+}
+.blogPreview a .blogInfo p{
+    font-size: 15px;
+}
+.blogPreview a .blogImages {
+    width: 45%;
+    height: 50%;
+    margin-top: 20px;
+}.BlogViewDetails .blogViewHeader {
+    display: flex;
+   flex-direction: column;
+   height: 360px;
+   margin-left: 30px;
+
+}
+
+.BlogViewDetails .blogViewHeader .blogViewHeadInfo {
+    width: 30%;
+    /* height: 100%; */
+    margin-top: 30px;
+
+
+}
+
+.BlogViewDetails .blogViewHeader .blogViewHeadImg {
+    width: 25%;
+    height: 40%;
+    margin-top: 0px;
+}
+
 }

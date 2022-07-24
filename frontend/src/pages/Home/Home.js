@@ -2,6 +2,8 @@ import React from "react";
 import "./Home.css";
 // import Search from "../../components/Search/Search";
 import { Link } from 'react-router-dom';
+import { FaCcPaypal, FaAirbnb } from "react-icons/fa";
+import { SiZillow, SiTrulia } from "react-icons/si";
 
 
 const Home = () => {
@@ -62,13 +64,50 @@ Our success lies in our network of property experts and customers spanning the g
         </div>
       </section>
 
-      <section class="container ratings-section">
-        <h1 class="text-center sub-heading my-lg-5">Our Popularity</h1>
-        <p class="my-5" className="paragraph">
+      <section className="sponsor-section">
+        <h1 className="sponsor-heading">We are proud of affiliation with</h1>
+
+        <div className="sponsor-cards">
+        <div className="card">
+            <img className="card-img" src="zillow.png" alt="" />
+            <h2 className="card-heading">Zillow.com</h2>
+            <p className="card-para">
+                 An American tech real-estate marketplace company that was founded in 2006
+            </p>
+           
+          </div>
+        <div className="card">
+            <img className="card-img" src="realt.png" alt="" />
+            <h2 className="card-heading">Reator.com</h2>
+            <p className="card-para">
+               Realtor.com is a real estate listings website operated by the News Corp subsidiary Move, Inc.
+            </p>
+           
+          </div>
+        <div className="card">
+            <img className="card-img" src="appartments.png" alt="" />
+            <h2 className="card-heading">Appartments.com</h2>
+            <p className="card-para">
+            Apartments.com has over 150,000 active listings of houses, townhomes, condos and duplexes. 
+            </p>
+           
+          </div>
+        </div>
+      </section>
+
+      <section className="feedback">
+      <h1 className="sponsor-heading">We Value your Feedback</h1>
+      <p className="paragrpah">Please provide us with your honest feedback</p>
+     <div className="feedback-input"> <textarea rows={9} cols={36}></textarea></div>
+      </section>
+
+      <section className="container ratings-section">
+        <h1 className="text-center sub-heading my-lg-5">Our Popularity</h1>
+        <p className="my-5 card-para" >
           For your general feedback, Please rate us according to your honest feedback. We are pleased with your feedback. 
         </p>
-        <div class="ratings-container">
-          <div class="ratings">
+        <div className="ratings-container">
+          <div className="ratings">
             <div class="container__value">200k+</div>
 
             <div class="container__label">Community</div>

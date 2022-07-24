@@ -23,15 +23,18 @@ const BlogMain = () => {
       <div className="bloglist">
         {blogs.map((blog) => {
           return (
-          <Link to={`/Blogs/Blogdata/${blog.id}`}>
-
             <div className="blogPreview" key={blog.id}>
-
-              <h1>Title: {blog.title}</h1>
-              <h2>Written by {blog.author}</h2>
+              <Link to={`/Blog/Blogdata/${blog.id}`}>
+              <div className="blogImages">
+                <img src={blog.img} alt="" />
+              </div>
+              <div className="blogInfo">
+              <h2>{blog.title}</h2>
+              <p>Written by {blog.author}</p>
+              </div>
+              
+              </Link>
             </div>
-            
-            </Link>
           );
         })}
       </div>
