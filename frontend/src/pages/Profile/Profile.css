@@ -1,0 +1,80 @@
+
+.profileBody{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-heading{
+    margin: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.profile-design{
+  
+    /* Background color */
+    
+
+    /* You can use gradient background color such as*/
+    /* background: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);  */
+    background-color: rgb(97, 172, 97);
+    height: 120px;
+    /* Curved corners */
+    border-bottom-left-radius: 50% 40%;
+    border-bottom-right-radius: 50% 40%;
+    
+}
+
+.profile-main{
+    display: flex;
+    margin-top: 20px;
+}
+
+.userImgCont{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+    width: 50%;
+}
+
+.userImgCont > button{
+    width: 200px;
+    margin-top: 50px;
+}
+.userInfoCont{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    flex: 5;
+    width: 50%;
+}
+
+.profile-sideDesign{
+
+    background-color: rgb(136, 209, 136);
+    flex: 0.5;
+    width: 100px;
+}
+
+#profileLabelId{
+    margin-top: 10px;
+}
+
+.propertSell{
+    margin: 20px;
+}
+
+.projectsBook{
+    margin: 20px;
+}
+
+.profile-table-head{
+    background-color: rgb(78, 163, 78);
+    font-size: 20px;
+}
+

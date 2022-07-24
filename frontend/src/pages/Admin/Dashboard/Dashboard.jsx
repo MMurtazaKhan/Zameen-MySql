@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Dashboard.css";
 import Sidebar from "../Sidebar/Sidebar";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -6,10 +6,14 @@ import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { FaProjectDiagram } from "react-icons/fa";
 import { FaPersonBooth } from "react-icons/fa";
 import { AiFillPropertySafety } from "react-icons/ai";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Dashboard = () => {
   const [show, setShow] = useState("yes");
   const sidebarTab = useRef(null);
+  const [user, setUser] = useState("");
+  const history = useHistory();
 
   const controlSidebar = (e, tab) => {
     if (tab === "yes") {
@@ -23,7 +27,18 @@ const Dashboard = () => {
     }
   };
 
+  const CID = localStorage.getItem("CID");
+  
+  
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/user/me/${CID}`)
+      .then((res) => setUser({ ...res.data[0] }));
+  }, [CID]);
+
   return (
+    <>
+  {user && user.role === "admin" ? (
     <div className="dashboard">
       <div className="admin-sidebar" ref={sidebarTab}>
         <Sidebar />
@@ -69,6 +84,29 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+  ): (
+    <div
+    style={{
+      textAlign: "center",
+      marginTop: "20px",
+    }}
+  >
+    <h1 style={{ fontSize: "20px" }}>
+      you have no access ko access to this resource to access this please
+      login with admin account:
+    </h1>
+    <button
+      style={{ width: "20%" }}
+      className="btn btn-warning btn-lg"
+      onClick={() => history.push("/register")}
+    >
+      Login Here
+    </button>
+  </div>
+  )}
+    
+    </>
+
   );
 };
 
