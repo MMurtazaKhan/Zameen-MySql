@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 const Profile = () => {
   const [user, setUser] = useState("");
   const { CID } = useParams();
+  // const CID = localStorage.getItem("CID");
   const history = useHistory();
 
   useEffect(() => {
@@ -16,6 +17,7 @@ const Profile = () => {
       .get(`http://localhost:5000/api/user/me/${CID}`)
       .then((res) => setUser({ ...res.data[0] }));
   }, [CID]);
+
 
   const ColoredLine = ({ color }) => (
     <hr
@@ -34,6 +36,7 @@ const Profile = () => {
   }
   const cid = localStorage.getItem("CID");
 
+console.log("User found is: ",user.name);
 
   return (
     <>

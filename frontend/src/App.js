@@ -18,6 +18,10 @@ import Booking from "./pages/BookingProperty/Booking";
 import Profile from "./pages/Profile/Profile";
 import UserList from "./pages/Admin/UserList/UserList";
 import PropertyList from "./pages/Admin/PropertyList/PropertyList";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import BlogMain from "./pages/Blog/BlogMain";
+import BlogViewDetails from "./pages/Blog/BlogViewDetail";
 
 
 
@@ -38,11 +42,15 @@ function App() {
 
           <Route exact path="/sell" component={Sell} />
           <Route exact path="/sellDetail/:PID" component={SellDetail} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/Blog" component={BlogMain} />
+          <Route exact path="/Blogs/Blogdata/:id" component={BlogViewDetails} />
           <Route exact path="/admin/dashboard" component={Dashboard} />
           <Route exact path="/admin/createProject" component={CreateProject} />
           <Route exact path="/admin/users" component={UserList} />
           <Route exact path="/admin/property" component={PropertyList} />
-
+        
 
           
 
