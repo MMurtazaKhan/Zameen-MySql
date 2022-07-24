@@ -1,0 +1,141 @@
+
+.BookingCont {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+
+  }
+
+  
+  .bookingBox {
+    background-color: white;
+    width: 30vw;
+    height: 70vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgb(136, 209, 136);
+    border-radius: 15px;
+  }
+  
+  .bookingHeading {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.664);
+    font: 500 1.6vmax "Roboto";
+    padding: 1.3vmax;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    width: 50%;
+    margin: auto;
+  }
+
+  .bookingSubHeading{
+    text-align: center;
+    color: rgba(0, 0, 0, 0.664);
+    font: 300 1.4vmax "Roboto";
+    padding: 0.6vmax;
+    width: 50%;
+    margin: auto;
+  }
+  
+  .bookingForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 2vmax;
+    justify-content: space-evenly;
+    height: 70%;
+    transition: all 0.5s;
+  }
+  
+  .bookingForm > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .bookingForm > div > input {
+    
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 0.9vmax cursive;
+    outline: none;
+  }
+  
+  .bookingForm > div > svg {
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0, 0, 0, 0.623);
+  }
+  
+  
+  .bookingBtn {
+    margin-top: 10px;
+    border: none;
+    background-color: tomato;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    font-size: 20px;
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  }
+  
+  .bookingBtn:hover {
+    background-color: rgb(179, 66, 46);
+  }
+
+  .bookingDropdown{
+      margin-left: 20px;
+      padding: 1vmax 4vmax;
+        padding-right: 1vmax;
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.267);
+        border-radius: 4px;
+        font: 300 1.1vmax cursive;
+        outline: none;
+        width: 100%;
+    }
+    
+  @media screen and (max-width: 600px) {
+    .BookingCont {
+      background-color: white;
+    }
+    .bookingBox {
+      width: 100vw;
+      height: 95vh;
+    }
+  
+    .bookingForm {
+      padding: 5vmax;
+    }
+  
+    .bookingForm > div > input {
+      padding: 2.5vmax 5vmax;
+      font: 300 1.7vmax cursive;
+    }
+  
+    .bookingForm > div > svg {
+      font-size: 2.8vmax;
+    }
+  
+  
+    .bookingBtn {
+      font: 300 1.9vmax "Roboto";
+      padding: 1.8vmax;
+    }
+  }

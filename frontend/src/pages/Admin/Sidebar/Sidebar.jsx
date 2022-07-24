@@ -26,12 +26,7 @@ const Sidebar = () => {
         </p>
       </Link>
 
-      <Link to="/admin/users">
-        <p>
-          <FaListAlt />
-          Users
-        </p>
-      </Link>
+      
 
       <Link to="/admin/createProject">
         <p>

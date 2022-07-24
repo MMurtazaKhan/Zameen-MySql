@@ -1,15 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./PropertyList.css";
+import "./RegisterationList.css";
 import Sidebar from "../Sidebar/Sidebar";
-import { toast } from "react-toastify";
 import axios from "axios";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const PropertyList = ({ history }) => {
+import { Link } from "react-router-dom";
+
+const RegisterationList = ({ history }) => {
   const [data, setData] = useState([]);
   const loadData = async () => {
+  
     const response = await axios.get(
-      `http://localhost:5000/api/properties/admin`
+      `http://localhost:5000/api/registerations/admin`
     );
 
     setData(response.data);
@@ -24,14 +26,6 @@ const PropertyList = ({ history }) => {
       .get(`http://localhost:5000/api/user/me/${CID}`)
       .then((res) => setUser({ ...res.data[0] }));
   }, [CID]);
-
-  const deleteProperty = (PID) => {
-    if (window.confirm("Are you sure want to delete this property?")) {
-      axios.delete(`http://localhost:5000/api/remove/property/${PID}`);
-      toast.success("Contact delete successfully");
-      setTimeout(() => loadData(), 500);
-    }
-  };
 
   const [show, setShow] = useState("yes");
   const sidebarTab = useRef(null);
@@ -63,20 +57,24 @@ const PropertyList = ({ history }) => {
             </div>
             <div>
               <div className="userListContainer">
-                <h1 id="userListHeading">All Property</h1>
+                <h1 id="userListHeading">All Registerations</h1>
 
                 <div style={{ marginTop: "150px" }}>
                   <table className="styled-table">
                     <thead>
                       <tr>
-                        <th style={{ textAlign: "center" }}>Property ID</th>
+                        <th style={{ textAlign: "center" }}>No.</th>
+               
+
+                        <th style={{ textAlign: "center" }}>
+                          Registeration ID
+                        </th>
                         <th style={{ textAlign: "center" }}>User ID</th>
-                        <th style={{ textAlign: "center" }}>Purpose</th>
-                        <th style={{ textAlign: "center" }}>Type</th>
-                        <th style={{ textAlign: "center" }}>City</th>
-                        <th style={{ textAlign: "center" }}>Price</th>
-                        <th style={{ textAlign: "center" }}>Area</th>
-                        <th style={{ textAlign: "center" }}>Name</th>
+                        <th style={{ textAlign: "center" }}>Project ID</th>
+                        <th style={{ textAlign: "center" }}>Project Name</th>
+                        <th style={{ textAlign: "center" }}>
+                          Installation Remaining
+                        </th>
                         <th style={{ textAlign: "center" }}>Email</th>
                         <th style={{ textAlign: "center" }}>Contact</th>
                         <th style={{ textAlign: "center" }}>Action</th>
@@ -86,25 +84,22 @@ const PropertyList = ({ history }) => {
                       {data.map((item, index) => {
                         return (
                           <tr key={item.id}>
-                            <th scope="row">{item.PID}</th>
-                            <td>{item.CID}</td>
-                            <td>{item.purpose}</td>
-                            <td>{item.type}</td>
-                            <td>{item.city}</td>
-                            <td>{item.price}</td>
-                            <td>{item.area}</td>
-                            <td>{item.name}</td>
+                            <th scope="row">{index + 1}</th>
+                            <td>{item.RID}</td>
 
+                            <td>{item.CID}</td>
+                            <td>{item.PRID}</td>
+
+                            <td>{item.name}</td>
+                            <td>{item.installation}</td>
                             <td>{item.email}</td>
                             <td>{item.contact}</td>
-
                             <td>
-                              <button
-                                className="btn btn-delete"
-                                onClick={() => deleteProperty(item.PID)}
+                              <Link
+                                to={`/admin/reg/update/${item.RID}/${item.PRID}/${item.CID}`}
                               >
-                                Delete
-                              </button>
+                                <button className="btn btn-edit">Edit</button>
+                              </Link>
                             </td>
                           </tr>
                         );
@@ -140,4 +135,5 @@ const PropertyList = ({ history }) => {
   );
 };
 
-export default PropertyList;
+export default RegisterationList;
+

@@ -37,7 +37,7 @@ const Profile = () => {
   }
   const cid = localStorage.getItem("CID");
 
-console.log("User found is: ",user.name);
+// console.log("User found is: ",user.name);
 
   return (
     <>
