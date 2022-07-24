@@ -84,6 +84,73 @@
     padding-right: 200px;
     padding-left: 50px;
   }
+
+  /* Afilliation CSS */
+  .sponsor-section{
+    margin-top: 30px;
+    background-image: url("E:\final\Zameen-MySql\frontend\public\green-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .sponsor-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .card2{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 2px solid grey;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-heading{
+    font-family: 'Mukta', sans-serif;
+  }
+  .sponsor-heading{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+  }
+
+  /* Feedback CSS */
+
+  .feedback{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("E:\final\Zameen-MySql\frontend\public\light-blue.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    text-align: center;
+  }
+
+  .feedback-input{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .feed-inp{
+    height: 100px;
+    width: 80%;
+    border-radius: 20px;
+    font-size: 20px;
+  }
+
   
   /* Ratings CSS */
   
@@ -118,11 +185,12 @@
   .para-italic{
     font-family: 'Mukta', sans-serif;
     font-style: italic;
+    font-size: 20px;
     font-weight: bold;
   }
   .paragraph{
     font-family: 'Karla', sans-serif;
-    font-size: 18px;
+    font-size: 25px;
     color: black;
   }
   .container__value {
