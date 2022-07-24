@@ -8,8 +8,9 @@ import { toast } from "react-toastify";
 
 const Profile = () => {
   const [user, setUser] = useState("");
-  const { CID } = useParams();
-  // const CID = localStorage.getItem("CID");
+  // const { CID } = useParams();
+  const CID = localStorage.getItem("CID");
+
   const history = useHistory();
 
   useEffect(() => {

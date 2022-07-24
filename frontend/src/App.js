@@ -61,7 +61,9 @@ function App() {
           <Route exact path="/book-property/:PRID" component={Booking} />
 
 
-          <Route exact path="/profile/:CID" component={Profile} />
+          {/* <Route exact path="/profile/:CID" component={Profile} /> */}
+          <Route exact path="/profile" component={Profile} />
+
 
 
           {/* <Route exact path="/addContact" component={AddEdit} />
