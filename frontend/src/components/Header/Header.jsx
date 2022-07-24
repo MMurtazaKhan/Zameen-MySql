@@ -83,7 +83,9 @@ const Header = () => {
               paddingLeft: "10px",
               paddingRight: "10px",
             }}
-            to={`/profile/${CID}`}
+            // to={`/profile/${CID}`}
+            to="/profile"
+
           >
             {/* <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
             {" "}
