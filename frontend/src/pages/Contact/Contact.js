@@ -27,7 +27,7 @@ const Contact = () => {
         </div>
         <div className="email">
           <HiMail style={{ color: "white", fontSize: "3em" }} />
-          <p>contact@zameen.com</p>
+          <p >contact@zameen.com</p>
         </div>
         <div className="map">
           <IoLocationSharp style={{ color: "white", fontSize: "3em" }} />

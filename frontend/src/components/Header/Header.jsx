@@ -52,7 +52,7 @@ const Header = () => {
         <div className="center-Container">
           <ul>
             <li>
-              <Link className="Link-tag" to="" onClick={() => { setMenuopened(false) }}>
+              <Link className="Link-tag" to=""  onClick={() => { setMenuopened(false) }}>
                 HOME
               </Link>
             </li>

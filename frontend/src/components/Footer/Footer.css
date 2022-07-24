@@ -84,7 +84,7 @@ ul{
 .footer-col > .social-links > .footer-svgs{
 	width: 40px;
 	height: 40px;
-	background-color: #504949;
+	/* background-color: #504949; */
 	margin: 0px 10px;
 	display: flex;
 	align-items: center;
@@ -97,7 +97,7 @@ ul{
 
 }
 .footer-svgs>a{
-	margin-left: 30px;
+	margin-left: 33px;
 	text-decoration: none;
 
 }
@@ -127,7 +127,7 @@ ul{
 		margin-right: 10px;
 	}
 	.footer-svgs>a{
-		margin-left: 30px;
+		margin-left: 20px;
 
 	}
 	.footerMain{

@@ -21,7 +21,7 @@ const About =  () => {
                 <p>Zameen.com estate agency services was started by three software engineering students from NED University of Engineering and Technology .
                     The team includes Muhammad Abdullah Aziz,Muhammad Murtaza Khan ,Muhammad Abdullah Imdad. All of them are one of the best software developers in the city as there last project have  won the
                     NED ProjectMania Camp at NED Auditorium.They have developed this public service website for people who face hurdles while dealing in any issue related to the estate industry.This app is now being used countrywide ,helping every user to tackle their residencial problems. <br />
-                    <span id="follow">You can contact every member by accessing their cards on right.</span>
+                    <span id="follow">You can contact every member by accessing their cards.</span>
                 </p>
                 <Swiper
                     // install Swiper modules

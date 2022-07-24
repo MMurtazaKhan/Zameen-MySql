@@ -120,3 +120,118 @@
     outline-color: rgb(243, 198, 126);
     
   }
+  @media (max-width:574px){
+    .contact-page {
+
+      margin-top: 0px;
+      padding: 0px;
+      height: 100vh;
+      background-image: url("E:\final\Zameen-MySql\frontend\public\contact.jpeg");
+    
+      width: 100%;
+    
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .email>p{
+      font-size: 18px !important;
+    }
+    
+    .contact-svgs {
+      width: 40px;
+      height: 40px;
+      background-color: rgb(255, 242, 242, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+    
+    .contact-container {
+      box-sizing: border-box;
+    
+      width: 94%;
+      height: 500px;
+      border: 1px solid whitesmoke;
+      margin: 20px auto;
+      background: linear-gradient(316deg, rgb(11 131 121) 50%, rgb(15 158 113) 75%, rgb(17 195 150) 100%);
+    
+    
+    }
+    
+    
+    .contact-container h1 {
+    
+      text-align: center;
+      font-size: 30px;
+      color: wheat;
+      font-family: 'Times New Roman', Times, serif;
+      /* font-family: 'Baloo 2', cursive; */
+      text-transform: uppercase;
+    }
+    .phone>p{
+      font-size: 18px!important;
+    }
+    .social-links {
+    
+      display: inline-block;
+    }
+    
+    .social-links a {
+    
+      display: inline-block;
+      margin-right: 19px;
+      text-align: center;
+      line-height: 40px;
+     
+    
+    
+    }
+    
+    .social-links a:hover{
+      transition: width 2s, height 2s, transform 2s;
+border-radius: 5px;      
+      background-color: rgb(3, 77, 99);
+      
+    }
+    
+  
+    
+    .phone,
+    .map,
+    .social-links,
+    .email {
+      margin-left: 10px;
+      margin-bottom: 20px;
+    
+    }
+    
+    .contact-container p {
+      margin-top: 5px;
+      font-size: 16px;
+      font-family: 'Baloo 2', cursive;
+      color: rgb(17, 16, 16);
+    
+    }
+    
+    .map p {
+      line-height: 20px;
+      font-size: 18px;
+    }
+    
+    .social-links p {
+      line-height: 24px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    
+    .social-links i:hover {
+    
+      outline-color: rgb(243, 198, 126);
+      
+    }
+
+  }

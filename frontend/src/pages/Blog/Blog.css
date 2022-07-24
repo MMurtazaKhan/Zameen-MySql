@@ -108,6 +108,9 @@
     height: 60%;
     margin-top: 30px;
 }
+.project-heading{
+    font-size: 35px;
+}
 
 .BlogViewDetails .blogViewHeader .blogViewHeadImg img {
     width: 100%;
@@ -191,6 +194,9 @@
     width: 25%;
     height: 40%;
     margin-top: 0px;
+}
+.project-heading{
+    font-size: 30px;
 }
 
 }

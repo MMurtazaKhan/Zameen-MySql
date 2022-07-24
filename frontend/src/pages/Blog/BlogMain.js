@@ -7,15 +7,10 @@ const BlogMain = () => {
   return (
     <>
       <div className="project-head">
-        <h1
-          className="project-heading"
-          style={{ color: "wheat", fontSize: "45px" }}
-        >
-          Blog
-        </h1>
+    
         <h3
           className="project-heading"
-          style={{ color: "wheat", fontSize: "35px" }}
+          style={{ color: "wheat"}}
         >
           Read the <span className="yellow-color">Amazing Blogs</span> from Us!
         </h3>
