@@ -103,8 +103,8 @@ console.log("User found is: ",user.name);
               </div>
 
               <div className="profile-label">
-                <h4>Email</h4>
-                <p>{user.email}</p>
+                <h4>Role</h4>
+                <p>{user.role}</p>
                 <ColoredLine color="black" />
               </div>
             </div>
