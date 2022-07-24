@@ -30,6 +30,18 @@
     margin: 3px;
 }
 
+.blog-card{
+    text-decoration: none;
+    border-top: 2px solid rgb(39, 175, 39);
+    border-left: 2px solid rgb(39, 175, 39);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.blog-link{
+    text-decoration: none;
+}
 .blogPreview {
     padding: 10px 60px;
     margin: 20px 0;
