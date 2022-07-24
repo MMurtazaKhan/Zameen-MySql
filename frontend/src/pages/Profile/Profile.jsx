@@ -19,6 +19,7 @@ const Profile = () => {
       .then((res) => setUser({ ...res.data[0] }));
   }, [CID]);
 
+
   const ColoredLine = ({ color }) => (
     <hr
       style={{
@@ -36,6 +37,7 @@ const Profile = () => {
   }
   const cid = localStorage.getItem("CID");
 
+console.log("User found is: ",user.name);
 
   return (
     <>
