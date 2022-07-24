@@ -3,18 +3,12 @@ import Sidebar from "../Sidebar/Sidebar";
 import "./CreateProject.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import { MdDescription } from "react-icons/md";
+
 import { MdOutlineStorage } from "react-icons/md";
 import { FaSpellCheck } from "react-icons/fa";
 import { MdOutlineAttachMoney } from "react-icons/md";
-
 import axios from "axios";
 import { toast } from "react-toastify";
-
-// import DescriptionIcon from "@material-ui/icons/Description";
-// import StorageIcon from "@material-ui/icons/Storage";
-// import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-// import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 
 import { AiOutlineCalendar, AiFillHome } from "react-icons/ai";
 import { MdOutlineReduceCapacity } from "react-icons/md";
@@ -37,37 +31,23 @@ const CreateProject = () => {
   const [image, setImage] = useState("");
   const [show, setShow] = useState("yes");
 
-  // const [images, setImages] = useState([]);
+ 
 
   const [user, setUser] = useState("");
   const history = useHistory();
 
   const sidebarTab = useRef(null);
 
-  // useEffect(() => {
-  //   if (error) {
-  //     alert.error(error);
-  //     dispatch(clearErrors());
-  //   }
-
-  //   if (success) {
-  //     alert.success("Project Created Successfully");
-  //     history.push("/");
-  //     dispatch({ type: NEW_PROJECT_RESET });
-  //   }
-  // }, [dispatch, alert, error, history, success]);
 
   const createProjectSubmitHandler = (e) => {
     e.preventDefault();
 
-    // console.log(image.name);
+  
     const imageRef = ref(storage, `images/${image.name + v4()}`);
-    // console.log("hi");
+
     uploadBytes(imageRef, image).then(() => {
       getDownloadURL(imageRef)
         .then((url) => {
-          // setURL(url);
-          // uploadImage(url);
 
           axios
             .post("http://localhost:5000/api/project/new", {
@@ -110,8 +90,7 @@ const CreateProject = () => {
   };
 
   const handleFileChange = (e) => {
-    // console.log(e.target.files[0]);
-    // console.log("hoo")
+
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
@@ -256,22 +235,6 @@ const CreateProject = () => {
                       onChange={handleFileChange}
                     />
                   </div>
-
-                  {/* <div id="createProjectFormFile">
-                <input
-                  type="file"
-                  name="avatar"
-                  accept="image/*"
-                  onChange={createProjectImagesChange}
-                  multiple
-                />
-              </div> */}
-
-                  {/* <div id="createProjectFormImage">
-                {imagesPreview.map((image, index) => (
-                  <img key={index} src={image} alt="Project Preview" />
-                ))}
-              </div> */}
 
                   <button id="createProjectBtn" type="submit">
                     Create

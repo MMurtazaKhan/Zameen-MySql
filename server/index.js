@@ -8,12 +8,17 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// db connection:
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "mypassword",
+  password: "tiger",
   database: "zameen",
 });
+
+
+// user ------------------------------------------------------------------------------------
+
 
 app.post("/api/register", (req, res) => {
   const { name, email, contact, password } = req.body;
@@ -77,7 +82,18 @@ app.delete("/api/remove/user/:CID", (req, res) => {
   });
 });
 
-// register property:
+
+
+
+
+
+
+
+
+
+
+
+// property -----------------------------------------------------------------------------------
 
 app.get("/api/properties", (req, res) => {
   const sqlGet = "SELECT * FROM sell";
@@ -104,10 +120,9 @@ app.delete("/api/remove/property/:PID", (req, res) => {
   });
 });
 
-// Running code:
 
 app.post("/api/property/me", (req, res) => {
-  // const { purpose, property_type, city, address, price, land_area, contact, description } = req.body;
+
   const CID = req.body.CID;
   const purpose = req.body.purpose;
   const type = req.body.type;
@@ -161,7 +176,20 @@ app.get("/api/get", (req, res) => {
   });
 });
 
-// register project:
+
+
+
+
+
+
+
+
+
+
+
+
+
+// project --------------------------------------------------------------------------------
 
 app.post("/api/project/new", (req, res) => {
   const name = req.body.name;
@@ -217,7 +245,20 @@ app.get("/api/projects", (req, res) => {
   });
 });
 
-// Registeration:
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Registeration -----------------------------------------------------------------------------------
 
 app.post("/api/project/registeration/:PRID", (req, res) => {
   // const { purpose, property_type, city, address, price, land_area, contact, description } = req.body;
@@ -239,6 +280,31 @@ app.post("/api/project/registeration/:PRID", (req, res) => {
   );
 });
 
+app.get("/api/registerations/admin", (req, res) => {
+  const sqlGet =
+    "SELECT registeration.RID, registeration.PRID, registeration.CID, registeration.installation, project.name, user.email, user.contact from registeration JOIN project ON registeration.PRID = project.PRID JOIN user ON user.CID = registeration.CID";
+
+  db.query(sqlGet, (error, result) => {
+    res.send(result);
+  });
+});
+
+app.put("/api/registeration/put/:RID", (req, res) => {
+  const { RID } = req.params;
+
+
+  const installation = req.body.installation;
+
+  const sqlUpdate =
+    "UPDATE registeration SET installation = ? WHERE RID = ?";
+  db.query(sqlUpdate, [ installation, RID], (error, result) => {
+    if (error) {
+      console.log(error);
+    }
+    res.send(result);
+  });
+});
+
 // app.get("/", (req, res) => {
 //   const sqlInsert =
 //   "INSERT INTO registeration ( PRID, CID, installation) VALUES ('3', '5', '6')";
@@ -248,16 +314,6 @@ app.post("/api/project/registeration/:PRID", (req, res) => {
 //     res.send("hello");
 //   });
 //   });
-
-// app.get("/", (req, res) => {
-// const sqlInsert =
-// "INSERT INTO user (name, email, contact) VALUES ('aziz', 'aziz@malir.com', 34455666)";
-// db.query(sqlInsert, (error, result) => {
-//   console.log("error", error);
-//   console.log("result", result);
-//   res.send("hello");
-// });
-// });
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");

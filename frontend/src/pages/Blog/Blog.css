@@ -4,6 +4,25 @@
     margin: 0 auto;
 }
 
+<<<<<<< HEAD
+.blog-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: wheat;
+    height: 400px;
+    font-family: 'Gentium Book Plus', serif;
+    width: 100%;
+    background-image: url("E:\zameen-sql\Zameen-MySql\frontend\public\bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    
+}
+=======
+>>>>>>> 1cbe29210762985438a6831662adc38c8996cc5f
 
 .yellow-color{
     text-align: center;

@@ -74,42 +74,7 @@ const RegisterProperty = () => {
         });
     });
   };
-  // axios
-  //   .post("http://localhost:5000/api/property/me", {
-  //     CID: CID,
-  //     purpose: purpose,
-  //     type: type,
-  //     city: city,
-  //     address: address,
-  //     price: price,
-  //     area: area,
-  //     contact: ownerContact,
-  //     description: description,
-  //   })
-  //   .then((response) => {
-  //     console.log(response);
-
-  //     history.push("/");
-  //     toast.success("Property Added Successfully");
-  //   });
-
-  // const myForm = new FormData();
-
-  // myForm.set("purpose", purpose);
-  // myForm.set("propertyType", propertyType);
-  // myForm.set("city", city);
-  // myForm.set("address", address);
-  // myForm.set("propertyTitle", propertyTitle);
-  // myForm.set("description", description);
-  // myForm.set("price", price);
-  // myForm.set("landArea", landArea);
-  // myForm.set("ownerName", ownerName);
-  // myForm.set("ownerContact", ownerContact);
-
-  // images.forEach((image) => {
-  //   myForm.append("images", image);
-  // });
-  // dispatch(createProperty(myForm));
+  
 
   const handleFileChange = (e) => {
     // console.log(e.target.files[0]);
@@ -119,42 +84,7 @@ const RegisterProperty = () => {
     }
   };
 
-  // console.log(image.name);
-  //       const imageRef = ref(storage,`images/${image.name + v4()}`);
-  //       console.log("hi");
-  //       uploadBytes(imageRef,image).then(()=>{
-  //           getDownloadURL(imageRef).then((url)=>{
-  //               setURL(url);
-  //               uploadImage(url);
-  //           })
-  //           .catch((error)=>{
-  //               console.log(error.message,"error getting the image url");
-  //           })
-  //       })
-  //       .catch((error)=>{
-  //           console.log(error.message);
-  //       })
-
-  //   const createPropertyImagesChange = (e) => {
-  //     const files = Array.from(e.target.files);
-
-  //     setImages([]);
-  //     setImagesPreview([]);
-
-  //     files.forEach((file) => {
-  //       const reader = new FileReader();
-
-  //       reader.onload = () => {
-  //         if (reader.readyState === 2) {
-  //           setImagesPreview((old) => [...old, reader.result]);
-  //           setImages((old) => [...old, reader.result]);
-  //         }
-  //       };
-
-  //       reader.readAsDataURL(file);
-  //     });
-  //   };
-
+  
   return (
     <>
       {CID ? (
@@ -252,14 +182,7 @@ const RegisterProperty = () => {
                 </div>
 
                 <div className="regProp-con2">
-                  {/* Property Title */}
-                  {/* <input
-              type="text"
-              value={propertyTitle}
-              onChange={(e) => setPropertyTitle(e.target.value)}
-              style={{ width: "300px" }}
-            /> */}
-
+    
                   {/* Description */}
                   <textarea
                     value={description}
@@ -332,11 +255,7 @@ const RegisterProperty = () => {
                 </div>
               </div>
 
-              {/* <div id="createProductFormImage">
-          {imagesPreview.map((image, index) => (
-            <img key={index} src={image} alt="Product Preview" />
-          ))}
-        </div> */}
+     
 
               <span className="regProp-span">PROPERTY DETAILS</span>
               <div className="regProp-container">
@@ -345,15 +264,7 @@ const RegisterProperty = () => {
                 </div>
 
                 <div className="regProp-con2">
-                  {/* Owner Name */}
-                  {/* <input
-              type="text"
-              value={ownerName}
-              onChange={(e) => setOwnerName(e.target.value)}
-              style={{ width: "300px" }}
-              readOnly
-            />
-            <br /> */}
+  
                   {/* Owner Contact */}
                   <input
                     type="text"
