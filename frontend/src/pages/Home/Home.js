@@ -98,7 +98,7 @@ Our success lies in our network of property experts and customers spanning the g
       <section className="feedback">
       <h1 className="sponsor-heading">We Value your Feedback</h1>
       <p className="paragrpah">Please provide us with your honest feedback</p>
-     <div className="feedback-input"> <input className="feed-inp" type="text" placeholder="Enter your feedback"/></div>
+     <div className="feedback-input"> <textarea rows={9} cols={36}></textarea></div>
       </section>
 
       <section className="container ratings-section">

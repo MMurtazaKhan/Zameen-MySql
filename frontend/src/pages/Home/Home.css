@@ -56,7 +56,7 @@
   
   .container {
     text-align: center;
-    margin-left: 130px;
+    /* margin-left: 130px; */
     margin-right: 130px;
     margin-top: 30px;
   }
@@ -87,7 +87,7 @@
 
   /* Afilliation CSS */
   .sponsor-section{
-    margin-top: 30px;
+    margin-top: 80px;
     background-image: url("E:\final\Zameen-MySql\frontend\public\green-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -252,17 +252,128 @@
     padding: 5px;
   }
   
+/*responsive*/
+
+@media (max-width: 574px) {
+ 
   
-  /*responsive*/
-  @media (max-width: 767px) {
-    .footer-col {
-      width: 50%;
-      margin-bottom: 30px;
-    }
+  .ratings-container{
+    flex-direction: column;
   }
-  @media (max-width: 574px) {
-    .footer-col {
-      width: 100%;
-    }
+  .ratings{
+   margin-right: 20px;
+  height: 140px;
   }
+  .paragraph{
+    font-size: 18px;
+    padding-right: 12px;
+  }
+  .mission-desc{
+    flex-direction: column;
+  }
+  .mission-desc p{
+    padding: 0;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+  .mission-desc img{
+    height: 300px;
+  width: 250px;
+ /* margin-left: -9px; */
+ margin: 0 auto;
   
+
+  }
+  .home-cards{
+    flex-direction: column;
+    /* margin-right: 263px; */
+  }
+  .card {
+    width: 280px;
+  height: 360px;
+  }
+  .card-img {
+    height: 220px;
+    width: 260px;
+    border-radius: 10px;
+  }
+  .card-btn {
+    font-family: 'Mukta', sans-serif;
+    height: 45px;
+    width: 260px;
+    background-color: #21a57e;
+    border: 2px solid #21a57e;
+    border-radius: 10px;
+    font-size: 22px;
+  }
+  .services h1{
+    /* margin-right: 350px; */
+
+  }
+  .services p{
+    /* margin-right: 250px; */
+
+  }
+  .feedback{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-image: url("E:\final\Zameen-MySql\frontend\public\light-blue.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    text-align: center;
+  }
+
+  .feedback-input{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .feed-inp{
+    /* height: 50px; */
+    /* width: 80%; */
+    /* border-radius: 20px; */
+    font-size: 16px;
+  }
+  sponsor-section{
+    margin-top: 30px;
+    background-image: url("E:\final\Zameen-MySql\frontend\public\green-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .sponsor-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .card{
+    width: 280px;
+    height: 400px;
+    margin: 10px;
+    border: 2px solid grey;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-heading{
+    font-family: 'Mukta', sans-serif;
+  }
+  .sponsor-heading{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+  }
+}

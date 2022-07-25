@@ -87,7 +87,7 @@ const Footer = () => {
                 <div className="footer-svgs">
                   <Link to="/contact">
                     <FaFacebookF
-                      style={{ color: "white", fontSize: "1.2em" }}
+                      style={{ color: "white", fontSize: "1.2em" ,backgroundColor:"#504949"}}
                     />
                   </Link>
                 </div>
