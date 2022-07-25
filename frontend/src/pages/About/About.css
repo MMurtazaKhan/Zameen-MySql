@@ -111,7 +111,7 @@
         margin-top: 12px;
         font-weight: bold;
         color: wheat;
-        font-size: 21px;
+        font-size: 18px;
     
     }
     
@@ -126,7 +126,7 @@
     .singleAboutcard img {
         margin-top: 5px;
         height: 170px;
-        width: 240px;
+        width: 210px;
         border-radius: 8px;
         object-fit: fill;
     }
@@ -134,7 +134,7 @@
     .icons {
         display: flex;
         justify-content: space-evenly;
-    margin-top: -10px;
+    margin-top: -20px;
     
         width: 260px;
         margin-right: auto;

@@ -114,18 +114,15 @@ const Profile = () => {
         </div>
       ) : (
         // history.push("/register")
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "20px",
-          }}
+        <div id="profileNotReg" style={{marginTop:"60px"}}
+         
         >
           <h1 style={{ fontSize: "20px" }}>
             you have no access ko access to this resource to access this please
             login first:
           </h1>
           <button
-            style={{ width: "20%" }}
+           
             className="btn btn-warning btn-lg"
             onClick={() => history.push("/register")}
           >

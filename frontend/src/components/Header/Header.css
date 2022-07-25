@@ -100,7 +100,7 @@
 .right-Container {
   display: flex;
   flex: 3;
-  margin-right: 30px;
+  margin-right: 10px;
   height: 40px;
   align-items: center;
 }
@@ -286,17 +286,17 @@ input[type="button"]:hover {
   .center-Container{
    
     background-color: #33a137;
-    /* padding-top: 10px; */
-    height: 270px;
+    /* padding-top: -40px; */
+    height: 160px;
     width: 50%;
     flex: 0;
     right: 1rem;
-    margin-top: 10px;
+    margin-top: 120px;
     position: fixed;
     
      
       z-index: 2;
-      padding-bottom: 30px;
+      padding-bottom: 120px;
       justify-content: space-evenly;
      
      
@@ -312,10 +312,10 @@ input[type="button"]:hover {
 display: none;
 flex: 0;
   }
-  .right-Container{
+  /* .right-Container{
     display: none;
     flex: 0;
-      }
+      } */
   
   .Header-2{
    display: none;
@@ -339,11 +339,42 @@ flex: 0;
     
   
   }
+  .right-Container{
+    /* display: none; */
+    /* flex: 0; */
+    flex-direction: column-reverse;
+    background-color: #33a137;
+    /* padding-top: 10px; */
+    height: 100px;
+    width: 50%;
+    flex: 0;
+    /* right: -14px; */
+    margin-top: 379px;
+    left: 124px;
+    position: fixed;
+    /* margin-right: 100px; */
+    /* text-align: center; */
+    
+     
+      z-index: 1;
+      padding-bottom: 5px;
+      justify-content: space-evenly;
+      /* align-items: center; */
+      }
+  .right-Container>img{
+    display: none;
+  }
   .Header-1{
-   background-color: #e9e6e6;
+   background-color: white;
     width: 130px;
     margin-left: 166px;
-    top: 1rem;
+    /* top: 2rem; */
+    height: 90px;
+  }
+  #profileIcon{
+    margin-right: 10px;
+    
+    
   }
   
 

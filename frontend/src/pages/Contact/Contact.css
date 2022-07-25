@@ -16,7 +16,7 @@
     margin-top: 0px;
     padding: 0px;
     height: 100vh;
-    background-image: url("E:\zameen-sql\Zameen-MySql\frontend\public\contact.jpeg");
+    background-image: url("E:\final\Zameen-MySql\frontend\public\contact.jpeg");
   
     width: 100%;
   
@@ -183,7 +183,7 @@
     .social-links a {
     
       display: inline-block;
-      margin-right: 19px;
+      margin-right: 13px;
       text-align: center;
       line-height: 40px;
      

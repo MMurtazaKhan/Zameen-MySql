@@ -82,7 +82,7 @@ const Header = () => {
           <input
             type="button"
             value="+ Add Property"
-            onClick={() => history.push("/reg-property")}
+            onClick={() => {history.push("/reg-property");setMenuopened(false)}}
           />
           <img src="/pak-flag.png" alt="Pak Flag" />
           <Link
@@ -92,7 +92,7 @@ const Header = () => {
               paddingRight: "10px",
             }}
             // to={`/profile/${CID}`}
-            to="/profile"
+            to="/profile" onClick={() => { setMenuopened(false) }}
 
           >
             {/* <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
@@ -135,7 +135,7 @@ const Header = () => {
           ) : (
             ""
           )} */}
-          <Link style={{ color: "white", paddingLeft: "10px" }} to="/register">
+          <Link style={{ color: "white", paddingLeft: "10px" }} to="/register" onClick={() => { setMenuopened(false) }} id="profileIcon">
             {" "}
             <MdAccountCircle style={{ fontSize: "30px" }} />
           </Link>
