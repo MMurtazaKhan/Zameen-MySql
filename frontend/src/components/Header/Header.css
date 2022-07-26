@@ -279,6 +279,11 @@ input[type="button"]:hover {
   display: none;
   /* transition: all 0.5s; */
 }
+
+/* .logo{
+  height: 700px;
+  width: 200px;
+} */
 @media (max-width: 574px){
   
   

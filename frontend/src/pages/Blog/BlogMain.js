@@ -9,7 +9,7 @@ const BlogMain = () => {
       <div className="project-head">
     
         <h3
-          className="project-heading"
+          className="blog-heading"
           style={{ color: "wheat"}}
         >
           Read the <span className="yellow-color">Amazing Blogs</span> from Us!

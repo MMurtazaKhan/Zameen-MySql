@@ -56,8 +56,7 @@ const UpdateRegisteration = ({ history }) => {
   }, [CID]);
 
   return (
-    <>
-      {user && user.role === "admin" ? (
+   
         <div className="dashboard">
           <div className="admin-sidebar" ref={sidebarTab}>
             <Sidebar />
@@ -130,28 +129,9 @@ const UpdateRegisteration = ({ history }) => {
             </div>
           </div>
         </div>
-      ) : (
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "20px",
-          }}
-        >
-          <h1 style={{ fontSize: "20px" }}>
-            you have no access ko access to this resource to access this please
-            login with admin account:
-          </h1>
-          <button
-            style={{ width: "20%" }}
-            className="btn btn-warning btn-lg"
-            onClick={() => history.push("/register")}
-          >
-            Login Here
-          </button>
-        </div>
+     
       )}
-    </>
-  );
-};
+    
+  
 
 export default UpdateRegisteration;

@@ -12,7 +12,7 @@ const SellCard = ({ property }) => {
     <Link className="propertyCard" to={`/sellDetail/${property.PID}`}>
     <div className="property-img-container">
       {/* <img src={property.images[0].url} alt={property.name} /> */}
-      <img src="zameen.jpeg" alt="zameenimage" />
+      <img src={property.image} alt="zameenimage" />
 
     </div>
     <div className="property-card-contact">

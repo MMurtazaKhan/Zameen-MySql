@@ -45,11 +45,15 @@ const SellDetail = ({ match }) => {
       </div>
       <h2 className="sellDet-heading">{property.propertyTitle}</h2>
       <p className="sellDet-para">
+        <span className="sellDet-label">Available for: </span>
+        {property.purpose}
+      </p>
+      <p className="sellDet-para">
         <span className="sellDet-label">Description: </span>
         {property.description}
       </p>
 
-      <img src={property.image} />
+      <img className="sell-img" src={property.image} />
 
       <div className="sell-detail">
         <p className="sellDet-para">

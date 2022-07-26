@@ -32,28 +32,18 @@
     color: white;
     background-color: rgb(165, 165, 37);
     border-radius: 4px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     padding: 3px;
     margin: 3px;
 }
+
+.proj-img{
+    height: 500px;
+    width: 500px;
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 
 .projDet-label{
     font-size: 23px;
@@ -65,8 +55,8 @@
 }
 
 .projDet-btn{
-    padding: 4px;
-    width:50%;
+    padding: 8px;
+    width: 150px;
   display: flex;
   padding:3px 10px 5px 10px;
   /* background-color: #47ac4a; */
@@ -79,7 +69,7 @@
 }
 
 .projDet-btn:hover{
-    width:55%;
+    width:200px;
   border-radius: 0px 15px 15px 0px;
   transition: 1 ease-in-out;
 }

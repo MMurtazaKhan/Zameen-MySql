@@ -30,7 +30,7 @@ const ProjectDetail = ({ match }) => {
         </h1>
       </div>
       <h2 className="projDet-heading">{project.name}</h2>
-      <img src={project.image} />
+      <img className="proj-img" src={project.image} />
 
       {/* <h2 className="projDet-para">{project.description}</h2> */}
       {/* <div className="sell-detail-carousal"> */}
